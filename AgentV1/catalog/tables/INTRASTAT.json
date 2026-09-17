@@ -1,0 +1,7052 @@
+{
+ "INTRASTATTRANSACTIONNATURE": {
+  "name": "INTRASTATTRANSACTIONNATURE",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATTRANSACTIONNATURE",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "CODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 15,
+  "n_inbound_fk": 8,
+  "n_outbound_fk": 0,
+  "columns": [
+   {
+    "name": "CODE",
+    "position": 0,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 1,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 2,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 3,
+    "sql_type": "VARCHAR(120)",
+    "type": "VARCHAR",
+    "length": 120,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "CODEONREGISTER",
+    "position": 4,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CODEONREGFORTRIANGULAR",
+    "position": 5,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 6,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 7,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 8,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 9,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 10,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 11,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 12,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   },
+   {
+    "name": "ADDITIONALDESCRIPTION",
+    "position": 13,
+    "sql_type": "VARCHAR(300)",
+    "type": "VARCHAR",
+    "length": 300,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CODEBONREGISTER",
+    "position": 14,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATTRANSACTIONNATUREUID",
+    "table": "INTRASTATTRANSACTIONNATURE",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 6656
+ },
+ "INTRASTATMANNEROFTRANSPORT": {
+  "name": "INTRASTATMANNEROFTRANSPORT",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATMANNEROFTRANSPORT",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "CODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 12,
+  "n_inbound_fk": 3,
+  "n_outbound_fk": 0,
+  "columns": [
+   {
+    "name": "CODE",
+    "position": 0,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 1,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 2,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 3,
+    "sql_type": "VARCHAR(120)",
+    "type": "VARCHAR",
+    "length": 120,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "CODEONREGISTER",
+    "position": 4,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 5,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 6,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 7,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 8,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 9,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 10,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 11,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATMANNEROFTRANSPORTUID",
+    "table": "INTRASTATMANNEROFTRANSPORT",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 7648
+ },
+ "NONINVENTORYMEASUREMENT": {
+  "name": "NONINVENTORYMEASUREMENT",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.NONINVENTORYMEASUREMENT",
+  "module": "INTRASTAT",
+  "module_confidence": "low",
+  "module_basis": "FK neighbourhood: 1 of 1 related tables are INTRASTAT",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "NONINVENTORYCOMPANYCODE",
+   "NONINVENTORYITEMTYPECODE",
+   "NONINVENTORYSUBCODE01",
+   "MEASUREMENTTYPE",
+   "QUANTITYTYPE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 15,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 3,
+  "columns": [
+   {
+    "name": "NONINVENTORYCOMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NONINVENTORYITEMTYPECODE",
+    "position": 1,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NONINVENTORYSUBCODE01",
+    "position": 2,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "MEASUREMENTTYPE",
+    "position": 3,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "QUANTITYTYPE",
+    "position": 4,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "UNITOFMEASURECODE",
+    "position": 5,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "QUANTITY",
+    "position": 6,
+    "sql_type": "DECIMAL(15,5)",
+    "type": "DECIMAL",
+    "length": 15,
+    "scale": 5,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 7,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 8,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 9,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 10,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "OWNINGCOMPANYCODE",
+    "position": 11,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 12,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 13,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 14,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "NONINVENTORYMEASUREMENTUID",
+    "table": "NONINVENTORYMEASUREMENT",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 15996
+ },
+ "INTRASTATSTATISTICALSYSTEM": {
+  "name": "INTRASTATSTATISTICALSYSTEM",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATSTATISTICALSYSTEM",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "CODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 9,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 0,
+  "columns": [
+   {
+    "name": "CODE",
+    "position": 0,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 1,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 2,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 3,
+    "sql_type": "CHAR(30)",
+    "type": "CHAR",
+    "length": 30,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 4,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 5,
+    "sql_type": "CHAR(25)",
+    "type": "CHAR",
+    "length": 25,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 6,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 7,
+    "sql_type": "CHAR(25)",
+    "type": "CHAR",
+    "length": 25,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 8,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [],
+  "ddl_line": 18254
+ },
+ "INTRASTATTERMSOFDELIVERY": {
+  "name": "INTRASTATTERMSOFDELIVERY",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATTERMSOFDELIVERY",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "CODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 13,
+  "n_inbound_fk": 3,
+  "n_outbound_fk": 0,
+  "columns": [
+   {
+    "name": "CODE",
+    "position": 0,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 1,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 2,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 3,
+    "sql_type": "VARCHAR(120)",
+    "type": "VARCHAR",
+    "length": 120,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "CODEONREGISTER",
+    "position": 4,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "STATISTICAMOUNTCALCULATION",
+    "position": 5,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 6,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 7,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 8,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 9,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 10,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 11,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 12,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATTERMSOFDELIVERYUID",
+    "table": "INTRASTATTERMSOFDELIVERY",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 19502
+ },
+ "INTRASTATCUSTOMIZEDOPTION": {
+  "name": "INTRASTATCUSTOMIZEDOPTION",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATCUSTOMIZEDOPTION",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "COMPANYCODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 24,
+  "n_inbound_fk": 1,
+  "n_outbound_fk": 3,
+  "columns": [
+   {
+    "name": "COMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key",
+     "tenant_key"
+    ],
+    "meaning": "Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it."
+   },
+   {
+    "name": "PURCHASESPERIOD",
+    "position": 1,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESPERIOD",
+    "position": 2,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DECLARATIONONDISK",
+    "position": 3,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CONTEMPORARYTRANSACTION",
+    "position": 4,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "BATCHUMCODE",
+    "position": 5,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESSTATISTICAMOUNT",
+    "position": 6,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESSTATISTICAMOUNT",
+    "position": 7,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESFORSTATISTIC",
+    "position": 8,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESFORSTATISTIC",
+    "position": 9,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DECLARERADDRESSUNIQUEID",
+    "position": 10,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DECLARERADDRESSCODE",
+    "position": 11,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATTRANSACTIONPOLICYCODE",
+    "position": 12,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 13,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "MULTICOUNTRY",
+    "position": 14,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESFORFISCAL",
+    "position": 15,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESFORFISCAL",
+    "position": 16,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATDECLARATIONPOLICYCODE",
+    "position": 17,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CODEONREGISTERLENGTH",
+    "position": 18,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FILLNATUREB",
+    "position": 19,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CUSTOMCODE",
+    "position": 20,
+    "sql_type": "CHAR(6)",
+    "type": "CHAR",
+    "length": 6,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "THIRDPARTYDECLARANT",
+    "position": 21,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "THIRDPARTYTAXREGNUM",
+    "position": 22,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FILEPATH",
+    "position": 23,
+    "sql_type": "VARCHAR(250)",
+    "type": "VARCHAR",
+    "length": 250,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATCUSTOMIZEDOPTIONUID",
+    "table": "INTRASTATCUSTOMIZEDOPTION",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 23253
+ },
+ "NONINVENTORYPRMUOMCONVERSION": {
+  "name": "NONINVENTORYPRMUOMCONVERSION",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.NONINVENTORYPRMUOMCONVERSION",
+  "module": "INTRASTAT",
+  "module_confidence": "low",
+  "module_basis": "FK neighbourhood: 1 of 1 related tables are INTRASTAT",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "NONINVENTORYCOMPANYCODE",
+   "NONINVENTORYITEMTYPECODE",
+   "NONINVENTORYSUBCODE01",
+   "UNITOFMEASURECODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 16,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 3,
+  "columns": [
+   {
+    "name": "NONINVENTORYCOMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NONINVENTORYITEMTYPECODE",
+    "position": 1,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NONINVENTORYSUBCODE01",
+    "position": 2,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "UNITOFMEASURECODE",
+    "position": 3,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CONVERSIONFACTOR",
+    "position": 4,
+    "sql_type": "DECIMAL(11,5)",
+    "type": "DECIMAL",
+    "length": 11,
+    "scale": 5,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CONVERSIONFACTORTYPE",
+    "position": 5,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "MULTIPLIER",
+    "position": 6,
+    "sql_type": "DECIMAL(11,5)",
+    "type": "DECIMAL",
+    "length": 11,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CONVERSIONFACTORPOLICYCODE",
+    "position": 7,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 8,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 9,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 10,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 11,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "OWNINGCOMPANYCODE",
+    "position": 12,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 13,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 14,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 15,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "NONINVENTORYPRMUOMCVSUID",
+    "table": "NONINVENTORYPRMUOMCONVERSION",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 28346
+ },
+ "INTRASTATCOMBINEDNOMENCLATURE": {
+  "name": "INTRASTATCOMBINEDNOMENCLATURE",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATCOMBINEDNOMENCLATURE",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "CODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 15,
+  "n_inbound_fk": 8,
+  "n_outbound_fk": 1,
+  "columns": [
+   {
+    "name": "CODE",
+    "position": 0,
+    "sql_type": "CHAR(11)",
+    "type": "CHAR",
+    "length": 11,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 1,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 2,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 3,
+    "sql_type": "VARCHAR(120)",
+    "type": "VARCHAR",
+    "length": 120,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "EXCLUDEDINTEREEC",
+    "position": 4,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SUPPLUMREQUIRED",
+    "position": 5,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SUPPLEMENTARYUMCODE",
+    "position": 6,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATTRNLINEPOLICYCODE",
+    "position": 7,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 8,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 9,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 10,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 11,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 12,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 13,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 14,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "RASTATCOMBINEDNOMENCLATUREUID",
+    "table": "INTRASTATCOMBINEDNOMENCLATURE",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 31224
+ },
+ "INTRASTATTRANSACTIONERRORS": {
+  "name": "INTRASTATTRANSACTIONERRORS",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATTRANSACTIONERRORS",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "COMPANYCODE",
+   "CUSTOMERSUPPLIERTYPE",
+   "CUSTOMERCUSTOMERSUPPLIERCODE",
+   "SUPPLIERCUSTOMERSUPPLIERCODE",
+   "DOCUMENTDATE",
+   "DEFINITIVECOUNTERCODE",
+   "DEFINITIVECODE",
+   "ORIGINDOCUMENTNUMBER",
+   "DOCUMENTLINENUMBER",
+   "ERRORNUMBER"
+  ],
+  "primary_key_name": null,
+  "n_columns": 19,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 1,
+  "columns": [
+   {
+    "name": "COMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key",
+     "tenant_key"
+    ],
+    "meaning": "Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it."
+   },
+   {
+    "name": "CUSTOMERSUPPLIERTYPE",
+    "position": 1,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CUSTOMERCUSTOMERSUPPLIERCODE",
+    "position": 2,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUPPLIERCUSTOMERSUPPLIERCODE",
+    "position": 3,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DOCUMENTDATE",
+    "position": 4,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DEFINITIVECOUNTERCODE",
+    "position": 5,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DEFINITIVECODE",
+    "position": 6,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ORIGINDOCUMENTNUMBER",
+    "position": 7,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DOCUMENTLINENUMBER",
+    "position": 8,
+    "sql_type": "DECIMAL(7,0)",
+    "type": "DECIMAL",
+    "length": 7,
+    "scale": 0,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ERRORNUMBER",
+    "position": 9,
+    "sql_type": "DECIMAL(3,0)",
+    "type": "DECIMAL",
+    "length": 3,
+    "scale": 0,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ERRORCODE",
+    "position": 10,
+    "sql_type": "CHAR(12)",
+    "type": "CHAR",
+    "length": 12,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 11,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 12,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 13,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 14,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 15,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "DEFINITIVECOUNTERCOMPANYCODE",
+    "position": 16,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 17,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 18,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATTRANSACTIONERRORSUID",
+    "table": "INTRASTATTRANSACTIONERRORS",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 31864
+ },
+ "INTRASTATTRANSACTIONS": {
+  "name": "INTRASTATTRANSACTIONS",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATTRANSACTIONS",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "COMPANYCODE",
+   "CUSTOMERSUPPLIERTYPE",
+   "CUSTOMERCUSTOMERSUPPLIERCODE",
+   "SUPPLIERCUSTOMERSUPPLIERCODE",
+   "DOCUMENTDATE",
+   "DEFINITIVECOUNTERCODE",
+   "DEFINITIVECODE",
+   "ORIGINDOCUMENTNUMBER",
+   "DOCUMENTLINENUMBER"
+  ],
+  "primary_key_name": null,
+  "n_columns": 99,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 23,
+  "columns": [
+   {
+    "name": "COMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key",
+     "tenant_key"
+    ],
+    "meaning": "Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it."
+   },
+   {
+    "name": "CUSTOMERSUPPLIERTYPE",
+    "position": 1,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CUSTOMERCUSTOMERSUPPLIERCODE",
+    "position": 2,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUPPLIERCUSTOMERSUPPLIERCODE",
+    "position": 3,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "LEGALNAME",
+    "position": 4,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TAXREGISTRATIONNUMBER",
+    "position": 5,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DELIVERYPOINTUNIQUEID",
+    "position": 6,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DELIVERYPOINTCODE",
+    "position": 7,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ADDRESSEENAME",
+    "position": 8,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DOCUMENTDATE",
+    "position": 9,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DEFINITIVECOUNTERCODE",
+    "position": 10,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DEFINITIVECODE",
+    "position": 11,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ORIGINDOCUMENTNUMBER",
+    "position": 12,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DOCUMENTLINENUMBER",
+    "position": 13,
+    "sql_type": "DECIMAL(7,0)",
+    "type": "DECIMAL",
+    "length": 7,
+    "scale": 0,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DOCUMENTTYPE",
+    "position": 14,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "REGISTERTAXCODE",
+    "position": 15,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ACCOUNTTRANSACTIONNUMBER",
+    "position": 16,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ACCOUNTTRANSACTIONDATE",
+    "position": 17,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PROVISIONALCOUNTERCODE",
+    "position": 18,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PROVISIONALCODE",
+    "position": 19,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ORDERLINE",
+    "position": 20,
+    "sql_type": "DECIMAL(7,0)",
+    "type": "DECIMAL",
+    "length": 7,
+    "scale": 0,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ORDERSUBLINE",
+    "position": 21,
+    "sql_type": "DECIMAL(3,0)",
+    "type": "DECIMAL",
+    "length": 3,
+    "scale": 0,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRANSACTIONNUMBER",
+    "position": 22,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRANSACTIONDETAILNUMBER",
+    "position": 23,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TEMPLATEINTRACEE",
+    "position": 24,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "NATUREINTRACEECODE",
+    "position": 25,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NATUREINTRACEEDESCR",
+    "position": 26,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRANSPORTMODEINTRACEECODE",
+    "position": 27,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TRANSPORTMODEINTRACEEDESCR",
+    "position": 28,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DELIVERYMODEINTRACEECODE",
+    "position": 29,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DELIVERYMODEINTRACEEDESCR",
+    "position": 30,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESORIGINPROVINCE",
+    "position": 31,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESORIGINCOUNTRYCODE",
+    "position": 32,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SALESORIGINISOCODE",
+    "position": 33,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESDESTINATIONCOUNTRYCODE",
+    "position": 34,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SALESDESTCOUNTRYDESCR",
+    "position": 35,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESDESTINATIONISOCODE",
+    "position": 36,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESDELIVERYPOINTCOUNTRYCODE",
+    "position": 37,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SALESDELPOINTCOUNTRYDESCR",
+    "position": 38,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESDELIVERYPOINTISOCODE",
+    "position": 39,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESDESTINATIONPROVINCE",
+    "position": 40,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESDESTINATIONCNYCODE",
+    "position": 41,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESDESTINATIONISOCODE",
+    "position": 42,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESORIGINCOUNTRYCODE",
+    "position": 43,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESORIGINCOUNTRYDESCR",
+    "position": 44,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESORIGINISOCODE",
+    "position": 45,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESPROVENANCECOUNTRYCODE",
+    "position": 46,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESPROVENANCECNYDESCR",
+    "position": 47,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESPROVENANCEISOCODE",
+    "position": 48,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ITEMTYPEAFICODE",
+    "position": 49,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE01",
+    "position": 50,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE02",
+    "position": 51,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE03",
+    "position": 52,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE04",
+    "position": 53,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE05",
+    "position": 54,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE06",
+    "position": 55,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE07",
+    "position": 56,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE08",
+    "position": 57,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE09",
+    "position": 58,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE10",
+    "position": 59,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ITEMDESCRIPTION",
+    "position": 60,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "NOMENCLATUREINTRACEECODE",
+    "position": 61,
+    "sql_type": "CHAR(11)",
+    "type": "CHAR",
+    "length": 11,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NOMENCLATUREINTRACEEDESCR",
+    "position": 62,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "USERPRIMARYUOMCODE",
+    "position": 63,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "USERPRIMARYQUANTITY",
+    "position": 64,
+    "sql_type": "DECIMAL(15,5)",
+    "type": "DECIMAL",
+    "length": 15,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "WEIGHTUMCODE",
+    "position": 65,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "QTYWEIGHTUM",
+    "position": 66,
+    "sql_type": "DECIMAL(15,5)",
+    "type": "DECIMAL",
+    "length": 15,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ADDITIONALUMCODE",
+    "position": 67,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "QTYADDITIONALUM",
+    "position": 68,
+    "sql_type": "DECIMAL(15,5)",
+    "type": "DECIMAL",
+    "length": 15,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PRIMARYCURRENCYCODE",
+    "position": 69,
+    "sql_type": "CHAR(4)",
+    "type": "CHAR",
+    "length": 4,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CURRENCYCODE",
+    "position": 70,
+    "sql_type": "CHAR(4)",
+    "type": "CHAR",
+    "length": 4,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "EXCHANGERATE",
+    "position": 71,
+    "sql_type": "DECIMAL(28,15)",
+    "type": "DECIMAL",
+    "length": 28,
+    "scale": 15,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "AMOUNTPRIMARYCURRENCY",
+    "position": 72,
+    "sql_type": "DECIMAL(18,5)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "AMOUNTFOREIGNCURRENCY",
+    "position": 73,
+    "sql_type": "DECIMAL(18,5)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TAXCODE",
+    "position": 74,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TAXDESCR",
+    "position": 75,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "STATISTICAMOUNTPRIMARYCURRENCY",
+    "position": 76,
+    "sql_type": "DECIMAL(18,5)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "STATISTICAMOUNTFOREIGNCURRENCY",
+    "position": 77,
+    "sql_type": "DECIMAL(18,5)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 78,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 79,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 80,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 81,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "DEFINITIVECOUNTERCOMPANYCODE",
+    "position": 82,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PROVISIONALCOUNTERCOMPANYCODE",
+    "position": 83,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ITEMTYPEAFICOMPANYCODE",
+    "position": 84,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 85,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 86,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 87,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   },
+   {
+    "name": "ORIGINCOUNTRYCODE",
+    "position": 88,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TRANSACTIONNATUREB",
+    "position": 89,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "HASERRORS",
+    "position": 90,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DECLARERCOUNTRYCODE",
+    "position": 91,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TRANSACTIONTYPE",
+    "position": 92,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRIANGULAROPERATION",
+    "position": 93,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TERMSOFDELIVERYCOMPANYCODE",
+    "position": 94,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TERMSOFDELIVERYCODE",
+    "position": 95,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ISTOFIX",
+    "position": 96,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PLACEOFDELIVERY",
+    "position": 97,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ISPLACEOFDELIVERYTOFIX",
+    "position": 98,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATTRANSACTIONSUID",
+    "table": "INTRASTATTRANSACTIONS",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   },
+   {
+    "name": "INTTRANSACTIONS1",
+    "table": "INTRASTATTRANSACTIONS",
+    "columns": [
+     "COMPANYCODE",
+     "TRANSACTIONNUMBER",
+     "TRANSACTIONDETAILNUMBER"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 34787
+ },
+ "NONINVENTORY": {
+  "name": "NONINVENTORY",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.NONINVENTORY",
+  "module": "INTRASTAT",
+  "module_confidence": "low",
+  "module_basis": "FK neighbourhood: 1 of 1 related tables are INTRASTAT",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "COMPANYCODE",
+   "ITEMTYPECODE",
+   "SUBCODE01"
+  ],
+  "primary_key_name": null,
+  "n_columns": 42,
+  "n_inbound_fk": 2,
+  "n_outbound_fk": 13,
+  "columns": [
+   {
+    "name": "COMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key",
+     "tenant_key"
+    ],
+    "meaning": "Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it."
+   },
+   {
+    "name": "DIVISIONCODE",
+    "position": 1,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": "Division within a company; second-level organisational discriminator."
+   },
+   {
+    "name": "ALLOWEDDIVISIONS",
+    "position": 2,
+    "sql_type": "CHAR(90)",
+    "type": "CHAR",
+    "length": 90,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ITEMTYPECODE",
+    "position": 3,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SUBCODE01",
+    "position": 4,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key",
+     "generic_classification_code"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 5,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 6,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 7,
+    "sql_type": "VARCHAR(120)",
+    "type": "VARCHAR",
+    "length": 120,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "BASEPRIMARYUNITCODE",
+    "position": 8,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INITIALDATE",
+    "position": 9,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FINALDATE",
+    "position": 10,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "BARTYPECODE",
+    "position": 11,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "BARCODE",
+    "position": 12,
+    "sql_type": "VARCHAR(50)",
+    "type": "VARCHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DRAWINGNUMBER",
+    "position": 13,
+    "sql_type": "CHAR(30)",
+    "type": "CHAR",
+    "length": 30,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "MANUFACTURERCODE",
+    "position": 14,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATCODE",
+    "position": 15,
+    "sql_type": "CHAR(11)",
+    "type": "CHAR",
+    "length": 11,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FIRSTUSERGRPUSERGENGRPTYPECOD",
+    "position": 16,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FIRSTUSERGRPCODE",
+    "position": 17,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SNDUSERGRPUSERGENGRPTYPECODE",
+    "position": 18,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SECONDUSERGRPCODE",
+    "position": 19,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "THIRDUSERGRPUSERGENGRPTYPECOD",
+    "position": 20,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "THIRDUSERGRPCODE",
+    "position": 21,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FOURTHUSERGRPUSERGENGRPTYPECOD",
+    "position": 22,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FOURTHUSERGRPCODE",
+    "position": 23,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FIFTHUSERGRPUSERGENGRPTYPECOD",
+    "position": 24,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FIFTHUSERGRPCODE",
+    "position": 25,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 26,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 27,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 28,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 29,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "OWNINGCOMPANYCODE",
+    "position": 30,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 31,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "ITEMTYPECOMPANYCODE",
+    "position": 32,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "MANUFACTURERCOMPANYCODE",
+    "position": 33,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FIRSTGROUPCOMPANY",
+    "position": 34,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "SECONDGROUPCOMPANY",
+    "position": 35,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "THIRDGROUPCOMPANY",
+    "position": 36,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FOURTHGROUPCOMPANY",
+    "position": 37,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FIFTHGROUPCOMPANY",
+    "position": 38,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 39,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 40,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   },
+   {
+    "name": "QRCODE",
+    "position": 41,
+    "sql_type": "CHAR(200)",
+    "type": "CHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "NONINVENTORYUID",
+    "table": "NONINVENTORY",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 37128
+ },
+ "INTRACOMBNOMENCLATUREBEAN": {
+  "name": "INTRACOMBNOMENCLATUREBEAN",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRACOMBNOMENCLATUREBEAN",
+  "module": "INTRASTAT",
+  "module_confidence": "medium",
+  "module_basis": "table name starts with 'INTRACOM'",
+  "roles": [
+   "staging_mirror"
+  ],
+  "queryable": false,
+  "notes": [
+   "Integration staging/import mirror. Holds in-flight inbound rows, not the authoritative record, and relaxes the NOT NULL constraints of its twin. Do NOT use for business reporting."
+  ],
+  "primary_key": [
+   "IMPORTAUTOCOUNTER"
+  ],
+  "primary_key_name": null,
+  "n_columns": 25,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 0,
+  "columns": [
+   {
+    "name": "IMPORTAUTOCOUNTER",
+    "position": 0,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key",
+     "staging"
+    ],
+    "meaning": "Staging-row sequence number. Its presence marks a *BEAN import/staging mirror table."
+   },
+   {
+    "name": "CODE",
+    "position": 1,
+    "sql_type": "CHAR(11)",
+    "type": "CHAR",
+    "length": 11,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "LONGDESCRIPTION",
+    "position": 2,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Long human-readable label."
+   },
+   {
+    "name": "SHORTDESCRIPTION",
+    "position": 3,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Short human-readable label."
+   },
+   {
+    "name": "SEARCHDESCRIPTION",
+    "position": 4,
+    "sql_type": "VARCHAR(120)",
+    "type": "VARCHAR",
+    "length": 120,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "description"
+    ],
+    "meaning": "Normalised/uppercased label used for lookup and search screens."
+   },
+   {
+    "name": "EXCLUDEDINTEREEC",
+    "position": 5,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SUPPLUMREQUIRED",
+    "position": 6,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SUPPLEMENTARYUMCODE",
+    "position": 7,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATTRNLINEPOLICYCODE",
+    "position": 8,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "WSOPERATION",
+    "position": 9,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "staging"
+    ],
+    "meaning": "Requested web-service operation for a staging row (integration inbox pattern)."
+   },
+   {
+    "name": "IMPORTSTATUS",
+    "position": 10,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "staging"
+    ],
+    "meaning": "Staging-row processing status (integration inbox pattern)."
+   },
+   {
+    "name": "IMPCREATIONDATETIME",
+    "position": 11,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "IMPCREATIONUSER",
+    "position": 12,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "IMPLASTUPDATEDATETIME",
+    "position": 13,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "IMPLASTUPDATEUSER",
+    "position": 14,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "IMPORTDATETIME",
+    "position": 15,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "RETRYNR",
+    "position": 16,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "staging"
+    ],
+    "meaning": "Retry attempt counter for a staging row."
+   },
+   {
+    "name": "NEXTRETRY",
+    "position": 17,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "staging"
+    ],
+    "meaning": "Next retry timestamp for a failed staging row."
+   },
+   {
+    "name": "IMPORTID",
+    "position": 18,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ENTITYNAME",
+    "position": 19,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRANSLATEDLONGDESCRIPTION",
+    "position": 20,
+    "sql_type": "VARCHAR(200)",
+    "type": "VARCHAR",
+    "length": 200,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRANSLATEDLANGUAGECODE",
+    "position": 21,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRANSLATEDSHORTDESCRIPTION",
+    "position": 22,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "IMPOPERATIONUSER",
+    "position": 23,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "RELATEDDEPENDENTID",
+    "position": 24,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRACOMBNOMENCLATUREBEANXMT",
+    "table": "INTRACOMBNOMENCLATUREBEAN",
+    "columns": [
+     "IMPORTSTATUS",
+     "RETRYNR",
+     "IMPORTAUTOCOUNTER",
+     "NEXTRETRY"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 46775
+ },
+ "INTRACOMBNOMENCLATUREEXP": {
+  "name": "INTRACOMBNOMENCLATUREEXP",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRACOMBNOMENCLATUREEXP",
+  "module": "INTRASTAT",
+  "module_confidence": "medium",
+  "module_basis": "table name starts with 'INTRACOM'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "ENVIRONMENTCODE",
+   "EXPCODE",
+   "UNIQUEIDPK"
+  ],
+  "primary_key_name": null,
+  "n_columns": 8,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 0,
+  "columns": [
+   {
+    "name": "ENVIRONMENTCODE",
+    "position": 0,
+    "sql_type": "CHAR(10)",
+    "type": "CHAR",
+    "length": 10,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "EXPCODE",
+    "position": 1,
+    "sql_type": "CHAR(11)",
+    "type": "CHAR",
+    "length": 11,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "OPERATIONTYPE",
+    "position": 2,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "STATUS",
+    "position": 3,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "UNIQUEIDPK",
+    "position": 4,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 5,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "FATHERABSUNIQUEID",
+    "position": 6,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "EVENTEXPDATETIME",
+    "position": 7,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRACOMBNOMENCLATUREEXPUID",
+    "table": "INTRACOMBNOMENCLATUREEXP",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 76737
+ },
+ "INTRASTATCUSTOMIZEDOPTBYCOU": {
+  "name": "INTRASTATCUSTOMIZEDOPTBYCOU",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATCUSTOMIZEDOPTBYCOU",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "INTRASTATCUSTOMIZEDOPTCMPCOD",
+   "COUNTRYCODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 19,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 3,
+  "columns": [
+   {
+    "name": "INTRASTATCUSTOMIZEDOPTCMPCOD",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "COUNTRYCODE",
+    "position": 1,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATDECLARATIONPOLICYCODE",
+    "position": 2,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESPERIOD",
+    "position": 3,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESPERIOD",
+    "position": 4,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESSTATISTICAMOUNT",
+    "position": 5,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESSTATISTICAMOUNT",
+    "position": 6,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESFORFISCAL",
+    "position": 7,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESFORSTATISTIC",
+    "position": 8,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESFORFISCAL",
+    "position": 9,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESFORSTATISTIC",
+    "position": 10,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DECLARERADDRESSUNIQUEID",
+    "position": 11,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DECLARERADDRESSCODE",
+    "position": 12,
+    "sql_type": "CHAR(8)",
+    "type": "CHAR",
+    "length": 8,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FILLNATUREB",
+    "position": 13,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CUSTOMCODE",
+    "position": 14,
+    "sql_type": "CHAR(6)",
+    "type": "CHAR",
+    "length": 6,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "THIRDPARTYDECLARANT",
+    "position": 15,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "THIRDPARTYTAXREGNUM",
+    "position": 16,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FILEPATH",
+    "position": 17,
+    "sql_type": "VARCHAR(250)",
+    "type": "VARCHAR",
+    "length": 250,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 18,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "RASTATCUSTOMIZEDOPTBYCOUUID",
+    "table": "INTRASTATCUSTOMIZEDOPTBYCOU",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 208395
+ },
+ "INTRASTATDECLARATIONROW": {
+  "name": "INTRASTATDECLARATIONROW",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATDECLARATIONROW",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "INTRASTATDECLARATIONCMYCODE",
+   "INTRASTATDECLARATIONCODE",
+   "DECLARATIONROWID"
+  ],
+  "primary_key_name": null,
+  "n_columns": 53,
+  "n_inbound_fk": 0,
+  "n_outbound_fk": 12,
+  "columns": [
+   {
+    "name": "INTRASTATDECLARATIONCMYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATDECLARATIONCODE",
+    "position": 1,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DECLARATIONROWID",
+    "position": 2,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "AUTOMATIC",
+    "position": 3,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "MODIFIED",
+    "position": 4,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ROWTYPE",
+    "position": 5,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SECTIONROWNUMBER",
+    "position": 6,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ADJUSTMENTYEAR",
+    "position": 7,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ADJUSTMENTMONTH",
+    "position": 8,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ADJUSTMENTQUARTER",
+    "position": 9,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ADJUSTMENTPROTOCOL",
+    "position": 10,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ADJUSTMENTSECTIONROWNUMBER",
+    "position": 11,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PARTNERCOUNTRYCODE",
+    "position": 12,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PARTNERTAXREGISTRATIONNUMBER",
+    "position": 13,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "INVOICENUMBER",
+    "position": 14,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "INVOICEDATE",
+    "position": 15,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SIGN",
+    "position": 16,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TOTALAMOUNT",
+    "position": 17,
+    "sql_type": "DECIMAL(18,2)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 2,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TOTALAMOUNTSUPPLIERCURRENCY",
+    "position": 18,
+    "sql_type": "DECIMAL(18,2)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 2,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TRIANGULAROPERATION",
+    "position": 19,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "NATUREINTRACEECODE",
+    "position": 20,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "NOMENCLATUREINTRACEECODE",
+    "position": 21,
+    "sql_type": "CHAR(11)",
+    "type": "CHAR",
+    "length": 11,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ITEMDESCRIPTION",
+    "position": 22,
+    "sql_type": "VARCHAR(80)",
+    "type": "VARCHAR",
+    "length": 80,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "QUANTITYPERWEIGHT",
+    "position": 23,
+    "sql_type": "DECIMAL(15,5)",
+    "type": "DECIMAL",
+    "length": 15,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "QUANTITYINSUPPLEMENTARYUM",
+    "position": 24,
+    "sql_type": "DECIMAL(15,5)",
+    "type": "DECIMAL",
+    "length": 15,
+    "scale": 5,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "STATISTICALAMOUNT",
+    "position": 25,
+    "sql_type": "DECIMAL(18,2)",
+    "type": "DECIMAL",
+    "length": 18,
+    "scale": 2,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TERMSOFDELIVERYCOMPANYCODE",
+    "position": 26,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TERMSOFDELIVERYCODE",
+    "position": 27,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "INTRASTATTERMSOFDELIVERYCODE",
+    "position": 28,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TRANSPORTMODECODE",
+    "position": 29,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "TRANSACTIONNATUREB",
+    "position": 30,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DESTINATIONCOUNTRYCODE",
+    "position": 31,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "ORIGINPROVINCE",
+    "position": 32,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ORIGINCOUNTRYCODE",
+    "position": 33,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "PROVENANCECOUNTRYCODE",
+    "position": 34,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "DESTINATIONPROVINCE",
+    "position": 35,
+    "sql_type": "CHAR(2)",
+    "type": "CHAR",
+    "length": 2,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PAYMENTCOLLECTIONMODE",
+    "position": 36,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PAYMENTCOUNTRYCODE",
+    "position": 37,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "CALLOFFSTOCKOPERATIONTYPE",
+    "position": 38,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FINALCUSTOMERCOUNTRYCODE",
+    "position": 39,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "FINALCUSTOMERTAXCODE",
+    "position": 40,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ACCOUNTTRANSACTIONNUMBER",
+    "position": 41,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "ACCOUNTTRANSACTIONDATE",
+    "position": 42,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TOBEVERIFIED",
+    "position": 43,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "VERIFICATIONREASON",
+    "position": 44,
+    "sql_type": "CLOB(1000000)",
+    "type": "CLOB",
+    "length": 1000000,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 45,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 46,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 47,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 48,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 49,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 50,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 51,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   },
+   {
+    "name": "PLACEOFDELIVERY",
+    "position": 52,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATDECLARATIONROWUID",
+    "table": "INTRASTATDECLARATIONROW",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 215853
+ },
+ "INTRASTATDECLARATION": {
+  "name": "INTRASTATDECLARATION",
+  "schema": "DB2ADMIN",
+  "qualified_name": "DB2ADMIN.INTRASTATDECLARATION",
+  "module": "INTRASTAT",
+  "module_confidence": "high",
+  "module_basis": "table name starts with 'INTRASTAT'",
+  "roles": [
+   "business_data"
+  ],
+  "queryable": true,
+  "notes": [],
+  "primary_key": [
+   "COMPANYCODE",
+   "CODE"
+  ],
+  "primary_key_name": null,
+  "n_columns": 41,
+  "n_inbound_fk": 1,
+  "n_outbound_fk": 2,
+  "columns": [
+   {
+    "name": "COMPANYCODE",
+    "position": 0,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": true,
+    "tags": [
+     "primary_key",
+     "foreign_key",
+     "tenant_key"
+    ],
+    "meaning": "Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it."
+   },
+   {
+    "name": "CODE",
+    "position": 1,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": true,
+    "is_foreign_key": false,
+    "tags": [
+     "primary_key"
+    ],
+    "meaning": "Business (natural) key of a master-data table, typically the last primary-key column."
+   },
+   {
+    "name": "COUNTRYCODE",
+    "position": 2,
+    "sql_type": "CHAR(3)",
+    "type": "CHAR",
+    "length": 3,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": true,
+    "tags": [
+     "foreign_key"
+    ],
+    "meaning": null
+   },
+   {
+    "name": "MULTICOUNTRY",
+    "position": 3,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "DECLARATIONPOLICYCODE",
+    "position": 4,
+    "sql_type": "CHAR(20)",
+    "type": "CHAR",
+    "length": 20,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FREQUENCY",
+    "position": 5,
+    "sql_type": "CHAR(1)",
+    "type": "CHAR",
+    "length": 1,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "YEAR",
+    "position": 6,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "MONTH",
+    "position": 7,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "QUARTER",
+    "position": 8,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PERIODICITY",
+    "position": 9,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALES",
+    "position": 10,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESFISCALPURPOSE",
+    "position": 11,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESSTATISTICALPURPOSE",
+    "position": 12,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASES",
+    "position": 13,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESSTATISTICALPURPOSE",
+    "position": 14,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESFISCALPURPOSE",
+    "position": 15,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "NOPREVIOUSDECLARATIONS",
+    "position": 16,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "VATVARIATIONENDACTIVITIES",
+    "position": 17,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FILEPATH",
+    "position": 18,
+    "sql_type": "VARCHAR(250)",
+    "type": "VARCHAR",
+    "length": 250,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "TAXREGISTRATIONNUMBER",
+    "position": 19,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "THIRDPARTYDECLARANT",
+    "position": 20,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "THIRDPARTYTAXREGNUM",
+    "position": 21,
+    "sql_type": "CHAR(15)",
+    "type": "CHAR",
+    "length": 15,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FILLNATUREB",
+    "position": 22,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "CUSTOMCODE",
+    "position": 23,
+    "sql_type": "CHAR(6)",
+    "type": "CHAR",
+    "length": 6,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SENT",
+    "position": 24,
+    "sql_type": "SMALLINT",
+    "type": "SMALLINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SENTBYUSER",
+    "position": 25,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SENTDATE",
+    "position": 26,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "RESTOREDSENTBYUSER",
+    "position": 27,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "RESTOREDSENTDATE",
+    "position": 28,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PROTOCOL",
+    "position": 29,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "SALESREFERENCENUMBER",
+    "position": 30,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "PURCHASESREFERENCENUMBER",
+    "position": 31,
+    "sql_type": "INTEGER",
+    "type": "INTEGER",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": null
+   },
+   {
+    "name": "FROMDATE",
+    "position": 32,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": "Inclusive start of a validity period."
+   },
+   {
+    "name": "TODATE",
+    "position": 33,
+    "sql_type": "DATE",
+    "type": "DATE",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [],
+    "meaning": "End of a validity period."
+   },
+   {
+    "name": "CREATIONDATETIME",
+    "position": 34,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time creation timestamp (audit)."
+   },
+   {
+    "name": "CREATIONUSER",
+    "position": 35,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who created the row (audit)."
+   },
+   {
+    "name": "LASTUPDATEDATETIME",
+    "position": 36,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "Local-time last-modification timestamp (audit)."
+   },
+   {
+    "name": "LASTUPDATEUSER",
+    "position": 37,
+    "sql_type": "CHAR(50)",
+    "type": "CHAR",
+    "length": 50,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "User who last modified the row (audit)."
+   },
+   {
+    "name": "CREATIONDATETIMEUTC",
+    "position": 38,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies."
+   },
+   {
+    "name": "LASTUPDATEDATETIMEUTC",
+    "position": 39,
+    "sql_type": "TIMESTAMP",
+    "type": "TIMESTAMP",
+    "length": null,
+    "scale": null,
+    "nullable": true,
+    "default": null,
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "audit"
+    ],
+    "meaning": "UTC last-modification timestamp (audit)."
+   },
+   {
+    "name": "ABSUNIQUEID",
+    "position": 40,
+    "sql_type": "BIGINT",
+    "type": "BIGINT",
+    "length": null,
+    "scale": null,
+    "nullable": false,
+    "default": "<system default>",
+    "in_primary_key": false,
+    "is_foreign_key": false,
+    "tags": [
+     "surrogate_id"
+    ],
+    "meaning": "Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key."
+   }
+  ],
+  "unique_constraints": [],
+  "check_constraints": [],
+  "indexes": [
+   {
+    "name": "INTRASTATDECLARATIONUID",
+    "table": "INTRASTATDECLARATION",
+    "columns": [
+     "ABSUNIQUEID"
+    ],
+    "unique": false
+   }
+  ],
+  "ddl_line": 216441
+ }
+}

@@ -1,0 +1,6471 @@
+[
+ {
+  "child_table": "LANGUAGESALESLABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LANGUAGES"
+  ]
+ },
+ {
+  "child_table": "LANGUAGEBASELABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGECONTACTBOOKLABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSLETTERTEMPLATELANGUAGE",
+  "child_column": "FATHERID",
+  "parent_table": "ABSLETTERTEMPLATE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ABSLETTERTEMPLATE' + known child suffix 'LANGUAGE'",
+  "declared_in_ddl": false,
+  "on_clause": "ABSLETTERTEMPLATELANGUAGE.FATHERID = ABSLETTERTEMPLATE.ABSUNIQUEID",
+  "candidates": [
+   "ABSLETTERTEMPLATE"
+  ]
+ },
+ {
+  "child_table": "ABSLANGUAGEDESCRIPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEITEMTYPELABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "SIZESALIAS",
+  "child_column": "FATHERID",
+  "parent_table": "SIZES",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SIZES' + known child suffix 'ALIAS'",
+  "declared_in_ddl": false,
+  "on_clause": "SIZESALIAS.FATHERID = SIZES.ABSUNIQUEID",
+  "candidates": [
+   "SIZES"
+  ]
+ },
+ {
+  "child_table": "ABSINTERNATIONALIZEDIMG",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEADDRESSLINELABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ADTRANSLATEDIMAGE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSLANGUAGEMENUPROCESS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEMEASUREMENTLABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEDESCRIPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGECOMMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LONGLANGUAGEDESCRIPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEITEMSUBCODELABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ADTRANSLATEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSUILANGUAGEDESCRIPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSMULTIMEDIADEPENDENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSINFO",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ADDRESSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ORDERPARTNERBANKBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "ORDERPARTNER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'ORDERPARTNER' + recurring fragment 'BANK' (seen in 5 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "ORDERPARTNERBANKBEAN.FATHERID = ORDERPARTNER.ABSUNIQUEID",
+  "candidates": [
+   "ORDERPARTNER"
+  ]
+ },
+ {
+  "child_table": "ORDERPARTNERBRANDBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "ORDERPARTNER"
+  ]
+ },
+ {
+  "child_table": "PRIMROSEADDRESSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRIMROSEORDERPARTNERBANKBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRIMROSEORDPRNBANKV61BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSMULTIMEDIADEPENDENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEDESCRIPTIONSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PACKAGINGUNITCTGCVSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRDPRIMARYUOMCONVERSIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRODUCTSPECIALIZEDSIZEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "SECONDARYUNITCTGCVSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "SIZESBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "STATISTICALGROUPDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "STATISTICALGROUP",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'STATISTICALGROUP' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "STATISTICALGROUPDETAILBEAN.FATHERID = STATISTICALGROUP.ABSUNIQUEID",
+  "candidates": [
+   "STATISTICALGROUP"
+  ]
+ },
+ {
+  "child_table": "BOMCOMPONENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ROUTINGSTEPBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "ROUTING",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ROUTING' + known child suffix 'STEP'",
+  "declared_in_ddl": false,
+  "on_clause": "ROUTINGSTEPBEAN.FATHERID = ROUTING.ABSUNIQUEID",
+  "candidates": [
+   "ROUTING"
+  ]
+ },
+ {
+  "child_table": "NOTE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "COMPOSITIONDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "COMPOSITION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'COMPOSITION' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "COMPOSITIONDETAILBEAN.FATHERID = COMPOSITION.ABSUNIQUEID",
+  "candidates": [
+   "COMPOSITION"
+  ]
+ },
+ {
+  "child_table": "NOTEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRODUCTALLOWEDVALUESBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PRODUCT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'PRODUCT' + recurring fragment 'ALLOWEDVALUES' (seen in 4 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "PRODUCTALLOWEDVALUESBEAN.FATHERID = PRODUCT.ABSUNIQUEID",
+  "candidates": [
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "ORDERITEMORDERPARTNERLINKBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "ORDERITEM"
+  ]
+ },
+ {
+  "child_table": "PDMDB2BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PDMDB6BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "COMPOSITIONDESCRIPTIONSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "COMPOSITION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'COMPOSITION' + known child suffix 'DESCRIPTIONS'",
+  "declared_in_ddl": false,
+  "on_clause": "COMPOSITIONDESCRIPTIONSBEAN.FATHERID = COMPOSITION.ABSUNIQUEID",
+  "candidates": [
+   "COMPOSITION"
+  ]
+ },
+ {
+  "child_table": "CONTACTBOOKBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ORDPRNSPECIALIZEDDATABEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PDMSUP1BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PDMSUP2BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRIMROSECONTACTBOOKBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGADDRESS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGBUSINESSPARTNER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRODUCT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINTERNALDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINTERNALDOCUMENTBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALDOCUMENT' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALDOCUMENTBLOCKS.FATHERID = LOGINTERNALDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALDOCUMENTLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALDOCUMENTLINE.FATHERID = LOGINTERNALDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALDOCUMENTLINEBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALDOCUMENTLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALDOCUMENTLINEBLOCKS.FATHERID = LOGINTERNALDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALDOCUMENTLINE",
+   "LOGINTERNALDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALORDER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINTERNALORDERASSORTMENT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDER' + known child suffix 'ASSORTMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERASSORTMENT.FATHERID = LOGINTERNALORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALORDERBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDER' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERBLOCKS.FATHERID = LOGINTERNALORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALORDERDELIVERY",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDER' + known child suffix 'DELIVERY'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERDELIVERY.FATHERID = LOGINTERNALORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "LOGINTORDERDELIVERYBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINTERNALORDERLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDER' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERLINE.FATHERID = LOGINTERNALORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALORDERLINEBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDERLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERLINEBLOCKS.FATHERID = LOGINTERNALORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDERLINE",
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALRETURNDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGAGENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEORDERASSORTMENT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'ASSORTMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERASSORTMENT.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERBLOCKS.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERCHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERCHARGE.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURORDERDELIVERYBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEORDERDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERDISCOUNT.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERLINEBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDERLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERLINEBLOCKS.FATHERID = LOGPURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDERLINE",
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERLINECHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDERLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERLINECHARGE.FATHERID = LOGPURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDERLINE",
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERLINEDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDERLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERLINEDISCOUNT.FATHERID = LOGPURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDERLINE",
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESCLAIMLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENT' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTBLOCKS.FATHERID = LOGSALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTCHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENT' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTCHARGE.FATHERID = LOGSALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTCOMMISSION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGSALESDOCUMENT' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTCOMMISSION.FATHERID = LOGSALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENT' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTDISCOUNT.FATHERID = LOGSALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTLINE.FATHERID = LOGSALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTLINEBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENTLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTLINEBLOCKS.FATHERID = LOGSALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENTLINE",
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTLINECHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENTLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTLINECHARGE.FATHERID = LOGSALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENTLINE",
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESDOCUMENTLINEDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESDOCUMENTLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESDOCUMENTLINEDISCOUNT.FATHERID = LOGSALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESDOCUMENTLINE",
+   "LOGSALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESORDERASSORTMENT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'ASSORTMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERASSORTMENT.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERBLOCKS.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERCHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERCHARGE.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERCOMMISSION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGSALESORDER' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERCOMMISSION.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERDELIVERY",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'DELIVERY'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERDELIVERY.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERDELIVERYBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERDELIVERY",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDERDELIVERY' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERDELIVERYBLOCKS.FATHERID = LOGSALESORDERDELIVERY.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERDELIVERY",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERDISCOUNT.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINE.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERLINEBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDERLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINEBLOCKS.FATHERID = LOGSALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERLINE",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERLINECHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDERLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINECHARGE.FATHERID = LOGSALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERLINE",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERLINECOMMISSION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGSALESORDERLINE' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINECOMMISSION.FATHERID = LOGSALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERLINE",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERLINEDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDERLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINEDISCOUNT.FATHERID = LOGSALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERLINE",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERLINEPRICE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDERLINE' + known child suffix 'PRICE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINEPRICE.FATHERID = LOGSALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERLINE",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESRELEASELINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESRELEASELINEBLOCKS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESRELEASELINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESRELEASELINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESRELEASELINEBLOCKS.FATHERID = LOGSALESRELEASELINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESRELEASELINE"
+  ]
+ },
+ {
+  "child_table": "LOGSALESRELEASELINECHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESRELEASELINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESRELEASELINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESRELEASELINECHARGE.FATHERID = LOGSALESRELEASELINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESRELEASELINE"
+  ]
+ },
+ {
+  "child_table": "LOGSALESRELEASELINECOMMISSION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESRELEASELINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGSALESRELEASELINE' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESRELEASELINECOMMISSION.FATHERID = LOGSALESRELEASELINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESRELEASELINE"
+  ]
+ },
+ {
+  "child_table": "LOGSALESRELEASELINEDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESRELEASELINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESRELEASELINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESRELEASELINEDISCOUNT.FATHERID = LOGSALESRELEASELINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESRELEASELINE"
+  ]
+ },
+ {
+  "child_table": "LOGBILLOFMATERIAL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGBOMCOMPONENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGROUTING",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGROUTINGSTEP",
+  "child_column": "FATHERID",
+  "parent_table": "LOGROUTING",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGROUTING' + known child suffix 'STEP'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGROUTINGSTEP.FATHERID = LOGROUTING.ABSUNIQUEID",
+  "candidates": [
+   "LOGROUTING"
+  ]
+ },
+ {
+  "child_table": "PDMDB1BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGORDERPARTNER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGORDPARTNERSPECIALIZEDDATA",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEORDERASSORTMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'ASSORTMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERASSORTMENTBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERBLOCKSBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERCHARGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERCHARGEBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERCOMMENTBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERDELIVERYBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'DELIVERY'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERDELIVERYBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURORDERDELIVERYBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURORDERDELIVERYCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEORDERDISCOUNTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERDISCOUNTBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERGROUPCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'PURCHASEORDER' + recurring fragment 'GROUPCOMMENT' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERGROUPCOMMENTBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERLINEBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDERLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERLINEBLOCKSBEAN.FATHERID = PURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDERLINE",
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERLINECHARGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDERLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERLINECHARGEBEAN.FATHERID = PURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDERLINE",
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERLINECOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDERLINE' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERLINECOMMENTBEAN.FATHERID = PURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDERLINE",
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "PURCHASEORDERLINEDISCOUNTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDERLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERLINEDISCOUNTBEAN.FATHERID = PURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDERLINE",
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERASSORTMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'ASSORTMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERASSORTMENTBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERBLOCKSBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERCHARGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERCHARGEBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERCOMMENTBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERCOMMISSIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'SALESORDER' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERCOMMISSIONBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERDELIVERYBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERDELIVERY",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERDELIVERY' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERDELIVERYBLOCKSBEAN.FATHERID = SALESORDERDELIVERY.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERDELIVERY",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERDELIVERYCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERDELIVERY",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERDELIVERY' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERDELIVERYCOMMENTBEAN.FATHERID = SALESORDERDELIVERY.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERDELIVERY",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERDISCOUNTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERDISCOUNTBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERGROUPCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'SALESORDER' + recurring fragment 'GROUPCOMMENT' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERGROUPCOMMENTBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINEBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINEBLOCKSBEAN.FATHERID = SALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINECHARGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINECHARGEBEAN.FATHERID = SALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINECOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERLINE' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINECOMMENTBEAN.FATHERID = SALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINECOMMISSIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'SALESORDERLINE' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINECOMMISSIONBEAN.FATHERID = SALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINEDISCOUNTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINEDISCOUNTBEAN.FATHERID = SALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINEPRICEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDERLINE' + known child suffix 'PRICE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINEPRICEBEAN.FATHERID = SALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "ABSLINKEDSPOOLFILE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCOSTELEMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ADSTORAGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "USERGENERICGROUPBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGELEMENTS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEORDER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEORDERDELIVERY",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'DELIVERY'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERDELIVERY.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERLINE.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASERETURNDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "INTERNALDOCUMENTBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "INTERNALDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'INTERNALDOCUMENT' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "INTERNALDOCUMENTBLOCKSBEAN.FATHERID = INTERNALDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "INTERNALDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "INTERNALDOCUMENTCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "INTERNALDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'INTERNALDOCUMENT' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "INTERNALDOCUMENTCOMMENTBEAN.FATHERID = INTERNALDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "INTERNALDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "INTDOCUMENTGROUPCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "INTERNALDOCUMENTLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "INTERNALDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'INTERNALDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "INTERNALDOCUMENTLINEBEAN.FATHERID = INTERNALDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "INTERNALDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "INTDOCUMENTLINEBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "INTDOCUMENTLINECOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "RECIPECOMPONENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "RECIPE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'RECIPE' + recurring fragment 'COMPONENT' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "RECIPECOMPONENTBEAN.FATHERID = RECIPE.ABSUNIQUEID",
+  "candidates": [
+   "RECIPE"
+  ]
+ },
+ {
+  "child_table": "RECIPEENGCHANGELOGBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "RECIPE"
+  ]
+ },
+ {
+  "child_table": "SALESORDERDELIVERYBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'DELIVERY'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERDELIVERYBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGREPLENISHMENTREQUISITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEORDERLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PURCHASEORDER' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "PURCHASEORDERLINEBEAN.FATHERID = PURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "DESIGNCOMPONENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "DESIGN",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'DESIGN' + recurring fragment 'COMPONENT' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "DESIGNCOMPONENTBEAN.FATHERID = DESIGN.ABSUNIQUEID",
+  "candidates": [
+   "DESIGN"
+  ]
+ },
+ {
+  "child_table": "DESIGNENGCHANGELOGBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "DESIGN"
+  ]
+ },
+ {
+  "child_table": "DESIGNSCREENSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "DESIGN"
+  ]
+ },
+ {
+  "child_table": "NONINVENTORYMEASUREMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "NONINVENTORY",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'NONINVENTORY' + recurring fragment 'MEASUREMENT' (seen in 8 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "NONINVENTORYMEASUREMENTBEAN.FATHERID = NONINVENTORY.ABSUNIQUEID",
+  "candidates": [
+   "NONINVENTORY"
+  ]
+ },
+ {
+  "child_table": "NONINVENTORYPRMUOMCVSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "NONINVENTORY"
+  ]
+ },
+ {
+  "child_table": "LOGCUSTOMERSUPPLIERDATA",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "COMPOSITIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ITEMSTLINKALLOWEDVALUEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "ITEMSTLINK"
+  ]
+ },
+ {
+  "child_table": "STATISTICALGROUPBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "BILLOFMATERIALBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ROUTINGBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "WORKCENTERANDOPERATTRSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "WORKCENTER"
+  ]
+ },
+ {
+  "child_table": "PDMFULLITEMBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PDMARB0BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PDMDB1HBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PDMDB1"
+  ]
+ },
+ {
+  "child_table": "PDMCO1BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PDMCO2BEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "SALESORDERLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESORDER' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESORDERLINEBEAN.FATHERID = SALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "SALPRICEDEFINITIONDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "WAREHOUSEITEMCOSTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ELEMENTSMEASUREMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "ELEMENTS",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'ELEMENTS' + recurring fragment 'MEASUREMENT' (seen in 8 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "ELEMENTSMEASUREMENTBEAN.FATHERID = ELEMENTS.ABSUNIQUEID",
+  "candidates": [
+   "ELEMENTS"
+  ]
+ },
+ {
+  "child_table": "PRODUCTMEASUREMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PRODUCT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'PRODUCT' + recurring fragment 'MEASUREMENT' (seen in 8 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "PRODUCTMEASUREMENTBEAN.FATHERID = PRODUCT.ABSUNIQUEID",
+  "candidates": [
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "WORKCENTERDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "WORKCENTER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'WORKCENTER' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "WORKCENTERDETAILBEAN.FATHERID = WORKCENTER.ABSUNIQUEID",
+  "candidates": [
+   "WORKCENTER"
+  ]
+ },
+ {
+  "child_table": "SIZESALIASBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SIZES",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SIZES' + known child suffix 'ALIAS'",
+  "declared_in_ddl": false,
+  "on_clause": "SIZESALIASBEAN.FATHERID = SIZES.ABSUNIQUEID",
+  "candidates": [
+   "SIZES"
+  ]
+ },
+ {
+  "child_table": "CURRENCYDAILYEXCHANGERATEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "CURRENCY"
+  ]
+ },
+ {
+  "child_table": "QASTANDARDDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRODUCTSPECIALIZEDALCOHOLBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "PRDSPECIALIZEDCHEMICALBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRODUCTSPECIALIZEDGREIGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "PRODUCTSPECIALIZEDYARNBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "COSTSFROMACCPERCOSTCENTERBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "COSTSFROMACCPERWORKCENTERBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "INTERNALPRICELISTLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "INTERNALPRICELIST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'INTERNALPRICELIST' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "INTERNALPRICELISTLINEBEAN.FATHERID = INTERNALPRICELIST.ABSUNIQUEID",
+  "candidates": [
+   "INTERNALPRICELIST"
+  ]
+ },
+ {
+  "child_table": "ACCOUNTTRANSACTIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ACCOUNTTRANSACTIONHEADERBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "ACCOUNTTRANSACTION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'ACCOUNTTRANSACTION' + recurring fragment 'HEADER' (seen in 72 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "ACCOUNTTRANSACTIONHEADERBEAN.FATHERID = ACCOUNTTRANSACTION.ABSUNIQUEID",
+  "candidates": [
+   "ACCOUNTTRANSACTION"
+  ]
+ },
+ {
+  "child_table": "PRODUCTIONDEMANDSTEPBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PRODUCTIONDEMAND",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PRODUCTIONDEMAND' + known child suffix 'STEP'",
+  "declared_in_ddl": false,
+  "on_clause": "PRODUCTIONDEMANDSTEPBEAN.FATHERID = PRODUCTIONDEMAND.ABSUNIQUEID",
+  "candidates": [
+   "PRODUCTIONDEMAND",
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "CALENDARDAILYINFORMATIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "CALENDARHOLIDAYBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "CALENDARSHIFTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "CLDSHIFTDAILYINFORMATIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "CALENDARSPECIFICSHIFTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "TOOLMEASUREMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "TOOL",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'TOOL' + recurring fragment 'MEASUREMENT' (seen in 8 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "TOOLMEASUREMENTBEAN.FATHERID = TOOL.ABSUNIQUEID",
+  "candidates": [
+   "TOOL"
+  ]
+ },
+ {
+  "child_table": "TOOLPRIMARYUOMCONVERSIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "TOOL"
+  ]
+ },
+ {
+  "child_table": "PATTERNDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PATTERN",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PATTERN' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "PATTERNDETAILBEAN.FATHERID = PATTERN.ABSUNIQUEID",
+  "candidates": [
+   "PATTERN"
+  ]
+ },
+ {
+  "child_table": "PATTERNLEVELBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PATTERN",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'PATTERN' + recurring fragment 'LEVEL' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "PATTERNLEVELBEAN.FATHERID = PATTERN.ABSUNIQUEID",
+  "candidates": [
+   "PATTERN"
+  ]
+ },
+ {
+  "child_table": "PATTERNREPETITIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PATTERN"
+  ]
+ },
+ {
+  "child_table": "PATTERNVARIANTDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PATTERN"
+  ]
+ },
+ {
+  "child_table": "PATTERNVARIANTHEADERBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PATTERN"
+  ]
+ },
+ {
+  "child_table": "PRODUCTIONDEMANDCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PRODUCTIONDEMAND",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PRODUCTIONDEMAND' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "PRODUCTIONDEMANDCOMMENTBEAN.FATHERID = PRODUCTIONDEMAND.ABSUNIQUEID",
+  "candidates": [
+   "PRODUCTIONDEMAND",
+   "PRODUCT"
+  ]
+ },
+ {
+  "child_table": "PURCHASECHARGEDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASECHARGEHEADERBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEDISCOUNTDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEDISCOUNTHEADERBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEPRICEDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEPRICELINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALDOCUMENTLINECOMMISSION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFULLITEMWAREHOUSELINK",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGITEMWAREHOUSELINK",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "SALESDOCUMENTBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENT' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTBLOCKSBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTCHARGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENT' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTCHARGEBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENT' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTCOMMENTBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTCOMMISSIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'SALESDOCUMENT' + recurring fragment 'COMMISSION' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTCOMMISSIONBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTDISCOUNTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENT' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTDISCOUNTBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTGROUPCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'SALESDOCUMENT' + recurring fragment 'GROUPCOMMENT' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTGROUPCOMMENTBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTLINEBEAN.FATHERID = SALESDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTLINEBLOCKSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENTLINE' + known child suffix 'BLOCKS'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTLINEBLOCKSBEAN.FATHERID = SALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENTLINE",
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTLINECHARGEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENTLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTLINECHARGEBEAN.FATHERID = SALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENTLINE",
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALESDOCUMENTLINECOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENTLINE' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTLINECOMMENTBEAN.FATHERID = SALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENTLINE",
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "SALDOCLINECOMMISSIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "SALESDOCUMENTLINEDISCOUNTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SALESDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SALESDOCUMENTLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "SALESDOCUMENTLINEDISCOUNTBEAN.FATHERID = SALESDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "SALESDOCUMENTLINE",
+   "SALESDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "WFMCOMMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "SIZESDISTRIBUTIONDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SIZESDISTRIBUTION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SIZESDISTRIBUTION' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "SIZESDISTRIBUTIONDETAILBEAN.FATHERID = SIZESDISTRIBUTION.ABSUNIQUEID",
+  "candidates": [
+   "SIZESDISTRIBUTION",
+   "SIZES"
+  ]
+ },
+ {
+  "child_table": "EXTERNALPRCLISTDEFCMTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "EXTOPERATIONCHARGEDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "EXTOPERATIONDSCDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "EXTOPERATIONPRICEDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "EXTOPPRICEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "FINVOULINESBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "FINVOULINESCRITBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "FINVOULINES"
+  ]
+ },
+ {
+  "child_table": "FINVOUTAXBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGASSETCUSTOMIZEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGASSETGROUP",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGBASEDRIVER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCOSTUNIT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINREMINDERTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINACCAREACUSTOMIZEDOPT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINANCIALCUSTOMIZEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGGENERALLEDGERACCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGISOCOUNTRY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGLINEREPORT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGLINEREPORTDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGLINEREPORT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGLINEREPORT' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGLINEREPORTDETAIL.FATHERID = LOGLINEREPORT.ABSUNIQUEID",
+  "candidates": [
+   "LOGLINEREPORT"
+  ]
+ },
+ {
+  "child_table": "LOGPAYMENTFORMAT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGVAT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGVATDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGVAT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGVAT' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGVATDETAIL.FATHERID = LOGVAT.ABSUNIQUEID",
+  "candidates": [
+   "LOGVAT"
+  ]
+ },
+ {
+  "child_table": "LOGSEPAMANDATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESCLAIMLINEDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESCLAIMLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESCLAIMLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESCLAIMLINEDISCOUNT.FATHERID = LOGSALESCLAIMLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESCLAIMLINE"
+  ]
+ },
+ {
+  "child_table": "LOGADSTORAGE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "QUALITYDOCLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "QUALITYDOCLINEDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "QUALITYDOCLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'QUALITYDOCLINE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "QUALITYDOCLINEDETAILBEAN.FATHERID = QUALITYDOCLINE.ABSUNIQUEID",
+  "candidates": [
+   "QUALITYDOCLINE"
+  ]
+ },
+ {
+  "child_table": "RFQDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURFNCACCOUNTDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURFNCACCTMPDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURMANACCTMPDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURMNGACCOUNTDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALFNCACCOUNTDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALFNCACCTMPDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALMNGACCOUNTDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALMNGACCTMPDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "APPSALESORDERLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "APPSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'APPSALESORDER' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "APPSALESORDERLINEBEAN.FATHERID = APPSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "APPSALESORDER"
+  ]
+ },
+ {
+  "child_table": "DISTRICTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "TOWNBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASERETURNDOCCOMMENTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "QUALITYCHARACTERISTICDLTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRICELIST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESPRICEDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESPRICEDEFINITIONDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESPRICEDEFINITION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESPRICEDEFINITION' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESPRICEDEFINITIONDETAIL.FATHERID = LOGSALESPRICEDEFINITION.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESPRICEDEFINITION"
+  ]
+ },
+ {
+  "child_table": "LOGSALESPRICELISTDEFINITION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASECHARGEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASECHARGEHEADER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEDISCOUNTDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEDISCOUNTHEADER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEPRICEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEPRICELINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEPRICELIST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSSCREENCOMPONENTLANGUAGE",
+  "child_column": "FATHERID",
+  "parent_table": "ABSSCREENCOMPONENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ABSSCREENCOMPONENT' + known child suffix 'LANGUAGE'",
+  "declared_in_ddl": false,
+  "on_clause": "ABSSCREENCOMPONENTLANGUAGE.FATHERID = ABSSCREENCOMPONENT.ABSUNIQUEID",
+  "candidates": [
+   "ABSSCREENCOMPONENT"
+  ]
+ },
+ {
+  "child_table": "ABSSCREENWINDOWLANGUAGE",
+  "child_column": "FATHERID",
+  "parent_table": "ABSSCREENWINDOW",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ABSSCREENWINDOW' + known child suffix 'LANGUAGE'",
+  "declared_in_ddl": false,
+  "on_clause": "ABSSCREENWINDOWLANGUAGE.FATHERID = ABSSCREENWINDOW.ABSUNIQUEID",
+  "candidates": [
+   "ABSSCREENWINDOW"
+  ]
+ },
+ {
+  "child_table": "LOGCSRM",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCSRMTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGCSRM",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGCSRM' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGCSRMTEMPLATE.FATHERID = LOGCSRM.ABSUNIQUEID",
+  "candidates": [
+   "LOGCSRM"
+  ]
+ },
+ {
+  "child_table": "LOGPRODUCTIONDEMAND",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGPRODUCT"
+  ]
+ },
+ {
+  "child_table": "INTERNALPRICELISTDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "INTERNALPRICELIST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'INTERNALPRICELIST' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "INTERNALPRICELISTDETAILBEAN.FATHERID = INTERNALPRICELIST.ABSUNIQUEID",
+  "candidates": [
+   "INTERNALPRICELIST"
+  ]
+ },
+ {
+  "child_table": "QUALITYLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGGLMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXPENSEINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGMRNDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGMRNHEADER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCOMMERCIALINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCOMMERCIALINVOICELINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGCOMMERCIALINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGCOMMERCIALINVOICE' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGCOMMERCIALINVOICELINE.FATHERID = LOGCOMMERCIALINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "LOGCOMMERCIALINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGCUSTOMINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCUSTOMINVOICELINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGCUSTOMINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGCUSTOMINVOICE' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGCUSTOMINVOICELINE.FATHERID = LOGCUSTOMINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "LOGCUSTOMINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGPLANTINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPLANTINVOICELINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPLANTINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPLANTINVOICE' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPLANTINVOICELINE.FATHERID = LOGPLANTINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "LOGPLANTINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGGATEENTRY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PURCHASEORDERLINEIBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PURCHASEORDERLINE",
+   "PURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "SALESORDERLINEIBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "SALESORDERLINE",
+   "SALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGEMPLOYEE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGLOANBUDGETDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PTMPEMPMAPPINGDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ITDBILLSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOANREQUESTDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "LOANREQUEST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOANREQUEST' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOANREQUESTDETAILBEAN.FATHERID = LOANREQUEST.ABSUNIQUEID",
+  "candidates": [
+   "LOANREQUEST",
+   "LOAN"
+  ]
+ },
+ {
+  "child_table": "LOGFINBUSINESSVSPROFIT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINDOCUMENTLINETEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINDOCUMENTLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINDOCUMENTLINE' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINDOCUMENTLINETEMPLATE.FATHERID = LOGFINDOCUMENTLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINDOCUMENTLINE",
+   "LOGFINDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGFINDOCUMENTTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINDOCUMENT' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINDOCUMENTTEMPLATE.FATHERID = LOGFINDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGFINDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINDOCUMENTLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINDOCUMENTLINE.FATHERID = LOGFINDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "ADDRESSGSTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "ADDRESS"
+  ]
+ },
+ {
+  "child_table": "ORDERPARTNERGSTBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "ORDERPARTNER"
+  ]
+ },
+ {
+  "child_table": "ORDERPARTNERTDSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "ORDERPARTNER"
+  ]
+ },
+ {
+  "child_table": "ABSAVAILABLETILESDESCRIPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": "ABSAVAILABLETILES",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ABSAVAILABLETILES' + known child suffix 'DESCRIPTIONS'",
+  "declared_in_ddl": false,
+  "on_clause": "ABSAVAILABLETILESDESCRIPTIONS.FATHERID = ABSAVAILABLETILES.ABSUNIQUEID",
+  "candidates": [
+   "ABSAVAILABLETILES"
+  ]
+ },
+ {
+  "child_table": "LOGFIKDSTATUSPOLICIES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRODUCTSTATUSPOLICIES",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPRODUCT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGPRODUCT' + recurring fragment 'STATUSPOLICIES' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPRODUCTSTATUSPOLICIES.FATHERID = LOGPRODUCT.ABSUNIQUEID",
+  "candidates": [
+   "LOGPRODUCT"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALPRICELISTLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEADDRESSLINELABELSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PMPRVMNTMACHINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "PMPRVMNT"
+  ]
+ },
+ {
+  "child_table": "LOGENTITYSTATUSPOLICIES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSTATUSRULEPOLICY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGTNAACTIVITYDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGORDERPARTNERBANK",
+  "child_column": "FATHERID",
+  "parent_table": "LOGORDERPARTNER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGORDERPARTNER' + recurring fragment 'BANK' (seen in 5 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGORDERPARTNERBANK.FATHERID = LOGORDERPARTNER.ABSUNIQUEID",
+  "candidates": [
+   "LOGORDERPARTNER"
+  ]
+ },
+ {
+  "child_table": "INITIALSROLEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "INITIALS"
+  ]
+ },
+ {
+  "child_table": "LOGBILLOFEXCHANGE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGBILLOFEXCHANGECHECKLIST",
+  "child_column": "FATHERID",
+  "parent_table": "LOGBILLOFEXCHANGE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGBILLOFEXCHANGE' + recurring fragment 'CHECKLIST' (seen in 3 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGBILLOFEXCHANGECHECKLIST.FATHERID = LOGBILLOFEXCHANGE.ABSUNIQUEID",
+  "candidates": [
+   "LOGBILLOFEXCHANGE"
+  ]
+ },
+ {
+  "child_table": "LOGBILLOFEXCHANGEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGBILLOFEXCHANGE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGBILLOFEXCHANGE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGBILLOFEXCHANGEDETAIL.FATHERID = LOGBILLOFEXCHANGE.ABSUNIQUEID",
+  "candidates": [
+   "LOGBILLOFEXCHANGE"
+  ]
+ },
+ {
+  "child_table": "LOGBILLOFEXCHANGEDOCUMENTS",
+  "child_column": "FATHERID",
+  "parent_table": "LOGBILLOFEXCHANGE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGBILLOFEXCHANGE' + recurring fragment 'DOCUMENTS' (seen in 5 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGBILLOFEXCHANGEDOCUMENTS.FATHERID = LOGBILLOFEXCHANGE.ABSUNIQUEID",
+  "candidates": [
+   "LOGBILLOFEXCHANGE"
+  ]
+ },
+ {
+  "child_table": "LOGFINADVANCE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINADVANCEFCUTILIZATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINADVANCE"
+  ]
+ },
+ {
+  "child_table": "LOGFINADVANCEPCUTILIZATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINADVANCE"
+  ]
+ },
+ {
+  "child_table": "LOGFINBUYERADVSUBMISSION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBUYERADVSUBMISSIONDLT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINBUYERADVSUBMISSION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPADVANCE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPADVANCEFC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPADVANCE"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPADVANCEPC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPADVANCE"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPADVANCEPI",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPADVANCE"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPEDCADVANCE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPEDCHARGES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPEDCNEGOTIATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATIONADVANCE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINEXPNEGOTIATION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINEXPNEGOTIATION' + recurring fragment 'ADVANCE' (seen in 11 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINEXPNEGOTIATIONADVANCE.FATHERID = LOGFINEXPNEGOTIATION.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINEXPNEGOTIATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATIONEA",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPNEGOTIATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATIONEXT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPNEGOTIATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATIONFC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPNEGOTIATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATIONINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINEXPNEGOTIATION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINEXPNEGOTIATION' + recurring fragment 'INVOICE' (seen in 28 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINEXPNEGOTIATIONINVOICE.FATHERID = LOGFINEXPNEGOTIATION.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINEXPNEGOTIATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPNEGOTIATIONPC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPNEGOTIATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPPCUTILIZEDFC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPREALISATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINFORWARDCONTRACT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINIMPFCPAYMENTDETAILS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINIMPORTEDCHARGES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINIMPORTFC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINIMPORTFCPAYMENT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINIMPORTFC",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINIMPORTFC' + recurring fragment 'PAYMENT' (seen in 12 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINIMPORTFCPAYMENT.FATHERID = LOGFINIMPORTFC.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINIMPORTFC"
+  ]
+ },
+ {
+  "child_table": "LOGFINIMPORTPAYMENTEDC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINNSUBVENTIONENTRY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPACKINGCREDIT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFIRCREALISATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "FINDOCUMENTLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "FINDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'FINDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "FINDOCUMENTLINEBEAN.FATHERID = FINDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "FINDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGSERVICETRANSACTIONTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGAPPROVALREQUESTDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGAPPROVALREQUEST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGAPPROVALREQUEST' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGAPPROVALREQUESTDETAIL.FATHERID = LOGAPPROVALREQUEST.ABSUNIQUEID",
+  "candidates": [
+   "LOGAPPROVALREQUEST"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPLINEDISCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGEXTOPLINE' + known child suffix 'DISCOUNT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPLINEDISCOUNT.FATHERID = LOGEXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPDOCLINEPRODPROGRESS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRODUCTIONRESERVATIONGROUP",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGPRODUCT"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPLINECHARGE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGEXTOPLINE' + known child suffix 'CHARGE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPLINECHARGE.FATHERID = LOGEXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "LOGTOLENTITIES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRODUCTIONDEMANDTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPRODUCTIONDEMAND",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPRODUCTIONDEMAND' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPRODUCTIONDEMANDTEMPLATE.FATHERID = LOGPRODUCTIONDEMAND.ABSUNIQUEID",
+  "candidates": [
+   "LOGPRODUCTIONDEMAND",
+   "LOGPRODUCT"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPDOCUMENTLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGEXTOPDOCUMENT' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPDOCUMENTLINE.FATHERID = LOGEXTOPDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPLINECOMMENT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGEXTOPLINE' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPLINECOMMENT.FATHERID = LOGEXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "BOMCOMPONENTALTERNATIVEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "BOMCOMPONENT"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPLINESTOCKTRANSACTION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGEXTOPLINE' + recurring fragment 'STOCKTRANSACTION' (seen in 5 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPLINESTOCKTRANSACTION.FATHERID = LOGEXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "LOGQUALITYDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGTERMSOFLOG",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTOPLINEPROPROGRESS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "LOGPURCHASEORDERLINETEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDERLINE' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERLINETEMPLATE.FATHERID = LOGPURCHASEORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDERLINE",
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSTOCKTRANSACTIONTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPLANNINGTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRODUCTALLOWEDVALUES",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPRODUCT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGPRODUCT' + recurring fragment 'ALLOWEDVALUES' (seen in 4 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPRODUCTALLOWEDVALUES.FATHERID = LOGPRODUCT.ABSUNIQUEID",
+  "candidates": [
+   "LOGPRODUCT"
+  ]
+ },
+ {
+  "child_table": "LOGTOLATTRIBUTES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTOPLINESUPWHSTRN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "ABSTILETEMPLATEDESCRIPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": "ABSTILETEMPLATE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ABSTILETEMPLATE' + known child suffix 'DESCRIPTIONS'",
+  "declared_in_ddl": false,
+  "on_clause": "ABSTILETEMPLATEDESCRIPTIONS.FATHERID = ABSTILETEMPLATE.ABSUNIQUEID",
+  "candidates": [
+   "ABSTILETEMPLATE"
+  ]
+ },
+ {
+  "child_table": "LOGITEMSTLINKALLOWEDVALUE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINTERNALORDERLINETEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDERLINE' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERLINETEMPLATE.FATHERID = LOGINTERNALORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDERLINE",
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "LOGSALESCLAIMTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTOPLINERESERVATION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGEXTOPLINE' + recurring fragment 'RESERVATION' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPLINERESERVATION.FATHERID = LOGEXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPDOCUMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGSALESORDERLINETEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDERLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDERLINE' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERLINETEMPLATE.FATHERID = LOGSALESORDERLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDERLINE",
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGINTERNALRETURNTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEPROTOTYPELABELS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPROJECT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINTERNALORDERTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINTERNALORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINTERNALORDER' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINTERNALORDERTEMPLATE.FATHERID = LOGINTERNALORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGINTERNALORDER"
+  ]
+ },
+ {
+  "child_table": "PROJECTBUDGETDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PROJECT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'PROJECT' + recurring fragment 'BUDGETDETAIL' (seen in 3 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "PROJECTBUDGETDETAILBEAN.FATHERID = PROJECT.ABSUNIQUEID",
+  "candidates": [
+   "PROJECT"
+  ]
+ },
+ {
+  "child_table": "LOGQUALITYHEADER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGAPPROVALREQUEST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGMSEEXTOPLINECHECK",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGBASECUSTOMIZEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGQUALITYDOCLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTOPLINEENTRYTRANSACTION",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGEXTOPLINE' + recurring fragment 'ENTRYTRANSACTION' (seen in 4 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPLINEENTRYTRANSACTION.FATHERID = LOGEXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "LOGSALESORDERTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGSALESORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGSALESORDER' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGSALESORDERTEMPLATE.FATHERID = LOGSALESORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGSALESORDER"
+  ]
+ },
+ {
+  "child_table": "LOGDEVELOPMENTREQUESTDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGDEVELOPMENTREQUEST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGDEVELOPMENTREQUEST' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGDEVELOPMENTREQUESTDETAIL.FATHERID = LOGDEVELOPMENTREQUEST.ABSUNIQUEID",
+  "candidates": [
+   "LOGDEVELOPMENTREQUEST"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGQUALITYLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTERNALOPERATIONTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "BOMCOMPONENTRULEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "BOMCOMPONENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'BOMCOMPONENT' + recurring fragment 'RULE' (seen in 40 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "BOMCOMPONENTRULEBEAN.FATHERID = BOMCOMPONENT.ABSUNIQUEID",
+  "candidates": [
+   "BOMCOMPONENT"
+  ]
+ },
+ {
+  "child_table": "LOGALLOCATIONTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGREQUISITIONTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "STANDARDORDERGROUPBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LANGUAGEADDITIONALDESCRIPTION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTOPDOCUMENTCOMMENT",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEXTOPDOCUMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGEXTOPDOCUMENT' + known child suffix 'COMMENT'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEXTOPDOCUMENTCOMMENT.FATHERID = LOGEXTOPDOCUMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGEXTOPDOCUMENT"
+  ]
+ },
+ {
+  "child_table": "LOGRETURNTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LONGLANGUAGEDESCRIPTIONSBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGDEVELOPMENTREQUEST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRODUCTIONPROGRESSTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGPRODUCT"
+  ]
+ },
+ {
+  "child_table": "LOGEXTOPDOCLINEISSUETRN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEXTOPDOCLINEENTRYTRN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGMSEEXTOPLINEINFO",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEORDERTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPURCHASEORDER",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPURCHASEORDER' + known child suffix 'TEMPLATE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPURCHASEORDERTEMPLATE.FATHERID = LOGPURCHASEORDER.ABSUNIQUEID",
+  "candidates": [
+   "LOGPURCHASEORDER"
+  ]
+ },
+ {
+  "child_table": "LOGDIRECTINVOICEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGDIRECTINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGDIRECTINVOICE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGDIRECTINVOICEDETAIL.FATHERID = LOGDIRECTINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "LOGDIRECTINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGPRECOMMINVOICELINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGPRECOMMINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGPRECOMMINVOICE' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGPRECOMMINVOICELINE.FATHERID = LOGPRECOMMINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "LOGPRECOMMINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGORDERPARTNERGST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGORDERPARTNER"
+  ]
+ },
+ {
+  "child_table": "LOGGATEENTRYDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGGATEENTRY",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGGATEENTRY' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGGATEENTRYDETAIL.FATHERID = LOGGATEENTRY.ABSUNIQUEID",
+  "candidates": [
+   "LOGGATEENTRY"
+  ]
+ },
+ {
+  "child_table": "LOGDIRECTINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGNETCOMPANYSETUP",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGTDSTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPRECOMMINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGINVOICETYPE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "DIRECTINVOICEDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "DIRECTINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'DIRECTINVOICE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "DIRECTINVOICEDETAILBEAN.FATHERID = DIRECTINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "DIRECTINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGEXPORTSHIPPING",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGBILLOFLADING",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGADVANCEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGADVANCE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGADVANCE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGADVANCEDETAIL.FATHERID = LOGADVANCE.ABSUNIQUEID",
+  "candidates": [
+   "LOGADVANCE"
+  ]
+ },
+ {
+  "child_table": "NETFINTRANSACTIONDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGDIRECTDOCUMENTTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGTAXTEMPLATEHEADER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGADDRESSGST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGADDRESS"
+  ]
+ },
+ {
+  "child_table": "LOGLCPURCANCELLATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGMRNPREFIX",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGNETTOLOG",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGNETTOLENTITIES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEVENTMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGADVANCE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGLCAMENDMENTPURREGISTRY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGLCAMENDMENT"
+  ]
+ },
+ {
+  "child_table": "LOGLCDETAILPUR",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGTAXTEMPLATEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGLCAMENDMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGCONSUMPTIONDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGMRNREJECTIONDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "PRECOMMINVOICELINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "PRECOMMINVOICE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'PRECOMMINVOICE' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "PRECOMMINVOICELINEBEAN.FATHERID = PRECOMMINVOICE.ABSUNIQUEID",
+  "candidates": [
+   "PRECOMMINVOICE"
+  ]
+ },
+ {
+  "child_table": "LOGLCAMENDMENTREGISTRY",
+  "child_column": "FATHERID",
+  "parent_table": "LOGLCAMENDMENT",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGLCAMENDMENT' + recurring fragment 'REGISTRY' (seen in 4 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGLCAMENDMENTREGISTRY.FATHERID = LOGLCAMENDMENT.ABSUNIQUEID",
+  "candidates": [
+   "LOGLCAMENDMENT"
+  ]
+ },
+ {
+  "child_table": "LOGINVOICETYPEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGINVOICETYPE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGINVOICETYPE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGINVOICETYPEDETAIL.FATHERID = LOGINVOICETYPE.ABSUNIQUEID",
+  "candidates": [
+   "LOGINVOICETYPE"
+  ]
+ },
+ {
+  "child_table": "LOGCONSUMPTIONHEADER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPURCHASEINVOICE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPAYROLLCUSTOMIZEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEMPLOYEEPREFIX",
+  "child_column": "FATHERID",
+  "parent_table": "LOGEMPLOYEE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGEMPLOYEE' + recurring fragment 'PREFIX' (seen in 5 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGEMPLOYEEPREFIX.FATHERID = LOGEMPLOYEE.ABSUNIQUEID",
+  "candidates": [
+   "LOGEMPLOYEE"
+  ]
+ },
+ {
+  "child_table": "LOGFINMOTORPREMIUMCHARTDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINMOTORPREMIUMCHART",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINMOTORPREMIUMCHART' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINMOTORPREMIUMCHARTDETAIL.FATHERID = LOGFINMOTORPREMIUMCHART.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINMOTORPREMIUMCHART"
+  ]
+ },
+ {
+  "child_table": "LOGFINBUVSCCVSPCDEFAULT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBLNSHEETLINETEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINTRANSITDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANINTERESTCALC",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINLOANINTEREST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINLOANINTEREST' + recurring fragment 'CALC' (seen in 3 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINLOANINTERESTCALC.FATHERID = LOGFINLOANINTEREST.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINLOANINTEREST"
+  ]
+ },
+ {
+  "child_table": "LOGFINIMPFCPAYMENTFORLOAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANPAY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINFCPAYMENTFORAMENDREGPUR",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFININSURANCEPREMIUMREFUND",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPREMIUMCALCULATIONCLAIM",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINPREMIUMCALCULATION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINPREMIUMCALCULATION' + recurring fragment 'CLAIM' (seen in 7 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINPREMIUMCALCULATIONCLAIM.FATHERID = LOGFINPREMIUMCALCULATION.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINPREMIUMCALCULATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINPOLICYMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "FINALLOCATIONDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "FINALLOCATION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'FINALLOCATION' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "FINALLOCATIONDETAILBEAN.FATHERID = FINALLOCATION.ABSUNIQUEID",
+  "candidates": [
+   "FINALLOCATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINLOANSCHEDULE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINGLVSCOSTCENTERMAPPING",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINRECONCILIATIONTRN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFININTERUNITTRNLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPCEXTLETTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBANKGLVSPCGL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPOADVPAYMENTBANKCHARGES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPREALISATIONPCDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPREALISATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINEXPREALISATIONDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINEXPREALISATION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINEXPREALISATION' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINEXPREALISATIONDETAIL.FATHERID = LOGFINEXPREALISATION.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINEXPREALISATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINLOANINTEREST",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPNEXTSUBVENTION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGPERIODCLOSURECOSTACCOUNT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINALLOCATIONDEFNDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINALLOCATIONDEFN",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINALLOCATIONDEFN' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINALLOCATIONDEFNDETAIL.FATHERID = LOGFINALLOCATIONDEFN.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINALLOCATIONDEFN"
+  ]
+ },
+ {
+  "child_table": "LOGFINASSETMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLNSCHEDULEDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINLNSCHEDULE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINLNSCHEDULE' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINLNSCHEDULEDETAIL.FATHERID = LOGFINLNSCHEDULE.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINLNSCHEDULE"
+  ]
+ },
+ {
+  "child_table": "LOGFINOPENDOCUMENTS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINEXPREALISATIONFCDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINEXPREALISATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINBSTATEMENTTRANSACTION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINOPENDOCUMENTSTRN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINOPENDOCUMENTS"
+  ]
+ },
+ {
+  "child_table": "LOGFININTERBUBANKCHARGES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFININSURANCECLAIM",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINITCSEGMAPDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINITCSEGMAP",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINITCSEGMAP' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINITCSEGMAPDETAIL.FATHERID = LOGFINITCSEGMAP.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINITCSEGMAP"
+  ]
+ },
+ {
+  "child_table": "LOGFINGSTINVOICETAXMAPDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINGSTINVOICETAXMAP",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINGSTINVOICETAXMAP' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINGSTINVOICETAXMAPDETAIL.FATHERID = LOGFINGSTINVOICETAXMAP.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINGSTINVOICETAXMAP"
+  ]
+ },
+ {
+  "child_table": "LOGFINLOANASSETCS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINLOANASSET"
+  ]
+ },
+ {
+  "child_table": "LOGFINLOANDISBURSEMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBLNSLINETMPCALCULATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINREVALUATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLNSCHEDULE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINMOTARINPREMIUMREFUND",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPREMIUMRATEMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANCAPITALSR",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBANKCHARGES",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINTRANSITDETAILOUT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINTRANSITDETAIL"
+  ]
+ },
+ {
+  "child_table": "LOGFINMOTORPREMIUMCHART",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINMOTORVEHICLEPREMIEUMCL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPAYMENTPROPOSALLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINPAYMENTPROPOSAL",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINPAYMENTPROPOSAL' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINPAYMENTPROPOSALLINE.FATHERID = LOGFINPAYMENTPROPOSAL.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINPAYMENTPROPOSAL"
+  ]
+ },
+ {
+  "child_table": "LOGFINPOADVANCEPROPOSAL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINDEPRECIATIONRATEMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPOLICYALLOCATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINCUSTOMIZEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINMAINASSETGLMAPPING",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINMAINASSET",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINMAINASSET' + recurring fragment 'GLMAPPING' (seen in 7 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINMAINASSETGLMAPPING.FATHERID = LOGFINMAINASSET.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINMAINASSET"
+  ]
+ },
+ {
+  "child_table": "LOGFINRECONCILEOPENENTRY",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPREMIUMCALCULATION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANREPAYMENTM",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINLOANREPAYMENT"
+  ]
+ },
+ {
+  "child_table": "LOGFINPCCONTDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBUDGET",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINGLVSCOSTCENTERMPLINE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINALLOCATIONDEFN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINITCSEGMAP",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINMOTORVEHICLEPREMIEUMCLC",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINMOTORVEHICLEPREMIEUMCL"
+  ]
+ },
+ {
+  "child_table": "LOGFINLOANASSET",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFININTERUNITTRANSACTION",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINMAINASSET",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPURINVOICEFCPAYMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINREVALUATIONCHILD",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINREVALUATION",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINREVALUATION' + recurring fragment 'CHILD' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINREVALUATIONCHILD.FATHERID = LOGFINREVALUATION.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINREVALUATION"
+  ]
+ },
+ {
+  "child_table": "LOGFINUGGVSGLMAPPING",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPAYMENTPROPOSAL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINBALANCESHEETTEMPLATE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANINTERESTSUBSIDY",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINLOANINTEREST",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'LOGFINLOANINTEREST' + recurring fragment 'SUBSIDY' (seen in 3 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINLOANINTERESTSUBSIDY.FATHERID = LOGFINLOANINTEREST.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINLOANINTEREST"
+  ]
+ },
+ {
+  "child_table": "LOGFINGSTINVOICETAXMAP",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINCOSTCENTERDETAIL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANINSURANCE",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANREPAYMENT",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANOUTSTANDING",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINPOADVANCEPROPOSALLINE",
+  "child_column": "FATHERID",
+  "parent_table": "LOGFINPOADVANCEPROPOSAL",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'LOGFINPOADVANCEPROPOSAL' + known child suffix 'LINE'",
+  "declared_in_ddl": false,
+  "on_clause": "LOGFINPOADVANCEPROPOSALLINE.FATHERID = LOGFINPOADVANCEPROPOSAL.ABSUNIQUEID",
+  "candidates": [
+   "LOGFINPOADVANCEPROPOSAL"
+  ]
+ },
+ {
+  "child_table": "LOGFINBLNSHEETLINETEMPLATEGL",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": [
+   "LOGFINBLNSHEETLINETEMPLATE"
+  ]
+ },
+ {
+  "child_table": "LOGFINPREMIUMMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGFINLOANMASTER",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "ABSTAGSLANGUAGE",
+  "child_column": "FATHERID",
+  "parent_table": "ABSTAGS",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'ABSTAGS' + known child suffix 'LANGUAGE'",
+  "declared_in_ddl": false,
+  "on_clause": "ABSTAGSLANGUAGE.FATHERID = ABSTAGS.ABSUNIQUEID",
+  "candidates": [
+   "ABSTAGS"
+  ]
+ },
+ {
+  "child_table": "SKETCHDETAILBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SKETCH",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "high",
+  "basis": "name = 'SKETCH' + known child suffix 'DETAIL'",
+  "declared_in_ddl": false,
+  "on_clause": "SKETCHDETAILBEAN.FATHERID = SKETCH.ABSUNIQUEID",
+  "candidates": [
+   "SKETCH"
+  ]
+ },
+ {
+  "child_table": "SKETCHDETAILSIZEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "SKETCHDETAIL",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'SKETCHDETAIL' + recurring fragment 'SIZE' (seen in 5 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "SKETCHDETAILSIZEBEAN.FATHERID = SKETCHDETAIL.ABSUNIQUEID",
+  "candidates": [
+   "SKETCHDETAIL",
+   "SKETCH"
+  ]
+ },
+ {
+  "child_table": "EXTOPLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "EXTOPLINERESERVATIONBEAN",
+  "child_column": "FATHERID",
+  "parent_table": "EXTOPLINE",
+  "parent_column": "ABSUNIQUEID",
+  "confidence": "medium",
+  "basis": "name = 'EXTOPLINE' + recurring fragment 'RESERVATION' (seen in 6 tables)",
+  "declared_in_ddl": false,
+  "on_clause": "EXTOPLINERESERVATIONBEAN.FATHERID = EXTOPLINE.ABSUNIQUEID",
+  "candidates": [
+   "EXTOPLINE"
+  ]
+ },
+ {
+  "child_table": "EXTOPSUBSTEPLINEBEAN",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ },
+ {
+  "child_table": "LOGEINVOICECUSTOMIZEDOPTIONS",
+  "child_column": "FATHERID",
+  "parent_table": null,
+  "parent_column": null,
+  "confidence": "unresolved",
+  "basis": "FATHERID present but no parent table is derivable from the name",
+  "declared_in_ddl": false,
+  "on_clause": null,
+  "candidates": []
+ }
+]

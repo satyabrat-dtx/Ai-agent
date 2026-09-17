@@ -1,0 +1,60 @@
+# DB2ADMIN.FINGLVSCOSTCENTERMAPPINGLINE
+
+- **Module**: `FINANCE` (high confidence — table name starts with 'FIN')
+- **Roles**: `business_data`
+- **Columns**: 14
+- **Primary key**: `FINGLVSCOSTCENTERMPCMYCODE`, `FINGLVSCOSTCENTERMPBUNITCODE`, `FINGLVSCOSTCENTERMPTMPCODE`, `FINGLVSCOSTCENTERMAPPINGGLCODE`, `FINGLVSCOSTCENTERMPFROMDATE`, `COSTCENTERCOMPANYCODE`, `COSTCENTERCODE`
+- **FK degree**: referenced by 0 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 223733
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FINGLVSCOSTCENTERMPCMYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FINGLVSCOSTCENTERMPBUNITCODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FINGLVSCOSTCENTERMPTMPCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `FINGLVSCOSTCENTERMAPPINGGLCODE` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `FINGLVSCOSTCENTERMPFROMDATE` | DATE | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `COSTCENTERCOMPANYCODE` | CHAR(3) | NOT NULL | PK | primary_key |  |
+| 6 | `COSTCENTERCODE` | CHAR(20) | NOT NULL | PK | primary_key |  |
+| 7 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 8 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 9 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 10 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 11 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 12 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 13 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `FINGLVSCOSTCENTERMAPPING_LINE` | `FINGLVSCOSTCENTERMPCMYCODE`, `FINGLVSCOSTCENTERMPBUNITCODE`, `FINGLVSCOSTCENTERMPTMPCODE`, `FINGLVSCOSTCENTERMAPPINGGLCODE`, `FINGLVSCOSTCENTERMPFROMDATE` | [`FINGLVSCOSTCENTERMAPPING`](../FINANCE/FINGLVSCOSTCENTERMAPPING.md) | `COMPANYCODE`, `BUSINESSUNITCODE`, `TEMPLATECODE`, `GLCODE`, `FROMDATE` | RESTRICT | `FINGLVSCOSTCENTERMAPPINGLINE.FINGLVSCOSTCENTERMPCMYCODE = FINGLVSCOSTCENTERMAPPING.COMPANYCODE AND FINGLVSCOSTCENTERMAPPINGLINE.FINGLVSCOSTCENTERMPBUNITCODE = FINGLVSCOSTCENTERMAPPING.BUSINESSUNITCODE AND FINGLVSCOSTCENTERMAPPINGLINE.FINGLVSCOSTCENTERMPTMPCODE = FINGLVSCOSTCENTERMAPPING.TEMPLATECODE AND FINGLVSCOSTCENTERMAPPINGLINE.FINGLVSCOSTCENTERMAPPINGGLCODE = FINGLVSCOSTCENTERMAPPING.GLCODE AND FINGLVSCOSTCENTERMAPPINGLINE.FINGLVSCOSTCENTERMPFROMDATE = FINGLVSCOSTCENTERMAPPING.FROMDATE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `FINGLVSCOSTCENTERMPLINEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FINGLVSCOSTCENTERMPCMYCODE,
+       t.FINGLVSCOSTCENTERMPBUNITCODE,
+       t.FINGLVSCOSTCENTERMPTMPCODE,
+       t.FINGLVSCOSTCENTERMAPPINGGLCODE,
+       t.FINGLVSCOSTCENTERMPFROMDATE,
+       t.COSTCENTERCOMPANYCODE,
+       t.COSTCENTERCODE,
+       t.CREATIONDATETIME,
+       t.CREATIONUSER,
+       t.LASTUPDATEDATETIME,
+       t.LASTUPDATEUSER,
+       t.CREATIONDATETIMEUTC
+FROM   DB2ADMIN.FINGLVSCOSTCENTERMAPPINGLINE t
+FETCH FIRST 100 ROWS ONLY;
+```

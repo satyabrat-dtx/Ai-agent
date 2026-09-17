@@ -1,0 +1,65 @@
+# DB2ADMIN.FINLOANREPAYMENT
+
+- **Module**: `FINANCE` (high confidence — table name starts with 'FIN')
+- **Roles**: `business_data`
+- **Columns**: 17
+- **Primary key**: `FINLOANMASTERCOMPANYCODE`, `FINLMLTEUGENERICGROUPTYPECODE`, `FINLOANMASTERLOANTYPECODE`, `FINLOANMASTERLOANNO`, `SLNO`
+- **FK degree**: referenced by 1 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 230218
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FINLOANMASTERCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FINLMLTEUGENERICGROUPTYPECODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FINLOANMASTERLOANTYPECODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `FINLOANMASTERLOANNO` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `ABSVERSIONNUMBER` | BIGINT | NOT NULL |  |  |  |
+| 5 | `SLNO` | INTEGER | NOT NULL | PK | primary_key |  |
+| 6 | `NUMBEROFREPAYMENTS` | DECIMAL(3,0) |  |  |  |  |
+| 7 | `AMOUNT` | DECIMAL(18,5) |  |  |  |  |
+| 8 | `STARTDATE` | DATE |  |  |  |  |
+| 9 | `ENDDATE` | DATE |  |  |  |  |
+| 10 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 11 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 12 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 13 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 14 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 15 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 16 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `FINLOANMASTER_LINE3` | `FINLOANMASTERCOMPANYCODE`, `FINLMLTEUGENERICGROUPTYPECODE`, `FINLOANMASTERLOANTYPECODE`, `FINLOANMASTERLOANNO` | [`FINLOANMASTER`](../FINANCE/FINLOANMASTER.md) | `COMPANYCODE`, `LTYPEUSERGENERICGROUPTYPECODE`, `LOANTYPECODE`, `LOANNO` | RESTRICT | `FINLOANREPAYMENT.FINLOANMASTERCOMPANYCODE = FINLOANMASTER.COMPANYCODE AND FINLOANREPAYMENT.FINLMLTEUGENERICGROUPTYPECODE = FINLOANMASTER.LTYPEUSERGENERICGROUPTYPECODE AND FINLOANREPAYMENT.FINLOANMASTERLOANTYPECODE = FINLOANMASTER.LOANTYPECODE AND FINLOANREPAYMENT.FINLOANMASTERLOANNO = FINLOANMASTER.LOANNO` |
+
+## Referenced by (child → this table) — 1
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `FINLOANREPAYMENT_LINE` | [`FINLOANSCHEDULE`](../FINANCE/FINLOANSCHEDULE.md) | `FINLRFINLOANMASTERCOMPANYCODE`, `FINLRFINLMLTEUGENGRPTYPECODE`, `FINLRFINLMASTERLOANTYPECODE`, `FINLRFINLOANMASTERLOANNO`, `FINLOANREPAYMENTSLNO` | `FINLOANSCHEDULE.FINLRFINLOANMASTERCOMPANYCODE = FINLOANREPAYMENT.FINLOANMASTERCOMPANYCODE AND FINLOANSCHEDULE.FINLRFINLMLTEUGENGRPTYPECODE = FINLOANREPAYMENT.FINLMLTEUGENERICGROUPTYPECODE AND FINLOANSCHEDULE.FINLRFINLMASTERLOANTYPECODE = FINLOANREPAYMENT.FINLOANMASTERLOANTYPECODE AND FINLOANSCHEDULE.FINLRFINLOANMASTERLOANNO = FINLOANREPAYMENT.FINLOANMASTERLOANNO AND FINLOANSCHEDULE.FINLOANREPAYMENTSLNO = FINLOANREPAYMENT.SLNO` |
+
+## Indexes
+
+- `FINLOANREPAYMENTUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FINLOANMASTERCOMPANYCODE,
+       t.FINLMLTEUGENERICGROUPTYPECODE,
+       t.FINLOANMASTERLOANTYPECODE,
+       t.FINLOANMASTERLOANNO,
+       t.ABSVERSIONNUMBER,
+       t.SLNO,
+       t.NUMBEROFREPAYMENTS,
+       t.AMOUNT,
+       t.STARTDATE,
+       t.ENDDATE,
+       t.CREATIONDATETIME,
+       t.CREATIONUSER
+FROM   DB2ADMIN.FINLOANREPAYMENT t
+FETCH FIRST 100 ROWS ONLY;
+```

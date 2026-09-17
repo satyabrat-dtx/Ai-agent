@@ -1,0 +1,75 @@
+# DB2ADMIN.ORDERPARTNERBANK
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 2 of 2 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 24
+- **Primary key**: `ORDPRNCSMSUPPLIERCOMPANYCODE`, `ORDPRNCUSTOMERSUPPLIERTYPE`, `ORDPRNCUSTOMERSUPPLIERCODE`, `IDENTIFIER`
+- **FK degree**: referenced by 1 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 23778
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `ORDPRNCSMSUPPLIERCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `ORDPRNCUSTOMERSUPPLIERTYPE` | CHAR(1) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `ORDPRNCUSTOMERSUPPLIERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `IDENTIFIER` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 4 | `BANKCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 5 | `BANKBRANCHCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 6 | `EXTERNALBANKCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 7 | `CINCODE` | CHAR(2) |  |  |  |  |
+| 8 | `CURRENTACCOUNTID` | CHAR(30) |  |  |  |  |
+| 9 | `BBAN` | CHAR(30) |  |  |  |  |
+| 10 | `BIC` | CHAR(11) |  |  |  |  |
+| 11 | `IBAN` | CHAR(34) |  |  |  |  |
+| 12 | `PRIORITY` | DECIMAL(3,0) | NOT NULL |  |  |  |
+| 13 | `CURRENCYCODE` | CHAR(4) |  | FK | foreign_key |  |
+| 14 | `BANKBANKCOUNTRYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 15 | `ACCOUNTOWNER` | CHAR(100) |  |  |  |  |
+| 16 | `DIRECTDEBIT` | SMALLINT | NOT NULL |  |  |  |
+| 17 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 18 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 19 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 20 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 21 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 22 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 23 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `BANKEXTERNAL_EXTERNALBANK` | `ORDPRNCSMSUPPLIERCOMPANYCODE`, `EXTERNALBANKCODE` | [`BANKEXTERNAL`](../SALES/BANKEXTERNAL.md) | `COMPANYCODE`, `CODE` | RESTRICT | `ORDERPARTNERBANK.ORDPRNCSMSUPPLIERCOMPANYCODE = BANKEXTERNAL.COMPANYCODE AND ORDERPARTNERBANK.EXTERNALBANKCODE = BANKEXTERNAL.CODE` |
+| `BANK_BANK` | `BANKBANKCOUNTRYCODE`, `BANKCODE`, `BANKBRANCHCODE` | [`BANK`](../CORE_MASTER/BANK.md) | `BANKCOUNTRYCODE`, `CODE`, `BRANCHCODE` | RESTRICT | `ORDERPARTNERBANK.BANKBANKCOUNTRYCODE = BANK.BANKCOUNTRYCODE AND ORDERPARTNERBANK.BANKCODE = BANK.CODE AND ORDERPARTNERBANK.BANKBRANCHCODE = BANK.BRANCHCODE` |
+| `CURRENCY_CURRENCY` | `CURRENCYCODE` | [`CURRENCY`](../CORE_MASTER/CURRENCY.md) | `CODE` | RESTRICT | `ORDERPARTNERBANK.CURRENCYCODE = CURRENCY.CODE` |
+| `ORDERPARTNER_ORDERPARTNERBANK` | `ORDPRNCSMSUPPLIERCOMPANYCODE`, `ORDPRNCUSTOMERSUPPLIERTYPE`, `ORDPRNCUSTOMERSUPPLIERCODE` | [`ORDERPARTNER`](../CORE_MASTER/ORDERPARTNER.md) | `CUSTOMERSUPPLIERCOMPANYCODE`, `CUSTOMERSUPPLIERTYPE`, `CUSTOMERSUPPLIERCODE` | RESTRICT | `ORDERPARTNERBANK.ORDPRNCSMSUPPLIERCOMPANYCODE = ORDERPARTNER.CUSTOMERSUPPLIERCOMPANYCODE AND ORDERPARTNERBANK.ORDPRNCUSTOMERSUPPLIERTYPE = ORDERPARTNER.CUSTOMERSUPPLIERTYPE AND ORDERPARTNERBANK.ORDPRNCUSTOMERSUPPLIERCODE = ORDERPARTNER.CUSTOMERSUPPLIERCODE` |
+
+## Referenced by (child → this table) — 1
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `ORDERPARTNERBANK_ORDERPARTNERBANK` | [`MILSALORDIMP`](../SALES/MILSALORDIMP.md) | `CC`, `ORDERTYPE`, `ORDPRNCUSTOMERSUPPLIERCODE`, `ORDERPARTNERBANKIDENTIFIER` | `MILSALORDIMP.CC = ORDERPARTNERBANK.ORDPRNCSMSUPPLIERCOMPANYCODE AND MILSALORDIMP.ORDERTYPE = ORDERPARTNERBANK.ORDPRNCUSTOMERSUPPLIERTYPE AND MILSALORDIMP.ORDPRNCUSTOMERSUPPLIERCODE = ORDERPARTNERBANK.ORDPRNCUSTOMERSUPPLIERCODE AND MILSALORDIMP.ORDERPARTNERBANKIDENTIFIER = ORDERPARTNERBANK.IDENTIFIER` |
+
+## Indexes
+
+- `ORDERPARTNERBANKUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.ORDPRNCSMSUPPLIERCOMPANYCODE,
+       t.ORDPRNCUSTOMERSUPPLIERTYPE,
+       t.ORDPRNCUSTOMERSUPPLIERCODE,
+       t.IDENTIFIER,
+       t.BANKCODE,
+       t.BANKBRANCHCODE,
+       t.EXTERNALBANKCODE,
+       t.CINCODE,
+       t.CURRENTACCOUNTID,
+       t.BBAN,
+       t.BIC,
+       t.IBAN
+FROM   DB2ADMIN.ORDERPARTNERBANK t
+FETCH FIRST 100 ROWS ONLY;
+```

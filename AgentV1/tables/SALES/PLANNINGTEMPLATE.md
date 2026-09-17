@@ -1,0 +1,781 @@
+# DB2ADMIN.PLANNINGTEMPLATE
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 2 of 3 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 589
+- **Primary key**: `COMPANYCODE`, `CODE`
+- **FK degree**: referenced by 4 constraint(s), references 141 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 81473
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `CODE` | CHAR(8) | NOT NULL | PK | primary_key | Business (natural) key of a master-data table, typically the last primary-key column. |
+| 2 | `RULECODE` | CHAR(10) |  | FK | foreign_key |  |
+| 3 | `RULEPOLICYCODE` | CHAR(20) |  |  |  |  |
+| 4 | `PLANNINGBY` | CHAR(1) | NOT NULL |  |  |  |
+| 5 | `PROJECTMANAGEMENT` | SMALLINT | NOT NULL |  |  |  |
+| 6 | `USEBASEQUANTITIES` | SMALLINT | NOT NULL |  |  |  |
+| 7 | `LEVEL1ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 8 | `LEVEL1SUBCODE01` | CHAR(20) |  |  |  |  |
+| 9 | `LEVEL1SUBCODE02` | CHAR(10) |  |  |  |  |
+| 10 | `LEVEL1SUBCODE03` | CHAR(10) |  |  |  |  |
+| 11 | `LEVEL1SUBCODE04` | CHAR(10) |  |  |  |  |
+| 12 | `LEVEL1SUBCODE05` | CHAR(10) |  |  |  |  |
+| 13 | `LEVEL1SUBCODE06` | CHAR(10) |  |  |  |  |
+| 14 | `LEVEL1SUBCODE07` | CHAR(10) |  |  |  |  |
+| 15 | `LEVEL1SUBCODE08` | CHAR(10) |  |  |  |  |
+| 16 | `LEVEL1SUBCODE09` | CHAR(10) |  |  |  |  |
+| 17 | `LEVEL1SUBCODE10` | CHAR(10) |  |  |  |  |
+| 18 | `PLANNINGAVLFORMULA1CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 19 | `AVAILABILITYCONDITION` | CHAR(1) |  |  |  |  |
+| 20 | `AVAILABILITYBYGROUP` | SMALLINT | NOT NULL |  |  |  |
+| 21 | `PERIODIZEDCALENDARTYPE1CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 22 | `LOGICALWAREHOUSE1CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 23 | `AVLWAREHOUSEGROUP1CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 24 | `TOLERANCEQTY` | DECIMAL(15,5) |  |  |  |  |
+| 25 | `FORCERECALCULATION` | SMALLINT | NOT NULL |  |  |  |
+| 26 | `LEVEL2MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 27 | `LEVEL2ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 28 | `LEVEL2SUBCODE01` | CHAR(20) |  |  |  |  |
+| 29 | `LEVEL2SUBCODE02` | CHAR(10) |  |  |  |  |
+| 30 | `LEVEL2SUBCODE03` | CHAR(10) |  |  |  |  |
+| 31 | `LEVEL2SUBCODE04` | CHAR(10) |  |  |  |  |
+| 32 | `LEVEL2SUBCODE05` | CHAR(10) |  |  |  |  |
+| 33 | `LEVEL2SUBCODE06` | CHAR(10) |  |  |  |  |
+| 34 | `LEVEL2SUBCODE07` | CHAR(10) |  |  |  |  |
+| 35 | `LEVEL2SUBCODE08` | CHAR(10) |  |  |  |  |
+| 36 | `LEVEL2SUBCODE09` | CHAR(10) |  |  |  |  |
+| 37 | `LEVEL2SUBCODE10` | CHAR(10) |  |  |  |  |
+| 38 | `RULE2CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 39 | `RULEPOLICY2CODE` | CHAR(20) |  |  |  |  |
+| 40 | `PLANNINGAVLFORMULA2CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 41 | `AVAILABILITYCONDITION2` | CHAR(1) |  |  |  |  |
+| 42 | `AVAILABILITYBYGROUP2` | SMALLINT | NOT NULL |  |  |  |
+| 43 | `PERIODIZEDCALENDARTYPE2CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 44 | `LOGICALWAREHOUSE2CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 45 | `AVLWAREHOUSEGROUP2CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 46 | `TOLERANCEQTY2` | DECIMAL(15,5) |  |  |  |  |
+| 47 | `FORCERECALCULATION2` | SMALLINT | NOT NULL |  |  |  |
+| 48 | `LEVEL3MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 49 | `LEVEL3ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 50 | `LEVEL3SUBCODE01` | CHAR(20) |  |  |  |  |
+| 51 | `LEVEL3SUBCODE02` | CHAR(10) |  |  |  |  |
+| 52 | `LEVEL3SUBCODE03` | CHAR(10) |  |  |  |  |
+| 53 | `LEVEL3SUBCODE04` | CHAR(10) |  |  |  |  |
+| 54 | `LEVEL3SUBCODE05` | CHAR(10) |  |  |  |  |
+| 55 | `LEVEL3SUBCODE06` | CHAR(10) |  |  |  |  |
+| 56 | `LEVEL3SUBCODE07` | CHAR(10) |  |  |  |  |
+| 57 | `LEVEL3SUBCODE08` | CHAR(10) |  |  |  |  |
+| 58 | `LEVEL3SUBCODE09` | CHAR(10) |  |  |  |  |
+| 59 | `LEVEL3SUBCODE10` | CHAR(10) |  |  |  |  |
+| 60 | `RULE3CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 61 | `RULEPOLICY3CODE` | CHAR(20) |  |  |  |  |
+| 62 | `PLANNINGAVLFORMULA3CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 63 | `AVAILABILITYCONDITION3` | CHAR(1) |  |  |  |  |
+| 64 | `AVAILABILITYBYGROUP3` | SMALLINT | NOT NULL |  |  |  |
+| 65 | `PERIODIZEDCALENDARTYPE3CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 66 | `LOGICALWAREHOUSE3CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 67 | `AVLWAREHOUSEGROUP3CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 68 | `TOLERANCEQTY3` | DECIMAL(15,5) |  |  |  |  |
+| 69 | `FORCERECALCULATION3` | SMALLINT | NOT NULL |  |  |  |
+| 70 | `LEVEL4MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 71 | `LEVEL4ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 72 | `LEVEL4SUBCODE01` | CHAR(20) |  |  |  |  |
+| 73 | `LEVEL4SUBCODE02` | CHAR(10) |  |  |  |  |
+| 74 | `LEVEL4SUBCODE03` | CHAR(10) |  |  |  |  |
+| 75 | `LEVEL4SUBCODE04` | CHAR(10) |  |  |  |  |
+| 76 | `LEVEL4SUBCODE05` | CHAR(10) |  |  |  |  |
+| 77 | `LEVEL4SUBCODE06` | CHAR(10) |  |  |  |  |
+| 78 | `LEVEL4SUBCODE07` | CHAR(10) |  |  |  |  |
+| 79 | `LEVEL4SUBCODE08` | CHAR(10) |  |  |  |  |
+| 80 | `LEVEL4SUBCODE09` | CHAR(10) |  |  |  |  |
+| 81 | `LEVEL4SUBCODE10` | CHAR(10) |  |  |  |  |
+| 82 | `RULE4CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 83 | `RULEPOLICY4CODE` | CHAR(20) |  |  |  |  |
+| 84 | `PLANNINGAVLFORMULA4CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 85 | `AVAILABILITYCONDITION4` | CHAR(1) |  |  |  |  |
+| 86 | `AVAILABILITYBYGROUP4` | SMALLINT | NOT NULL |  |  |  |
+| 87 | `PERIODIZEDCALENDARTYPE4CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 88 | `LOGICALWAREHOUSE4CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 89 | `AVLWAREHOUSEGROUP4CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 90 | `TOLERANCEQTY4` | DECIMAL(15,5) |  |  |  |  |
+| 91 | `FORCERECALCULATION4` | SMALLINT | NOT NULL |  |  |  |
+| 92 | `LEVEL5MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 93 | `LEVEL5ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 94 | `LEVEL5SUBCODE01` | CHAR(20) |  |  |  |  |
+| 95 | `LEVEL5SUBCODE02` | CHAR(10) |  |  |  |  |
+| 96 | `LEVEL5SUBCODE03` | CHAR(10) |  |  |  |  |
+| 97 | `LEVEL5SUBCODE04` | CHAR(10) |  |  |  |  |
+| 98 | `LEVEL5SUBCODE05` | CHAR(10) |  |  |  |  |
+| 99 | `LEVEL5SUBCODE06` | CHAR(10) |  |  |  |  |
+| 100 | `LEVEL5SUBCODE07` | CHAR(10) |  |  |  |  |
+| 101 | `LEVEL5SUBCODE08` | CHAR(10) |  |  |  |  |
+| 102 | `LEVEL5SUBCODE09` | CHAR(10) |  |  |  |  |
+| 103 | `LEVEL5SUBCODE10` | CHAR(10) |  |  |  |  |
+| 104 | `RULE5CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 105 | `RULEPOLICY5CODE` | CHAR(20) |  |  |  |  |
+| 106 | `PLANNINGAVLFORMULA5CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 107 | `AVAILABILITYCONDITION5` | CHAR(1) |  |  |  |  |
+| 108 | `AVAILABILITYBYGROUP5` | SMALLINT | NOT NULL |  |  |  |
+| 109 | `PERIODIZEDCALENDARTYPE5CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 110 | `LOGICALWAREHOUSE5CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 111 | `AVLWAREHOUSEGROUP5CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 112 | `TOLERANCEQTY5` | DECIMAL(15,5) |  |  |  |  |
+| 113 | `FORCERECALCULATION5` | SMALLINT | NOT NULL |  |  |  |
+| 114 | `LEVEL6MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 115 | `LEVEL6ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 116 | `LEVEL6SUBCODE01` | CHAR(20) |  |  |  |  |
+| 117 | `LEVEL6SUBCODE02` | CHAR(10) |  |  |  |  |
+| 118 | `LEVEL6SUBCODE03` | CHAR(10) |  |  |  |  |
+| 119 | `LEVEL6SUBCODE04` | CHAR(10) |  |  |  |  |
+| 120 | `LEVEL6SUBCODE05` | CHAR(10) |  |  |  |  |
+| 121 | `LEVEL6SUBCODE06` | CHAR(10) |  |  |  |  |
+| 122 | `LEVEL6SUBCODE07` | CHAR(10) |  |  |  |  |
+| 123 | `LEVEL6SUBCODE08` | CHAR(10) |  |  |  |  |
+| 124 | `LEVEL6SUBCODE09` | CHAR(10) |  |  |  |  |
+| 125 | `LEVEL6SUBCODE10` | CHAR(10) |  |  |  |  |
+| 126 | `RULE6CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 127 | `RULEPOLICY6CODE` | CHAR(20) |  |  |  |  |
+| 128 | `PLANNINGAVLFORMULA6CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 129 | `AVAILABILITYCONDITION6` | CHAR(1) |  |  |  |  |
+| 130 | `AVAILABILITYBYGROUP6` | SMALLINT | NOT NULL |  |  |  |
+| 131 | `PERIODIZEDCALENDARTYPE6CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 132 | `LOGICALWAREHOUSE6CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 133 | `AVLWAREHOUSEGROUP6CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 134 | `TOLERANCEQTY6` | DECIMAL(15,5) |  |  |  |  |
+| 135 | `FORCERECALCULATION6` | SMALLINT | NOT NULL |  |  |  |
+| 136 | `LEVEL7MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 137 | `LEVEL7ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 138 | `LEVEL7SUBCODE01` | CHAR(20) |  |  |  |  |
+| 139 | `LEVEL7SUBCODE02` | CHAR(10) |  |  |  |  |
+| 140 | `LEVEL7SUBCODE03` | CHAR(10) |  |  |  |  |
+| 141 | `LEVEL7SUBCODE04` | CHAR(10) |  |  |  |  |
+| 142 | `LEVEL7SUBCODE05` | CHAR(10) |  |  |  |  |
+| 143 | `LEVEL7SUBCODE06` | CHAR(10) |  |  |  |  |
+| 144 | `LEVEL7SUBCODE07` | CHAR(10) |  |  |  |  |
+| 145 | `LEVEL7SUBCODE08` | CHAR(10) |  |  |  |  |
+| 146 | `LEVEL7SUBCODE09` | CHAR(10) |  |  |  |  |
+| 147 | `LEVEL7SUBCODE10` | CHAR(10) |  |  |  |  |
+| 148 | `RULE7CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 149 | `RULEPOLICY7CODE` | CHAR(20) |  |  |  |  |
+| 150 | `PLANNINGAVLFORMULA7CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 151 | `AVAILABILITYCONDITION7` | CHAR(1) |  |  |  |  |
+| 152 | `AVAILABILITYBYGROUP7` | SMALLINT | NOT NULL |  |  |  |
+| 153 | `PERIODIZEDCALENDARTYPE7CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 154 | `LOGICALWAREHOUSE7CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 155 | `AVLWAREHOUSEGROUP7CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 156 | `TOLERANCEQTY7` | DECIMAL(15,5) |  |  |  |  |
+| 157 | `FORCERECALCULATION7` | SMALLINT | NOT NULL |  |  |  |
+| 158 | `LEVEL8MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 159 | `LEVEL8ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 160 | `LEVEL8SUBCODE01` | CHAR(20) |  |  |  |  |
+| 161 | `LEVEL8SUBCODE02` | CHAR(10) |  |  |  |  |
+| 162 | `LEVEL8SUBCODE03` | CHAR(10) |  |  |  |  |
+| 163 | `LEVEL8SUBCODE04` | CHAR(10) |  |  |  |  |
+| 164 | `LEVEL8SUBCODE05` | CHAR(10) |  |  |  |  |
+| 165 | `LEVEL8SUBCODE06` | CHAR(10) |  |  |  |  |
+| 166 | `LEVEL8SUBCODE07` | CHAR(10) |  |  |  |  |
+| 167 | `LEVEL8SUBCODE08` | CHAR(10) |  |  |  |  |
+| 168 | `LEVEL8SUBCODE09` | CHAR(10) |  |  |  |  |
+| 169 | `LEVEL8SUBCODE10` | CHAR(10) |  |  |  |  |
+| 170 | `RULE8CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 171 | `RULEPOLICY8CODE` | CHAR(20) |  |  |  |  |
+| 172 | `PLANNINGAVLFORMULA8CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 173 | `AVAILABILITYCONDITION8` | CHAR(1) |  |  |  |  |
+| 174 | `AVAILABILITYBYGROUP8` | SMALLINT | NOT NULL |  |  |  |
+| 175 | `PERIODIZEDCALENDARTYPE8CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 176 | `LOGICALWAREHOUSE8CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 177 | `AVLWAREHOUSEGROUP8CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 178 | `TOLERANCEQTY8` | DECIMAL(15,5) |  |  |  |  |
+| 179 | `FORCERECALCULATION8` | SMALLINT | NOT NULL |  |  |  |
+| 180 | `LEVEL9MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 181 | `LEVEL9ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 182 | `LEVEL9SUBCODE01` | CHAR(20) |  |  |  |  |
+| 183 | `LEVEL9SUBCODE02` | CHAR(10) |  |  |  |  |
+| 184 | `LEVEL9SUBCODE03` | CHAR(10) |  |  |  |  |
+| 185 | `LEVEL9SUBCODE04` | CHAR(10) |  |  |  |  |
+| 186 | `LEVEL9SUBCODE05` | CHAR(10) |  |  |  |  |
+| 187 | `LEVEL9SUBCODE06` | CHAR(10) |  |  |  |  |
+| 188 | `LEVEL9SUBCODE07` | CHAR(10) |  |  |  |  |
+| 189 | `LEVEL9SUBCODE08` | CHAR(10) |  |  |  |  |
+| 190 | `LEVEL9SUBCODE09` | CHAR(10) |  |  |  |  |
+| 191 | `LEVEL9SUBCODE10` | CHAR(10) |  |  |  |  |
+| 192 | `RULE9CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 193 | `RULEPOLICY9CODE` | CHAR(20) |  |  |  |  |
+| 194 | `PLANNINGAVLFORMULA9CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 195 | `AVAILABILITYCONDITION9` | CHAR(1) |  |  |  |  |
+| 196 | `AVAILABILITYBYGROUP9` | SMALLINT | NOT NULL |  |  |  |
+| 197 | `PERIODIZEDCALENDARTYPE9CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 198 | `LOGICALWAREHOUSE9CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 199 | `AVLWAREHOUSEGROUP9CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 200 | `TOLERANCEQTY9` | DECIMAL(15,5) |  |  |  |  |
+| 201 | `FORCERECALCULATION9` | SMALLINT | NOT NULL |  |  |  |
+| 202 | `LEVEL10MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 203 | `LEVEL10ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 204 | `LEVEL10SUBCODE01` | CHAR(20) |  |  |  |  |
+| 205 | `LEVEL10SUBCODE02` | CHAR(10) |  |  |  |  |
+| 206 | `LEVEL10SUBCODE03` | CHAR(10) |  |  |  |  |
+| 207 | `LEVEL10SUBCODE04` | CHAR(10) |  |  |  |  |
+| 208 | `LEVEL10SUBCODE05` | CHAR(10) |  |  |  |  |
+| 209 | `LEVEL10SUBCODE06` | CHAR(10) |  |  |  |  |
+| 210 | `LEVEL10SUBCODE07` | CHAR(10) |  |  |  |  |
+| 211 | `LEVEL10SUBCODE08` | CHAR(10) |  |  |  |  |
+| 212 | `LEVEL10SUBCODE09` | CHAR(10) |  |  |  |  |
+| 213 | `LEVEL10SUBCODE10` | CHAR(10) |  |  |  |  |
+| 214 | `RULE10CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 215 | `RULEPOLICY10CODE` | CHAR(20) |  |  |  |  |
+| 216 | `PLANNINGAVLFORMULA10CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 217 | `AVAILABILITYCONDITION10` | CHAR(1) |  |  |  |  |
+| 218 | `AVAILABILITYBYGROUP10` | SMALLINT | NOT NULL |  |  |  |
+| 219 | `PERIODIZEDCALENDARTYPE10CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 220 | `LOGICALWAREHOUSE10CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 221 | `AVLWAREHOUSEGROUP10CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 222 | `TOLERANCEQTY10` | DECIMAL(15,5) |  |  |  |  |
+| 223 | `FORCERECALCULATION10` | SMALLINT | NOT NULL |  |  |  |
+| 224 | `LEVEL1ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 225 | `PLANNINGAVLFORMULA1CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 226 | `LOGICALWAREHOUSE1COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 227 | `AVLWAREHOUSEGROUP1COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 228 | `LEVEL2ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 229 | `PLANNINGAVLFORMULA2CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 230 | `LOGICALWAREHOUSE2COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 231 | `AVLWAREHOUSEGROUP2COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 232 | `LEVEL3ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 233 | `PLANNINGAVLFORMULA3CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 234 | `LOGICALWAREHOUSE3COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 235 | `AVLWAREHOUSEGROUP3COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 236 | `LEVEL4ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 237 | `PLANNINGAVLFORMULA4CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 238 | `LOGICALWAREHOUSE4COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 239 | `AVLWAREHOUSEGROUP4COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 240 | `LEVEL5ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 241 | `PLANNINGAVLFORMULA5CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 242 | `LOGICALWAREHOUSE5COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 243 | `AVLWAREHOUSEGROUP5COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 244 | `LEVEL6ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 245 | `PLANNINGAVLFORMULA6CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 246 | `LOGICALWAREHOUSE6COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 247 | `AVLWAREHOUSEGROUP6COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 248 | `LEVEL7ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 249 | `PLANNINGAVLFORMULA7CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 250 | `LOGICALWAREHOUSE7COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 251 | `AVLWAREHOUSEGROUP7COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 252 | `LEVEL8ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 253 | `PLANNINGAVLFORMULA8CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 254 | `LOGICALWAREHOUSE8COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 255 | `AVLWAREHOUSEGROUP8COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 256 | `LEVEL9ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 257 | `PLANNINGAVLFORMULA9CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 258 | `LOGICALWAREHOUSE9COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 259 | `AVLWAREHOUSEGROUP9COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 260 | `LEVEL10ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 261 | `PLANNINGAVLFORMULA10CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 262 | `LOGICALWAREHOUSE10COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 263 | `AVLWHSGROUP10COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 264 | `USEORDERONLOWERLEVELRULE` | SMALLINT | NOT NULL |  |  |  |
+| 265 | `AVQUALITYGROUP1CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 266 | `AVQUALITYGROUP2CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 267 | `AVQUALITYGROUP3CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 268 | `AVQUALITYGROUP4CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 269 | `AVQUALITYGROUP5CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 270 | `AVQUALITYGROUP6CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 271 | `AVQUALITYGROUP7CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 272 | `AVQUALITYGROUP8CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 273 | `AVQUALITYGROUP9CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 274 | `AVQUALITYGROUP10CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 275 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 276 | `LEVEL11MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 277 | `LEVEL11ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 278 | `LEVEL11ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 279 | `LEVEL11SUBCODE01` | CHAR(20) |  |  |  |  |
+| 280 | `LEVEL11SUBCODE02` | CHAR(10) |  |  |  |  |
+| 281 | `LEVEL11SUBCODE03` | CHAR(10) |  |  |  |  |
+| 282 | `LEVEL11SUBCODE04` | CHAR(10) |  |  |  |  |
+| 283 | `LEVEL11SUBCODE05` | CHAR(10) |  |  |  |  |
+| 284 | `LEVEL11SUBCODE06` | CHAR(10) |  |  |  |  |
+| 285 | `LEVEL11SUBCODE07` | CHAR(10) |  |  |  |  |
+| 286 | `LEVEL11SUBCODE08` | CHAR(10) |  |  |  |  |
+| 287 | `LEVEL11SUBCODE09` | CHAR(10) |  |  |  |  |
+| 288 | `LEVEL11SUBCODE10` | CHAR(10) |  |  |  |  |
+| 289 | `RULE11CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 290 | `RULEPOLICY11CODE` | CHAR(20) |  |  |  |  |
+| 291 | `PLANNINGAVLFORMULA11CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 292 | `PLANNINGAVLFORMULA11CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 293 | `AVAILABILITYCONDITION11` | CHAR(1) |  |  |  |  |
+| 294 | `AVAILABILITYBYGROUP11` | SMALLINT | NOT NULL |  |  |  |
+| 295 | `PERIODIZEDCALENDARTYPE11CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 296 | `LOGICALWAREHOUSE11COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 297 | `LOGICALWAREHOUSE11CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 298 | `AVLWHSGROUP11COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 299 | `AVLWAREHOUSEGROUP11CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 300 | `TOLERANCEQTY11` | DECIMAL(15,5) |  |  |  |  |
+| 301 | `FORCERECALCULATION11` | SMALLINT | NOT NULL |  |  |  |
+| 302 | `AVQUALITYGROUP11CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 303 | `LEVEL12MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 304 | `LEVEL12ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 305 | `LEVEL12ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 306 | `LEVEL12SUBCODE01` | CHAR(20) |  |  |  |  |
+| 307 | `LEVEL12SUBCODE02` | CHAR(10) |  |  |  |  |
+| 308 | `LEVEL12SUBCODE03` | CHAR(10) |  |  |  |  |
+| 309 | `LEVEL12SUBCODE04` | CHAR(10) |  |  |  |  |
+| 310 | `LEVEL12SUBCODE05` | CHAR(10) |  |  |  |  |
+| 311 | `LEVEL12SUBCODE06` | CHAR(10) |  |  |  |  |
+| 312 | `LEVEL12SUBCODE07` | CHAR(10) |  |  |  |  |
+| 313 | `LEVEL12SUBCODE08` | CHAR(10) |  |  |  |  |
+| 314 | `LEVEL12SUBCODE09` | CHAR(10) |  |  |  |  |
+| 315 | `LEVEL12SUBCODE10` | CHAR(10) |  |  |  |  |
+| 316 | `RULE12CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 317 | `RULEPOLICY12CODE` | CHAR(20) |  |  |  |  |
+| 318 | `PLANNINGAVLFORMULA12CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 319 | `PLANNINGAVLFORMULA12CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 320 | `AVAILABILITYCONDITION12` | CHAR(1) |  |  |  |  |
+| 321 | `AVAILABILITYBYGROUP12` | SMALLINT | NOT NULL |  |  |  |
+| 322 | `PERIODIZEDCALENDARTYPE12CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 323 | `LOGICALWAREHOUSE12COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 324 | `LOGICALWAREHOUSE12CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 325 | `AVLWHSGROUP12COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 326 | `AVLWAREHOUSEGROUP12CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 327 | `TOLERANCEQTY12` | DECIMAL(15,5) |  |  |  |  |
+| 328 | `FORCERECALCULATION12` | SMALLINT | NOT NULL |  |  |  |
+| 329 | `AVQUALITYGROUP12CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 330 | `LEVEL13MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 331 | `LEVEL13ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 332 | `LEVEL13ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 333 | `LEVEL13SUBCODE01` | CHAR(20) |  |  |  |  |
+| 334 | `LEVEL13SUBCODE02` | CHAR(10) |  |  |  |  |
+| 335 | `LEVEL13SUBCODE03` | CHAR(10) |  |  |  |  |
+| 336 | `LEVEL13SUBCODE04` | CHAR(10) |  |  |  |  |
+| 337 | `LEVEL13SUBCODE05` | CHAR(10) |  |  |  |  |
+| 338 | `LEVEL13SUBCODE06` | CHAR(10) |  |  |  |  |
+| 339 | `LEVEL13SUBCODE07` | CHAR(10) |  |  |  |  |
+| 340 | `LEVEL13SUBCODE08` | CHAR(10) |  |  |  |  |
+| 341 | `LEVEL13SUBCODE09` | CHAR(10) |  |  |  |  |
+| 342 | `LEVEL13SUBCODE10` | CHAR(10) |  |  |  |  |
+| 343 | `RULE13CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 344 | `RULEPOLICY13CODE` | CHAR(20) |  |  |  |  |
+| 345 | `PLANNINGAVLFORMULA13CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 346 | `PLANNINGAVLFORMULA13CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 347 | `AVAILABILITYCONDITION13` | CHAR(1) |  |  |  |  |
+| 348 | `AVAILABILITYBYGROUP13` | SMALLINT | NOT NULL |  |  |  |
+| 349 | `PERIODIZEDCALENDARTYPE13CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 350 | `LOGICALWAREHOUSE13COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 351 | `LOGICALWAREHOUSE13CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 352 | `AVLWHSGROUP13COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 353 | `AVLWAREHOUSEGROUP13CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 354 | `TOLERANCEQTY13` | DECIMAL(15,5) |  |  |  |  |
+| 355 | `FORCERECALCULATION13` | SMALLINT | NOT NULL |  |  |  |
+| 356 | `AVQUALITYGROUP13CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 357 | `LEVEL14MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 358 | `LEVEL14ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 359 | `LEVEL14ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 360 | `LEVEL14SUBCODE01` | CHAR(20) |  |  |  |  |
+| 361 | `LEVEL14SUBCODE02` | CHAR(10) |  |  |  |  |
+| 362 | `LEVEL14SUBCODE03` | CHAR(10) |  |  |  |  |
+| 363 | `LEVEL14SUBCODE04` | CHAR(10) |  |  |  |  |
+| 364 | `LEVEL14SUBCODE05` | CHAR(10) |  |  |  |  |
+| 365 | `LEVEL14SUBCODE06` | CHAR(10) |  |  |  |  |
+| 366 | `LEVEL14SUBCODE07` | CHAR(10) |  |  |  |  |
+| 367 | `LEVEL14SUBCODE08` | CHAR(10) |  |  |  |  |
+| 368 | `LEVEL14SUBCODE09` | CHAR(10) |  |  |  |  |
+| 369 | `LEVEL14SUBCODE10` | CHAR(10) |  |  |  |  |
+| 370 | `RULE14CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 371 | `RULEPOLICY14CODE` | CHAR(20) |  |  |  |  |
+| 372 | `PLANNINGAVLFORMULA14CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 373 | `PLANNINGAVLFORMULA14CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 374 | `AVAILABILITYCONDITION14` | CHAR(1) |  |  |  |  |
+| 375 | `AVAILABILITYBYGROUP14` | SMALLINT | NOT NULL |  |  |  |
+| 376 | `PERIODIZEDCALENDARTYPE14CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 377 | `LOGICALWAREHOUSE14COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 378 | `LOGICALWAREHOUSE14CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 379 | `AVLWHSGROUP14COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 380 | `AVLWAREHOUSEGROUP14CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 381 | `TOLERANCEQTY14` | DECIMAL(15,5) |  |  |  |  |
+| 382 | `FORCERECALCULATION14` | SMALLINT | NOT NULL |  |  |  |
+| 383 | `AVQUALITYGROUP14CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 384 | `LEVEL15MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 385 | `LEVEL15ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 386 | `LEVEL15ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 387 | `LEVEL15SUBCODE01` | CHAR(20) |  |  |  |  |
+| 388 | `LEVEL15SUBCODE02` | CHAR(10) |  |  |  |  |
+| 389 | `LEVEL15SUBCODE03` | CHAR(10) |  |  |  |  |
+| 390 | `LEVEL15SUBCODE04` | CHAR(10) |  |  |  |  |
+| 391 | `LEVEL15SUBCODE05` | CHAR(10) |  |  |  |  |
+| 392 | `LEVEL15SUBCODE06` | CHAR(10) |  |  |  |  |
+| 393 | `LEVEL15SUBCODE07` | CHAR(10) |  |  |  |  |
+| 394 | `LEVEL15SUBCODE08` | CHAR(10) |  |  |  |  |
+| 395 | `LEVEL15SUBCODE09` | CHAR(10) |  |  |  |  |
+| 396 | `LEVEL15SUBCODE10` | CHAR(10) |  |  |  |  |
+| 397 | `RULE15CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 398 | `RULEPOLICY15CODE` | CHAR(20) |  |  |  |  |
+| 399 | `PLANNINGAVLFORMULA15CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 400 | `PLANNINGAVLFORMULA15CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 401 | `AVAILABILITYCONDITION15` | CHAR(1) |  |  |  |  |
+| 402 | `AVAILABILITYBYGROUP15` | SMALLINT | NOT NULL |  |  |  |
+| 403 | `PERIODIZEDCALENDARTYPE15CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 404 | `LOGICALWAREHOUSE15COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 405 | `LOGICALWAREHOUSE15CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 406 | `AVLWHSGROUP15COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 407 | `AVLWAREHOUSEGROUP15CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 408 | `TOLERANCEQTY15` | DECIMAL(15,5) |  |  |  |  |
+| 409 | `FORCERECALCULATION15` | SMALLINT | NOT NULL |  |  |  |
+| 410 | `AVQUALITYGROUP15CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 411 | `LEVEL16MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 412 | `LEVEL16ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 413 | `LEVEL16ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 414 | `LEVEL16SUBCODE01` | CHAR(20) |  |  |  |  |
+| 415 | `LEVEL16SUBCODE02` | CHAR(10) |  |  |  |  |
+| 416 | `LEVEL16SUBCODE03` | CHAR(10) |  |  |  |  |
+| 417 | `LEVEL16SUBCODE04` | CHAR(10) |  |  |  |  |
+| 418 | `LEVEL16SUBCODE05` | CHAR(10) |  |  |  |  |
+| 419 | `LEVEL16SUBCODE06` | CHAR(10) |  |  |  |  |
+| 420 | `LEVEL16SUBCODE07` | CHAR(10) |  |  |  |  |
+| 421 | `LEVEL16SUBCODE08` | CHAR(10) |  |  |  |  |
+| 422 | `LEVEL16SUBCODE09` | CHAR(10) |  |  |  |  |
+| 423 | `LEVEL16SUBCODE10` | CHAR(10) |  |  |  |  |
+| 424 | `RULE16CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 425 | `RULEPOLICY16CODE` | CHAR(20) |  |  |  |  |
+| 426 | `PLANNINGAVLFORMULA16CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 427 | `PLANNINGAVLFORMULA16CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 428 | `AVAILABILITYCONDITION16` | CHAR(1) |  |  |  |  |
+| 429 | `AVAILABILITYBYGROUP16` | SMALLINT | NOT NULL |  |  |  |
+| 430 | `PERIODIZEDCALENDARTYPE16CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 431 | `LOGICALWAREHOUSE16COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 432 | `LOGICALWAREHOUSE16CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 433 | `AVLWHSGROUP16COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 434 | `AVLWAREHOUSEGROUP16CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 435 | `TOLERANCEQTY16` | DECIMAL(15,5) |  |  |  |  |
+| 436 | `FORCERECALCULATION16` | SMALLINT | NOT NULL |  |  |  |
+| 437 | `AVQUALITYGROUP16CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 438 | `LEVEL17MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 439 | `LEVEL17ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 440 | `LEVEL17ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 441 | `LEVEL17SUBCODE01` | CHAR(20) |  |  |  |  |
+| 442 | `LEVEL17SUBCODE02` | CHAR(10) |  |  |  |  |
+| 443 | `LEVEL17SUBCODE03` | CHAR(10) |  |  |  |  |
+| 444 | `LEVEL17SUBCODE04` | CHAR(10) |  |  |  |  |
+| 445 | `LEVEL17SUBCODE05` | CHAR(10) |  |  |  |  |
+| 446 | `LEVEL17SUBCODE06` | CHAR(10) |  |  |  |  |
+| 447 | `LEVEL17SUBCODE07` | CHAR(10) |  |  |  |  |
+| 448 | `LEVEL17SUBCODE08` | CHAR(10) |  |  |  |  |
+| 449 | `LEVEL17SUBCODE09` | CHAR(10) |  |  |  |  |
+| 450 | `LEVEL17SUBCODE10` | CHAR(10) |  |  |  |  |
+| 451 | `RULE17CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 452 | `RULEPOLICY17CODE` | CHAR(20) |  |  |  |  |
+| 453 | `PLANNINGAVLFORMULA17CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 454 | `PLANNINGAVLFORMULA17CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 455 | `AVAILABILITYCONDITION17` | CHAR(1) |  |  |  |  |
+| 456 | `AVAILABILITYBYGROUP17` | SMALLINT | NOT NULL |  |  |  |
+| 457 | `PERIODIZEDCALENDARTYPE17CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 458 | `LOGICALWAREHOUSE17COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 459 | `LOGICALWAREHOUSE17CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 460 | `AVLWHSGROUP17COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 461 | `AVLWAREHOUSEGROUP17CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 462 | `TOLERANCEQTY17` | DECIMAL(15,5) |  |  |  |  |
+| 463 | `FORCERECALCULATION17` | SMALLINT | NOT NULL |  |  |  |
+| 464 | `AVQUALITYGROUP17CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 465 | `LEVEL18MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 466 | `LEVEL18ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 467 | `LEVEL18ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 468 | `LEVEL18SUBCODE01` | CHAR(20) |  |  |  |  |
+| 469 | `LEVEL18SUBCODE02` | CHAR(10) |  |  |  |  |
+| 470 | `LEVEL18SUBCODE03` | CHAR(10) |  |  |  |  |
+| 471 | `LEVEL18SUBCODE04` | CHAR(10) |  |  |  |  |
+| 472 | `LEVEL18SUBCODE05` | CHAR(10) |  |  |  |  |
+| 473 | `LEVEL18SUBCODE06` | CHAR(10) |  |  |  |  |
+| 474 | `LEVEL18SUBCODE07` | CHAR(10) |  |  |  |  |
+| 475 | `LEVEL18SUBCODE08` | CHAR(10) |  |  |  |  |
+| 476 | `LEVEL18SUBCODE09` | CHAR(10) |  |  |  |  |
+| 477 | `LEVEL18SUBCODE10` | CHAR(10) |  |  |  |  |
+| 478 | `RULE18CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 479 | `RULEPOLICY18CODE` | CHAR(20) |  |  |  |  |
+| 480 | `PLANNINGAVLFORMULA18CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 481 | `PLANNINGAVLFORMULA18CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 482 | `AVAILABILITYCONDITION18` | CHAR(1) |  |  |  |  |
+| 483 | `AVAILABILITYBYGROUP18` | SMALLINT | NOT NULL |  |  |  |
+| 484 | `PERIODIZEDCALENDARTYPE18CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 485 | `LOGICALWAREHOUSE18COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 486 | `LOGICALWAREHOUSE18CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 487 | `AVLWHSGROUP18COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 488 | `AVLWAREHOUSEGROUP18CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 489 | `TOLERANCEQTY18` | DECIMAL(15,5) |  |  |  |  |
+| 490 | `FORCERECALCULATION18` | SMALLINT | NOT NULL |  |  |  |
+| 491 | `AVQUALITYGROUP18CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 492 | `LEVEL19MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 493 | `LEVEL19ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 494 | `LEVEL19ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 495 | `LEVEL19SUBCODE01` | CHAR(20) |  |  |  |  |
+| 496 | `LEVEL19SUBCODE02` | CHAR(10) |  |  |  |  |
+| 497 | `LEVEL19SUBCODE03` | CHAR(10) |  |  |  |  |
+| 498 | `LEVEL19SUBCODE04` | CHAR(10) |  |  |  |  |
+| 499 | `LEVEL19SUBCODE05` | CHAR(10) |  |  |  |  |
+| 500 | `LEVEL19SUBCODE06` | CHAR(10) |  |  |  |  |
+| 501 | `LEVEL19SUBCODE07` | CHAR(10) |  |  |  |  |
+| 502 | `LEVEL19SUBCODE08` | CHAR(10) |  |  |  |  |
+| 503 | `LEVEL19SUBCODE09` | CHAR(10) |  |  |  |  |
+| 504 | `LEVEL19SUBCODE10` | CHAR(10) |  |  |  |  |
+| 505 | `RULE19CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 506 | `RULEPOLICY19CODE` | CHAR(20) |  |  |  |  |
+| 507 | `PLANNINGAVLFORMULA19CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 508 | `PLANNINGAVLFORMULA19CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 509 | `AVAILABILITYCONDITION19` | CHAR(1) |  |  |  |  |
+| 510 | `AVAILABILITYBYGROUP19` | SMALLINT | NOT NULL |  |  |  |
+| 511 | `PERIODIZEDCALENDARTYPE19CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 512 | `LOGICALWAREHOUSE19COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 513 | `LOGICALWAREHOUSE19CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 514 | `AVLWHSGROUP19COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 515 | `AVLWAREHOUSEGROUP19CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 516 | `TOLERANCEQTY19` | DECIMAL(15,5) |  |  |  |  |
+| 517 | `FORCERECALCULATION19` | SMALLINT | NOT NULL |  |  |  |
+| 518 | `AVQUALITYGROUP19CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 519 | `LEVEL20MANAGED` | SMALLINT | NOT NULL |  |  |  |
+| 520 | `LEVEL20ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 521 | `LEVEL20ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 522 | `LEVEL20SUBCODE01` | CHAR(20) |  |  |  |  |
+| 523 | `LEVEL20SUBCODE02` | CHAR(10) |  |  |  |  |
+| 524 | `LEVEL20SUBCODE03` | CHAR(10) |  |  |  |  |
+| 525 | `LEVEL20SUBCODE04` | CHAR(10) |  |  |  |  |
+| 526 | `LEVEL20SUBCODE05` | CHAR(10) |  |  |  |  |
+| 527 | `LEVEL20SUBCODE06` | CHAR(10) |  |  |  |  |
+| 528 | `LEVEL20SUBCODE07` | CHAR(10) |  |  |  |  |
+| 529 | `LEVEL20SUBCODE08` | CHAR(10) |  |  |  |  |
+| 530 | `LEVEL20SUBCODE09` | CHAR(10) |  |  |  |  |
+| 531 | `LEVEL20SUBCODE10` | CHAR(10) |  |  |  |  |
+| 532 | `RULE20CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 533 | `RULEPOLICY20CODE` | CHAR(20) |  |  |  |  |
+| 534 | `PLANNINGAVLFORMULA20CMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 535 | `PLANNINGAVLFORMULA20CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 536 | `AVAILABILITYCONDITION20` | CHAR(1) |  |  |  |  |
+| 537 | `AVAILABILITYBYGROUP20` | SMALLINT | NOT NULL |  |  |  |
+| 538 | `PERIODIZEDCALENDARTYPE20CODE` | CHAR(10) |  | FK | foreign_key |  |
+| 539 | `LOGICALWAREHOUSE20COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 540 | `LOGICALWAREHOUSE20CODE` | CHAR(8) |  | FK | foreign_key |  |
+| 541 | `AVLWHSGROUP20COMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 542 | `AVLWAREHOUSEGROUP20CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 543 | `TOLERANCEQTY20` | DECIMAL(15,5) |  |  |  |  |
+| 544 | `FORCERECALCULATION20` | SMALLINT | NOT NULL |  |  |  |
+| 545 | `AVQUALITYGROUP20CODE` | CHAR(3) |  | FK | foreign_key |  |
+| 546 | `USESPLITTEDPDFORORDER` | SMALLINT | NOT NULL |  |  |  |
+| 547 | `MULTILINKSPLANNING` | SMALLINT | NOT NULL |  |  |  |
+| 548 | `FINITECAPACITYPLANNING` | SMALLINT | NOT NULL |  |  |  |
+| 549 | `ONETOONERELATION1` | SMALLINT | NOT NULL |  |  |  |
+| 550 | `ADDNEWRESERVATIONSAFTERPO1` | SMALLINT | NOT NULL |  |  |  |
+| 551 | `ONETOONERELATION2` | SMALLINT | NOT NULL |  |  |  |
+| 552 | `ADDNEWRESERVATIONSAFTERPO2` | SMALLINT | NOT NULL |  |  |  |
+| 553 | `ONETOONERELATION3` | SMALLINT | NOT NULL |  |  |  |
+| 554 | `ADDNEWRESERVATIONSAFTERPO3` | SMALLINT | NOT NULL |  |  |  |
+| 555 | `ONETOONERELATION4` | SMALLINT | NOT NULL |  |  |  |
+| 556 | `ADDNEWRESERVATIONSAFTERPO4` | SMALLINT | NOT NULL |  |  |  |
+| 557 | `ONETOONERELATION5` | SMALLINT | NOT NULL |  |  |  |
+| 558 | `ADDNEWRESERVATIONSAFTERPO5` | SMALLINT | NOT NULL |  |  |  |
+| 559 | `ONETOONERELATION6` | SMALLINT | NOT NULL |  |  |  |
+| 560 | `ADDNEWRESERVATIONSAFTERPO6` | SMALLINT | NOT NULL |  |  |  |
+| 561 | `ONETOONERELATION7` | SMALLINT | NOT NULL |  |  |  |
+| 562 | `ADDNEWRESERVATIONSAFTERPO7` | SMALLINT | NOT NULL |  |  |  |
+| 563 | `ONETOONERELATION8` | SMALLINT | NOT NULL |  |  |  |
+| 564 | `ADDNEWRESERVATIONSAFTERPO8` | SMALLINT | NOT NULL |  |  |  |
+| 565 | `ONETOONERELATION9` | SMALLINT | NOT NULL |  |  |  |
+| 566 | `ADDNEWRESERVATIONSAFTERPO9` | SMALLINT | NOT NULL |  |  |  |
+| 567 | `ONETOONERELATION10` | SMALLINT | NOT NULL |  |  |  |
+| 568 | `ADDNEWRESERVATIONSAFTERPO10` | SMALLINT | NOT NULL |  |  |  |
+| 569 | `ONETOONERELATION11` | SMALLINT | NOT NULL |  |  |  |
+| 570 | `ADDNEWRESERVATIONSAFTERPO11` | SMALLINT | NOT NULL |  |  |  |
+| 571 | `ONETOONERELATION12` | SMALLINT | NOT NULL |  |  |  |
+| 572 | `ADDNEWRESERVATIONSAFTERPO12` | SMALLINT | NOT NULL |  |  |  |
+| 573 | `ONETOONERELATION13` | SMALLINT | NOT NULL |  |  |  |
+| 574 | `ADDNEWRESERVATIONSAFTERPO13` | SMALLINT | NOT NULL |  |  |  |
+| 575 | `ONETOONERELATION14` | SMALLINT | NOT NULL |  |  |  |
+| 576 | `ADDNEWRESERVATIONSAFTERPO14` | SMALLINT | NOT NULL |  |  |  |
+| 577 | `ONETOONERELATION15` | SMALLINT | NOT NULL |  |  |  |
+| 578 | `ADDNEWRESERVATIONSAFTERPO15` | SMALLINT | NOT NULL |  |  |  |
+| 579 | `ONETOONERELATION16` | SMALLINT | NOT NULL |  |  |  |
+| 580 | `ADDNEWRESERVATIONSAFTERPO16` | SMALLINT | NOT NULL |  |  |  |
+| 581 | `ONETOONERELATION17` | SMALLINT | NOT NULL |  |  |  |
+| 582 | `ADDNEWRESERVATIONSAFTERPO17` | SMALLINT | NOT NULL |  |  |  |
+| 583 | `ONETOONERELATION18` | SMALLINT | NOT NULL |  |  |  |
+| 584 | `ADDNEWRESERVATIONSAFTERPO18` | SMALLINT | NOT NULL |  |  |  |
+| 585 | `ONETOONERELATION19` | SMALLINT | NOT NULL |  |  |  |
+| 586 | `ADDNEWRESERVATIONSAFTERPO19` | SMALLINT | NOT NULL |  |  |  |
+| 587 | `ONETOONERELATION20` | SMALLINT | NOT NULL |  |  |  |
+| 588 | `ADDNEWRESERVATIONSAFTERPO20` | SMALLINT | NOT NULL |  |  |  |
+
+## References (this table → parent) — 141
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA1` | `PLANNINGAVLFORMULA1CMYCODE`, `PLANNINGAVLFORMULA1CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA1CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA1CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA10` | `PLANNINGAVLFORMULA10CMYCODE`, `PLANNINGAVLFORMULA10CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA10CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA10CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA11` | `PLANNINGAVLFORMULA11CMYCODE`, `PLANNINGAVLFORMULA11CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA11CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA11CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA12` | `PLANNINGAVLFORMULA12CMYCODE`, `PLANNINGAVLFORMULA12CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA12CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA12CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA13` | `PLANNINGAVLFORMULA13CMYCODE`, `PLANNINGAVLFORMULA13CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA13CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA13CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA14` | `PLANNINGAVLFORMULA14CMYCODE`, `PLANNINGAVLFORMULA14CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA14CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA14CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA15` | `PLANNINGAVLFORMULA15CMYCODE`, `PLANNINGAVLFORMULA15CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA15CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA15CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA16` | `PLANNINGAVLFORMULA16CMYCODE`, `PLANNINGAVLFORMULA16CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA16CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA16CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA17` | `PLANNINGAVLFORMULA17CMYCODE`, `PLANNINGAVLFORMULA17CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA17CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA17CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA18` | `PLANNINGAVLFORMULA18CMYCODE`, `PLANNINGAVLFORMULA18CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA18CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA18CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA19` | `PLANNINGAVLFORMULA19CMYCODE`, `PLANNINGAVLFORMULA19CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA19CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA19CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA2` | `PLANNINGAVLFORMULA2CMYCODE`, `PLANNINGAVLFORMULA2CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA2CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA2CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA20` | `PLANNINGAVLFORMULA20CMYCODE`, `PLANNINGAVLFORMULA20CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA20CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA20CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA3` | `PLANNINGAVLFORMULA3CMYCODE`, `PLANNINGAVLFORMULA3CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA3CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA3CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA4` | `PLANNINGAVLFORMULA4CMYCODE`, `PLANNINGAVLFORMULA4CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA4CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA4CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA5` | `PLANNINGAVLFORMULA5CMYCODE`, `PLANNINGAVLFORMULA5CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA5CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA5CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA6` | `PLANNINGAVLFORMULA6CMYCODE`, `PLANNINGAVLFORMULA6CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA6CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA6CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA7` | `PLANNINGAVLFORMULA7CMYCODE`, `PLANNINGAVLFORMULA7CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA7CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA7CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA8` | `PLANNINGAVLFORMULA8CMYCODE`, `PLANNINGAVLFORMULA8CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA8CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA8CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYFORMULA_PLANNINGAVAILABILITYFORMULA9` | `PLANNINGAVLFORMULA9CMYCODE`, `PLANNINGAVLFORMULA9CODE` | [`AVAILABILITYFORMULA`](../CORE_MASTER/AVAILABILITYFORMULA.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.PLANNINGAVLFORMULA9CMYCODE = AVAILABILITYFORMULA.COMPANYCODE AND PLANNINGTEMPLATE.PLANNINGAVLFORMULA9CODE = AVAILABILITYFORMULA.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP1` | `AVLWAREHOUSEGROUP1COMPANYCODE`, `AVLWAREHOUSEGROUP1CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP1COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP1CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP10` | `AVLWHSGROUP10COMPANYCODE`, `AVLWAREHOUSEGROUP10CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP10COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP10CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP11` | `AVLWHSGROUP11COMPANYCODE`, `AVLWAREHOUSEGROUP11CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP11COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP11CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP12` | `AVLWHSGROUP12COMPANYCODE`, `AVLWAREHOUSEGROUP12CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP12COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP12CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP13` | `AVLWHSGROUP13COMPANYCODE`, `AVLWAREHOUSEGROUP13CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP13COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP13CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP14` | `AVLWHSGROUP14COMPANYCODE`, `AVLWAREHOUSEGROUP14CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP14COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP14CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP15` | `AVLWHSGROUP15COMPANYCODE`, `AVLWAREHOUSEGROUP15CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP15COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP15CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP16` | `AVLWHSGROUP16COMPANYCODE`, `AVLWAREHOUSEGROUP16CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP16COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP16CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP17` | `AVLWHSGROUP17COMPANYCODE`, `AVLWAREHOUSEGROUP17CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP17COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP17CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP18` | `AVLWHSGROUP18COMPANYCODE`, `AVLWAREHOUSEGROUP18CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP18COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP18CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP19` | `AVLWHSGROUP19COMPANYCODE`, `AVLWAREHOUSEGROUP19CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP19COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP19CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP2` | `AVLWAREHOUSEGROUP2COMPANYCODE`, `AVLWAREHOUSEGROUP2CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP2COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP2CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP20` | `AVLWHSGROUP20COMPANYCODE`, `AVLWAREHOUSEGROUP20CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWHSGROUP20COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP20CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP3` | `AVLWAREHOUSEGROUP3COMPANYCODE`, `AVLWAREHOUSEGROUP3CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP3COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP3CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP4` | `AVLWAREHOUSEGROUP4COMPANYCODE`, `AVLWAREHOUSEGROUP4CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP4COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP4CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP5` | `AVLWAREHOUSEGROUP5COMPANYCODE`, `AVLWAREHOUSEGROUP5CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP5COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP5CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP6` | `AVLWAREHOUSEGROUP6COMPANYCODE`, `AVLWAREHOUSEGROUP6CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP6COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP6CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP7` | `AVLWAREHOUSEGROUP7COMPANYCODE`, `AVLWAREHOUSEGROUP7CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP7COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP7CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP8` | `AVLWAREHOUSEGROUP8COMPANYCODE`, `AVLWAREHOUSEGROUP8CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP8COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP8CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVAILABILITYWAREHOUSEGROUP_AVAILABILITYWAREHOUSEGROUP9` | `AVLWAREHOUSEGROUP9COMPANYCODE`, `AVLWAREHOUSEGROUP9CODE` | [`AVAILABILITYWAREHOUSEGROUP`](../CORE_MASTER/AVAILABILITYWAREHOUSEGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.AVLWAREHOUSEGROUP9COMPANYCODE = AVAILABILITYWAREHOUSEGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVLWAREHOUSEGROUP9CODE = AVAILABILITYWAREHOUSEGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP1` | `COMPANYCODE`, `AVQUALITYGROUP1CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP1CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP10` | `COMPANYCODE`, `AVQUALITYGROUP10CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP10CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP11` | `COMPANYCODE`, `AVQUALITYGROUP11CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP11CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP12` | `COMPANYCODE`, `AVQUALITYGROUP12CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP12CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP13` | `COMPANYCODE`, `AVQUALITYGROUP13CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP13CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP14` | `COMPANYCODE`, `AVQUALITYGROUP14CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP14CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP15` | `COMPANYCODE`, `AVQUALITYGROUP15CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP15CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP16` | `COMPANYCODE`, `AVQUALITYGROUP16CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP16CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP17` | `COMPANYCODE`, `AVQUALITYGROUP17CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP17CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP18` | `COMPANYCODE`, `AVQUALITYGROUP18CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP18CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP19` | `COMPANYCODE`, `AVQUALITYGROUP19CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP19CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP2` | `COMPANYCODE`, `AVQUALITYGROUP2CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP2CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP20` | `COMPANYCODE`, `AVQUALITYGROUP20CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP20CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP3` | `COMPANYCODE`, `AVQUALITYGROUP3CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP3CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP4` | `COMPANYCODE`, `AVQUALITYGROUP4CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP4CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP5` | `COMPANYCODE`, `AVQUALITYGROUP5CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP5CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP6` | `COMPANYCODE`, `AVQUALITYGROUP6CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP6CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP7` | `COMPANYCODE`, `AVQUALITYGROUP7CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP7CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP8` | `COMPANYCODE`, `AVQUALITYGROUP8CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP8CODE = AVQUALITYGROUP.CODE` |
+| `AVQUALITYGROUP_AVQUALITYGROUP9` | `COMPANYCODE`, `AVQUALITYGROUP9CODE` | [`AVQUALITYGROUP`](../QUALITY/AVQUALITYGROUP.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = AVQUALITYGROUP.COMPANYCODE AND PLANNINGTEMPLATE.AVQUALITYGROUP9CODE = AVQUALITYGROUP.CODE` |
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = COMPANY.CODE` |
+| `ITEMTYPE_LEVEL10ITEMTYPE` | `LEVEL10ITEMTYPECOMPANYCODE`, `LEVEL10ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL10ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL10ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL11ITEMTYPE` | `LEVEL11ITEMTYPECOMPANYCODE`, `LEVEL11ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL11ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL11ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL12ITEMTYPE` | `LEVEL12ITEMTYPECOMPANYCODE`, `LEVEL12ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL12ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL12ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL13ITEMTYPE` | `LEVEL13ITEMTYPECOMPANYCODE`, `LEVEL13ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL13ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL13ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL14ITEMTYPE` | `LEVEL14ITEMTYPECOMPANYCODE`, `LEVEL14ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL14ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL14ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL15ITEMTYPE` | `LEVEL15ITEMTYPECOMPANYCODE`, `LEVEL15ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL15ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL15ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL16ITEMTYPE` | `LEVEL16ITEMTYPECOMPANYCODE`, `LEVEL16ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL16ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL16ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL17ITEMTYPE` | `LEVEL17ITEMTYPECOMPANYCODE`, `LEVEL17ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL17ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL17ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL18ITEMTYPE` | `LEVEL18ITEMTYPECOMPANYCODE`, `LEVEL18ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL18ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL18ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL19ITEMTYPE` | `LEVEL19ITEMTYPECOMPANYCODE`, `LEVEL19ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL19ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL19ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL1ITEMTYPE` | `LEVEL1ITEMTYPECOMPANYCODE`, `LEVEL1ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL1ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL1ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL20ITEMTYPE` | `LEVEL20ITEMTYPECOMPANYCODE`, `LEVEL20ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL20ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL20ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL2ITEMTYPE` | `LEVEL2ITEMTYPECOMPANYCODE`, `LEVEL2ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL2ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL2ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL3ITEMTYPE` | `LEVEL3ITEMTYPECOMPANYCODE`, `LEVEL3ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL3ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL3ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL4ITEMTYPE` | `LEVEL4ITEMTYPECOMPANYCODE`, `LEVEL4ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL4ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL4ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL5ITEMTYPE` | `LEVEL5ITEMTYPECOMPANYCODE`, `LEVEL5ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL5ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL5ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL6ITEMTYPE` | `LEVEL6ITEMTYPECOMPANYCODE`, `LEVEL6ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL6ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL6ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL7ITEMTYPE` | `LEVEL7ITEMTYPECOMPANYCODE`, `LEVEL7ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL7ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL7ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL8ITEMTYPE` | `LEVEL8ITEMTYPECOMPANYCODE`, `LEVEL8ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL8ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL8ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_LEVEL9ITEMTYPE` | `LEVEL9ITEMTYPECOMPANYCODE`, `LEVEL9ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LEVEL9ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PLANNINGTEMPLATE.LEVEL9ITEMTYPECODE = ITEMTYPE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE1` | `LOGICALWAREHOUSE1COMPANYCODE`, `LOGICALWAREHOUSE1CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE1COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE1CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE10` | `LOGICALWAREHOUSE10COMPANYCODE`, `LOGICALWAREHOUSE10CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE10COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE10CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE11` | `LOGICALWAREHOUSE11COMPANYCODE`, `LOGICALWAREHOUSE11CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE11COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE11CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE12` | `LOGICALWAREHOUSE12COMPANYCODE`, `LOGICALWAREHOUSE12CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE12COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE12CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE13` | `LOGICALWAREHOUSE13COMPANYCODE`, `LOGICALWAREHOUSE13CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE13COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE13CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE14` | `LOGICALWAREHOUSE14COMPANYCODE`, `LOGICALWAREHOUSE14CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE14COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE14CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE15` | `LOGICALWAREHOUSE15COMPANYCODE`, `LOGICALWAREHOUSE15CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE15COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE15CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE16` | `LOGICALWAREHOUSE16COMPANYCODE`, `LOGICALWAREHOUSE16CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE16COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE16CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE17` | `LOGICALWAREHOUSE17COMPANYCODE`, `LOGICALWAREHOUSE17CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE17COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE17CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE18` | `LOGICALWAREHOUSE18COMPANYCODE`, `LOGICALWAREHOUSE18CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE18COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE18CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE19` | `LOGICALWAREHOUSE19COMPANYCODE`, `LOGICALWAREHOUSE19CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE19COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE19CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE2` | `LOGICALWAREHOUSE2COMPANYCODE`, `LOGICALWAREHOUSE2CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE2COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE2CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE20` | `LOGICALWAREHOUSE20COMPANYCODE`, `LOGICALWAREHOUSE20CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE20COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE20CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE3` | `LOGICALWAREHOUSE3COMPANYCODE`, `LOGICALWAREHOUSE3CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE3COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE3CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE4` | `LOGICALWAREHOUSE4COMPANYCODE`, `LOGICALWAREHOUSE4CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE4COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE4CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE5` | `LOGICALWAREHOUSE5COMPANYCODE`, `LOGICALWAREHOUSE5CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE5COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE5CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE6` | `LOGICALWAREHOUSE6COMPANYCODE`, `LOGICALWAREHOUSE6CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE6COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE6CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE7` | `LOGICALWAREHOUSE7COMPANYCODE`, `LOGICALWAREHOUSE7CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE7COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE7CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE8` | `LOGICALWAREHOUSE8COMPANYCODE`, `LOGICALWAREHOUSE8CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE8COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE8CODE = LOGICALWAREHOUSE.CODE` |
+| `LOGICALWAREHOUSE_LOGICALWAREHOUSE9` | `LOGICALWAREHOUSE9COMPANYCODE`, `LOGICALWAREHOUSE9CODE` | [`LOGICALWAREHOUSE`](../WAREHOUSE/LOGICALWAREHOUSE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.LOGICALWAREHOUSE9COMPANYCODE = LOGICALWAREHOUSE.COMPANYCODE AND PLANNINGTEMPLATE.LOGICALWAREHOUSE9CODE = LOGICALWAREHOUSE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE1` | `PERIODIZEDCALENDARTYPE1CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE1CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE10` | `PERIODIZEDCALENDARTYPE10CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE10CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE11` | `PERIODIZEDCALENDARTYPE11CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE11CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE12` | `PERIODIZEDCALENDARTYPE12CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE12CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE13` | `PERIODIZEDCALENDARTYPE13CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE13CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE14` | `PERIODIZEDCALENDARTYPE14CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE14CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE15` | `PERIODIZEDCALENDARTYPE15CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE15CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE16` | `PERIODIZEDCALENDARTYPE16CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE16CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE17` | `PERIODIZEDCALENDARTYPE17CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE17CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE18` | `PERIODIZEDCALENDARTYPE18CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE18CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE19` | `PERIODIZEDCALENDARTYPE19CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE19CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE2` | `PERIODIZEDCALENDARTYPE2CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE2CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE20` | `PERIODIZEDCALENDARTYPE20CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE20CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE3` | `PERIODIZEDCALENDARTYPE3CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE3CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE4` | `PERIODIZEDCALENDARTYPE4CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE4CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE5` | `PERIODIZEDCALENDARTYPE5CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE5CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE6` | `PERIODIZEDCALENDARTYPE6CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE6CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE7` | `PERIODIZEDCALENDARTYPE7CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE7CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE8` | `PERIODIZEDCALENDARTYPE8CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE8CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `PERIODIZEDCALENDARTYPE_PERIODIZEDCALENDARTYPE9` | `PERIODIZEDCALENDARTYPE9CODE` | [`PERIODIZEDCALENDARTYPE`](../CORE_MASTER/PERIODIZEDCALENDARTYPE.md) | `CODE` | RESTRICT | `PLANNINGTEMPLATE.PERIODIZEDCALENDARTYPE9CODE = PERIODIZEDCALENDARTYPE.CODE` |
+| `RULES_RULE` | `COMPANYCODE`, `RULECODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULECODE = RULES.CODE` |
+| `RULES_RULE10` | `COMPANYCODE`, `RULE10CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE10CODE = RULES.CODE` |
+| `RULES_RULE11` | `COMPANYCODE`, `RULE11CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE11CODE = RULES.CODE` |
+| `RULES_RULE12` | `COMPANYCODE`, `RULE12CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE12CODE = RULES.CODE` |
+| `RULES_RULE13` | `COMPANYCODE`, `RULE13CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE13CODE = RULES.CODE` |
+| `RULES_RULE14` | `COMPANYCODE`, `RULE14CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE14CODE = RULES.CODE` |
+| `RULES_RULE15` | `COMPANYCODE`, `RULE15CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE15CODE = RULES.CODE` |
+| `RULES_RULE16` | `COMPANYCODE`, `RULE16CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE16CODE = RULES.CODE` |
+| `RULES_RULE17` | `COMPANYCODE`, `RULE17CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE17CODE = RULES.CODE` |
+| `RULES_RULE18` | `COMPANYCODE`, `RULE18CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE18CODE = RULES.CODE` |
+| `RULES_RULE19` | `COMPANYCODE`, `RULE19CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE19CODE = RULES.CODE` |
+| `RULES_RULE2` | `COMPANYCODE`, `RULE2CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE2CODE = RULES.CODE` |
+| `RULES_RULE20` | `COMPANYCODE`, `RULE20CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE20CODE = RULES.CODE` |
+| `RULES_RULE3` | `COMPANYCODE`, `RULE3CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE3CODE = RULES.CODE` |
+| `RULES_RULE4` | `COMPANYCODE`, `RULE4CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE4CODE = RULES.CODE` |
+| `RULES_RULE5` | `COMPANYCODE`, `RULE5CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE5CODE = RULES.CODE` |
+| `RULES_RULE6` | `COMPANYCODE`, `RULE6CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE6CODE = RULES.CODE` |
+| `RULES_RULE7` | `COMPANYCODE`, `RULE7CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE7CODE = RULES.CODE` |
+| `RULES_RULE8` | `COMPANYCODE`, `RULE8CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE8CODE = RULES.CODE` |
+| `RULES_RULE9` | `COMPANYCODE`, `RULE9CODE` | [`RULES`](../CORE_MASTER/RULES.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PLANNINGTEMPLATE.COMPANYCODE = RULES.COMPANYCODE AND PLANNINGTEMPLATE.RULE9CODE = RULES.CODE` |
+
+## Referenced by (child → this table) — 4
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `PLANNINGTEMPLATE_PLANNINGTEMPLATE` | [`TRERECUSTOMIZATION`](../CORE_MASTER/TRERECUSTOMIZATION.md) | `COMPANYCODE`, `PLANNINGTEMPLATECODE` | `TRERECUSTOMIZATION.COMPANYCODE = PLANNINGTEMPLATE.COMPANYCODE AND TRERECUSTOMIZATION.PLANNINGTEMPLATECODE = PLANNINGTEMPLATE.CODE` |
+| `PLANNINGTEMPLATE_PLANNINGTEMPLATE` | [`SALESORDERTEMPLATE`](../SALES/SALESORDERTEMPLATE.md) | `COMPANYCODE`, `PLANNINGTEMPLATECODE` | `SALESORDERTEMPLATE.COMPANYCODE = PLANNINGTEMPLATE.COMPANYCODE AND SALESORDERTEMPLATE.PLANNINGTEMPLATECODE = PLANNINGTEMPLATE.CODE` |
+| `PLANNINGTEMPLATE_PLANNINGTEMPLATE` | [`PROJECT`](../CORE_MASTER/PROJECT.md) | `COMPANYCODE`, `PLANNINGTEMPLATECODE` | `PROJECT.COMPANYCODE = PLANNINGTEMPLATE.COMPANYCODE AND PROJECT.PLANNINGTEMPLATECODE = PLANNINGTEMPLATE.CODE` |
+| `PLANNINGTEMPLATE_PLANNINGTEMPLATE` | [`DTXFORECASTMTXPERIODSETUP`](../SALES/DTXFORECASTMTXPERIODSETUP.md) | `COMPANYCODE`, `PLANNINGTEMPLATECODE` | `DTXFORECASTMTXPERIODSETUP.COMPANYCODE = PLANNINGTEMPLATE.COMPANYCODE AND DTXFORECASTMTXPERIODSETUP.PLANNINGTEMPLATECODE = PLANNINGTEMPLATE.CODE` |
+
+## Indexes
+
+- `PLANNINGTEMPLATEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.CODE,
+       t.RULECODE,
+       t.RULEPOLICYCODE,
+       t.PLANNINGBY,
+       t.PROJECTMANAGEMENT,
+       t.USEBASEQUANTITIES,
+       t.LEVEL1ITEMTYPECODE,
+       t.LEVEL1SUBCODE01,
+       t.LEVEL1SUBCODE02,
+       t.LEVEL1SUBCODE03,
+       t.LEVEL1SUBCODE04
+FROM   DB2ADMIN.PLANNINGTEMPLATE t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,51 @@
+# DB2ADMIN.DEPBFINYEARTURNOVERDOMESTIC
+
+- **Module**: `OTHER` (none confidence — no known prefix matched)
+- **Roles**: `business_data`
+- **Columns**: 7
+- **Primary key**: `DEPBDEFAULTCOMPANYCODE`, `DEPBDEFAULTDIVISIONCODE`, `FISCALYEARYEAR`
+- **FK degree**: referenced by 0 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 137285
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `DEPBDEFAULTCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `DEPBDEFAULTDIVISIONCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FISCALYEARYEAR` | DECIMAL(4,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `FIRMCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 4 | `TURNOVERVALUE` | DECIMAL(18,5) |  |  |  |  |
+| 5 | `CURRENCYCODE` | CHAR(4) |  | FK | foreign_key |  |
+| 6 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `CURRENCY_CURRENCY` | `CURRENCYCODE` | [`CURRENCY`](../CORE_MASTER/CURRENCY.md) | `CODE` | RESTRICT | `DEPBFINYEARTURNOVERDOMESTIC.CURRENCYCODE = CURRENCY.CODE` |
+| `DEPBDEFAULT_DETAIL` | `DEPBDEFAULTCOMPANYCODE`, `DEPBDEFAULTDIVISIONCODE` | [`DEPBDEFAULT`](../SALES/DEPBDEFAULT.md) | `COMPANYCODE`, `DIVISIONCODE` | RESTRICT | `DEPBFINYEARTURNOVERDOMESTIC.DEPBDEFAULTCOMPANYCODE = DEPBDEFAULT.COMPANYCODE AND DEPBFINYEARTURNOVERDOMESTIC.DEPBDEFAULTDIVISIONCODE = DEPBDEFAULT.DIVISIONCODE` |
+| `DIVISION_FIRM` | `DEPBDEFAULTCOMPANYCODE`, `FIRMCODE` | [`DIVISION`](../CORE_MASTER/DIVISION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `DEPBFINYEARTURNOVERDOMESTIC.DEPBDEFAULTCOMPANYCODE = DIVISION.COMPANYCODE AND DEPBFINYEARTURNOVERDOMESTIC.FIRMCODE = DIVISION.CODE` |
+| `LIFOYEAR_FISCALYEAR` | `DEPBDEFAULTCOMPANYCODE`, `FISCALYEARYEAR` | [`LIFOYEAR`](../OTHER/LIFOYEAR.md) | `COMPANYCODE`, `YEAR` | RESTRICT | `DEPBFINYEARTURNOVERDOMESTIC.DEPBDEFAULTCOMPANYCODE = LIFOYEAR.COMPANYCODE AND DEPBFINYEARTURNOVERDOMESTIC.FISCALYEARYEAR = LIFOYEAR.YEAR` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `BFINYEARTURNOVERDOMESTICUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.DEPBDEFAULTCOMPANYCODE,
+       t.DEPBDEFAULTDIVISIONCODE,
+       t.FISCALYEARYEAR,
+       t.FIRMCODE,
+       t.TURNOVERVALUE,
+       t.CURRENCYCODE,
+       t.ABSUNIQUEID
+FROM   DB2ADMIN.DEPBFINYEARTURNOVERDOMESTIC t
+FETCH FIRST 100 ROWS ONLY;
+```

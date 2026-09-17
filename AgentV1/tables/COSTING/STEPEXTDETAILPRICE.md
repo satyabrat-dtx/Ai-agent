@@ -1,0 +1,80 @@
+# DB2ADMIN.STEPEXTDETAILPRICE
+
+- **Module**: `COSTING` (low confidence — FK neighbourhood: 1 of 1 related tables are COSTING)
+- **Roles**: `business_data`
+- **Columns**: 27
+- **Primary key**: `COMPANYCODE`, `COUNTERCODE`, `CODE`, `STEPNUMBER`, `LINE`
+- **FK degree**: referenced by 0 constraint(s), references 7 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 97386
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `COUNTERCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 2 | `COUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `CODE` | CHAR(15) | NOT NULL | PK | primary_key | Business (natural) key of a master-data table, typically the last primary-key column. |
+| 4 | `STEPNUMBER` | DECIMAL(5,0) | NOT NULL | PK | primary_key |  |
+| 5 | `LINE` | DECIMAL(5,0) | NOT NULL | PK | primary_key |  |
+| 6 | `CHECKDELETED` | SMALLINT | NOT NULL |  |  |  |
+| 7 | `SUPPLIERCUSTOMERSUPPLIERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 8 | `SUPPLIERCUSTOMERSUPPLIERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 9 | `CURRENCYCODE` | CHAR(4) |  | FK | foreign_key |  |
+| 10 | `COSTVALUE` | DECIMAL(18,5) |  |  |  |  |
+| 11 | `COSTVALUECLOSING` | DECIMAL(18,5) |  |  |  |  |
+| 12 | `COSTTYPE` | CHAR(2) |  |  |  |  |
+| 13 | `QUANTITYTYPE` | CHAR(2) |  |  |  |  |
+| 14 | `QUANTITYRIF` | CHAR(2) |  |  |  |  |
+| 15 | `QUANTITYFATT` | DECIMAL(15,5) |  |  |  |  |
+| 16 | `UNITOFMEASURECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 17 | `COSTELEMENTCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 18 | `COSTELEMENTITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 19 | `COSTELEMENTSUBCODE01` | CHAR(20) |  | FK | foreign_key |  |
+| 20 | `SERVICECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 21 | `SERVICEITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 22 | `SERVICESUBCODE01` | CHAR(20) |  | FK | foreign_key |  |
+| 23 | `TRANSACTIONVECTOR` | VARCHAR(4000) |  |  |  |  |
+| 24 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 25 | `COSTVALUEFORCED` | SMALLINT | NOT NULL |  |  |  |
+| 26 | `GIFTLINE` | SMALLINT | NOT NULL |  |  |  |
+
+## References (this table → parent) — 7
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `STEPEXTDETAILPRICE.COMPANYCODE = COMPANY.CODE` |
+| `COSTELEMENT_COSTELEMENT` | `COSTELEMENTCOMPANYCODE`, `COSTELEMENTITEMTYPECODE`, `COSTELEMENTSUBCODE01` | [`COSTELEMENT`](../COSTING/COSTELEMENT.md) | `COMPANYCODE`, `ITEMTYPECODE`, `SUBCODE01` | RESTRICT | `STEPEXTDETAILPRICE.COSTELEMENTCOMPANYCODE = COSTELEMENT.COMPANYCODE AND STEPEXTDETAILPRICE.COSTELEMENTITEMTYPECODE = COSTELEMENT.ITEMTYPECODE AND STEPEXTDETAILPRICE.COSTELEMENTSUBCODE01 = COSTELEMENT.SUBCODE01` |
+| `COUNTER_COUNTER` | `COUNTERCOMPANYCODE`, `COUNTERCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `STEPEXTDETAILPRICE.COUNTERCOMPANYCODE = COUNTER.COMPANYCODE AND STEPEXTDETAILPRICE.COUNTERCODE = COUNTER.CODE` |
+| `CURRENCY_CURRENCY` | `CURRENCYCODE` | [`CURRENCY`](../CORE_MASTER/CURRENCY.md) | `CODE` | RESTRICT | `STEPEXTDETAILPRICE.CURRENCYCODE = CURRENCY.CODE` |
+| `ORDERPARTNER_SUPPLIER` | `COMPANYCODE`, `SUPPLIERCUSTOMERSUPPLIERTYPE`, `SUPPLIERCUSTOMERSUPPLIERCODE` | [`ORDERPARTNER`](../CORE_MASTER/ORDERPARTNER.md) | `CUSTOMERSUPPLIERCOMPANYCODE`, `CUSTOMERSUPPLIERTYPE`, `CUSTOMERSUPPLIERCODE` | RESTRICT | `STEPEXTDETAILPRICE.COMPANYCODE = ORDERPARTNER.CUSTOMERSUPPLIERCOMPANYCODE AND STEPEXTDETAILPRICE.SUPPLIERCUSTOMERSUPPLIERTYPE = ORDERPARTNER.CUSTOMERSUPPLIERTYPE AND STEPEXTDETAILPRICE.SUPPLIERCUSTOMERSUPPLIERCODE = ORDERPARTNER.CUSTOMERSUPPLIERCODE` |
+| `SERVICES_SERVICE` | `SERVICECOMPANYCODE`, `SERVICEITEMTYPECODE`, `SERVICESUBCODE01` | [`SERVICES`](../COSTING/SERVICES.md) | `COMPANYCODE`, `ITEMTYPECODE`, `SUBCODE01` | RESTRICT | `STEPEXTDETAILPRICE.SERVICECOMPANYCODE = SERVICES.COMPANYCODE AND STEPEXTDETAILPRICE.SERVICEITEMTYPECODE = SERVICES.ITEMTYPECODE AND STEPEXTDETAILPRICE.SERVICESUBCODE01 = SERVICES.SUBCODE01` |
+| `UNITOFMEASURE_UNITOFMEASURE` | `UNITOFMEASURECODE` | [`UNITOFMEASURE`](../CORE_MASTER/UNITOFMEASURE.md) | `CODE` | RESTRICT | `STEPEXTDETAILPRICE.UNITOFMEASURECODE = UNITOFMEASURE.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `STEPEXTDETAILPRICEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.COUNTERCOMPANYCODE,
+       t.COUNTERCODE,
+       t.CODE,
+       t.STEPNUMBER,
+       t.LINE,
+       t.CHECKDELETED,
+       t.SUPPLIERCUSTOMERSUPPLIERTYPE,
+       t.SUPPLIERCUSTOMERSUPPLIERCODE,
+       t.CURRENCYCODE,
+       t.COSTVALUE,
+       t.COSTVALUECLOSING
+FROM   DB2ADMIN.STEPEXTDETAILPRICE t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

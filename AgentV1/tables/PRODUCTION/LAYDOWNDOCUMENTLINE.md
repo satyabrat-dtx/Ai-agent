@@ -1,0 +1,72 @@
+# DB2ADMIN.LAYDOWNDOCUMENTLINE
+
+- **Module**: `PRODUCTION` (low confidence — FK neighbourhood: 1 of 1 related tables are PRODUCTION)
+- **Roles**: `business_data`
+- **Columns**: 24
+- **Primary key**: `LAYDOWNDOCUMENTCOMPANYCODE`, `LAYDOWNDOCUMENTCOUNTERCODE`, `LAYDOWNDOCUMENTCODE`, `ORDERLINE`
+- **FK degree**: referenced by 0 constraint(s), references 3 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 105513
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `LAYDOWNDOCUMENTCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `LAYDOWNDOCUMENTCOUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `LAYDOWNDOCUMENTCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `ORDERLINE` | DECIMAL(7,0) | NOT NULL | PK | primary_key |  |
+| 4 | `PRODUCTIONORDERCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 5 | `RESERVATIONGROUPLINE` | INTEGER | NOT NULL | FK | foreign_key |  |
+| 6 | `MARKERCODE` | CHAR(10) |  | FK | foreign_key |  |
+| 7 | `MAXNOLAYERS` | INTEGER | NOT NULL |  |  |  |
+| 8 | `USERNOLAYERS` | INTEGER | NOT NULL |  |  |  |
+| 9 | `RECOMMENDEDLAYLENGTH` | DECIMAL(8,3) | NOT NULL |  |  |  |
+| 10 | `USERLAYLENGTH` | DECIMAL(8,3) | NOT NULL |  |  |  |
+| 11 | `WIDTHRANGEFROM` | DECIMAL(5,2) | NOT NULL |  |  |  |
+| 12 | `WIDTHRANGETO` | DECIMAL(5,2) | NOT NULL |  |  |  |
+| 13 | `USERWIDTHRANGEFROM` | DECIMAL(5,2) | NOT NULL |  |  |  |
+| 14 | `USERWIDTHRANGETO` | DECIMAL(5,2) | NOT NULL |  |  |  |
+| 15 | `EXTERNALCODE` | CHAR(10) |  |  |  |  |
+| 16 | `FINALLAYERUSE` | INTEGER | NOT NULL |  |  |  |
+| 17 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 18 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 19 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 20 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 21 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 22 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 23 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+
+## References (this table → parent) — 3
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `LAYDOWNDOCUMENT_LINE` | `LAYDOWNDOCUMENTCOMPANYCODE`, `LAYDOWNDOCUMENTCOUNTERCODE`, `LAYDOWNDOCUMENTCODE` | [`LAYDOWNDOCUMENT`](../PRODUCTION/LAYDOWNDOCUMENT.md) | `COMPANYCODE`, `COUNTERCODE`, `CODE` | RESTRICT | `LAYDOWNDOCUMENTLINE.LAYDOWNDOCUMENTCOMPANYCODE = LAYDOWNDOCUMENT.COMPANYCODE AND LAYDOWNDOCUMENTLINE.LAYDOWNDOCUMENTCOUNTERCODE = LAYDOWNDOCUMENT.COUNTERCODE AND LAYDOWNDOCUMENTLINE.LAYDOWNDOCUMENTCODE = LAYDOWNDOCUMENT.CODE` |
+| `MARKERHEADER_MARKER` | `LAYDOWNDOCUMENTCOMPANYCODE`, `PRODUCTIONORDERCODE`, `RESERVATIONGROUPLINE`, `MARKERCODE` | [`MARKERHEADER`](../PRODUCTION/MARKERHEADER.md) | `COMPANYCODE`, `PRODUCTIONORDERCODE`, `RESERVATIONGROUPLINE`, `CODE` | RESTRICT | `LAYDOWNDOCUMENTLINE.LAYDOWNDOCUMENTCOMPANYCODE = MARKERHEADER.COMPANYCODE AND LAYDOWNDOCUMENTLINE.PRODUCTIONORDERCODE = MARKERHEADER.PRODUCTIONORDERCODE AND LAYDOWNDOCUMENTLINE.RESERVATIONGROUPLINE = MARKERHEADER.RESERVATIONGROUPLINE AND LAYDOWNDOCUMENTLINE.MARKERCODE = MARKERHEADER.CODE` |
+| `PRODUCTIONORDER_PRODUCTIONORDER` | `LAYDOWNDOCUMENTCOMPANYCODE`, `PRODUCTIONORDERCODE` | [`PRODUCTIONORDER`](../PRODUCTION/PRODUCTIONORDER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `LAYDOWNDOCUMENTLINE.LAYDOWNDOCUMENTCOMPANYCODE = PRODUCTIONORDER.COMPANYCODE AND LAYDOWNDOCUMENTLINE.PRODUCTIONORDERCODE = PRODUCTIONORDER.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `LAYDOWNDOCUMENTLINEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.LAYDOWNDOCUMENTCOMPANYCODE,
+       t.LAYDOWNDOCUMENTCOUNTERCODE,
+       t.LAYDOWNDOCUMENTCODE,
+       t.ORDERLINE,
+       t.PRODUCTIONORDERCODE,
+       t.RESERVATIONGROUPLINE,
+       t.MARKERCODE,
+       t.MAXNOLAYERS,
+       t.USERNOLAYERS,
+       t.RECOMMENDEDLAYLENGTH,
+       t.USERLAYLENGTH,
+       t.WIDTHRANGEFROM
+FROM   DB2ADMIN.LAYDOWNDOCUMENTLINE t
+FETCH FIRST 100 ROWS ONLY;
+```

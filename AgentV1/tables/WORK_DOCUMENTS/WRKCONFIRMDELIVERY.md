@@ -1,0 +1,62 @@
+# DB2ADMIN.WRKCONFIRMDELIVERY
+
+- **Module**: `WORK_DOCUMENTS` (medium confidence — table name starts with 'WRK')
+- **Roles**: `business_data`
+- **Columns**: 22
+- **Primary key**: `CREATIONTIMESTAMP`, `LINE`, `DLVSALORDLINESALORDCMYCODE`, `DLVSALORDLINESALORDCNTCODE`, `DLVSALORDERLINESALESORDERCODE`, `DLVSALESORDERLINEORDERLINE`, `DLVSALESORDERLINEORDERSUBLINE`, `DLVSALORDLINECMPORDERLINE`, `DELIVERYDELIVERYLINE`
+- **FK degree**: referenced by 0 constraint(s), references 0 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 35277
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `CREATIONTIMESTAMP` | BIGINT | NOT NULL | PK | primary_key audit |  |
+| 1 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 2 | `LINE` | INTEGER | NOT NULL | PK | primary_key |  |
+| 3 | `DLVSALORDLINESALORDCMYCODE` | CHAR(3) | NOT NULL | PK | primary_key |  |
+| 4 | `DLVSALORDLINESALORDCNTCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 5 | `DLVSALORDERLINESALESORDERCODE` | CHAR(15) | NOT NULL | PK | primary_key |  |
+| 6 | `DLVSALESORDERLINEORDERLINE` | DECIMAL(7,0) | NOT NULL | PK | primary_key |  |
+| 7 | `DLVSALESORDERLINEORDERSUBLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 8 | `DLVSALORDLINECMPORDERLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 9 | `DELIVERYDELIVERYLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 10 | `REMAINEDUSERPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 11 | `REMAINEDUSERSECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 12 | `REMAINEDUSERPACKAGINGQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 13 | `PRIMARYQUANTITYDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 14 | `SECONDARYQTYDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 15 | `PACKAGINGQTYDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 16 | `DELIVERYPOINTUNIQUEID` | BIGINT | NOT NULL |  |  |  |
+| 17 | `DELIVERYPOINTCODE` | CHAR(8) |  |  |  |  |
+| 18 | `TERMSOFDLVLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 19 | `TERMSOFSHPLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 20 | `QUALITYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 21 | `ONLYONESHIPPINGPARAMETERS` | SMALLINT | NOT NULL |  |  |  |
+
+## References (this table → parent) — 0
+
+_None._
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Starter query
+
+```sql
+SELECT t.CREATIONTIMESTAMP,
+       t.CREATIONUSER,
+       t.LINE,
+       t.DLVSALORDLINESALORDCMYCODE,
+       t.DLVSALORDLINESALORDCNTCODE,
+       t.DLVSALORDERLINESALESORDERCODE,
+       t.DLVSALESORDERLINEORDERLINE,
+       t.DLVSALESORDERLINEORDERSUBLINE,
+       t.DLVSALORDLINECMPORDERLINE,
+       t.DELIVERYDELIVERYLINE,
+       t.REMAINEDUSERPRIMARYQUANTITY,
+       t.REMAINEDUSERSECONDARYQUANTITY
+FROM   DB2ADMIN.WRKCONFIRMDELIVERY t
+FETCH FIRST 100 ROWS ONLY;
+```

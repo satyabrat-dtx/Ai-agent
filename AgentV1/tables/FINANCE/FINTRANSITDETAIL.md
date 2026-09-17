@@ -1,0 +1,71 @@
+# DB2ADMIN.FINTRANSITDETAIL
+
+- **Module**: `FINANCE` (high confidence — table name starts with 'FIN')
+- **Roles**: `business_data`
+- **Columns**: 25
+- **Primary key**: `FINPOLICYMASTERCOMPANYCODE`, `FINPOLICYMBUSINESSUNITCODE`, `FINPOLICYMPOLICYTEUGENGRPTECOD`, `FINPOLICYMASTERPOLICYTYPECODE`, `FINPOLICYMINCMYCSMSUPTYPE`, `FINPOLICYMINCMYCSMSUPCODE`, `FINPOLICYMASTERPOLICYNO`, `FINPOLICYMASTERPOLICYDATE`, `LINENO`
+- **FK degree**: referenced by 0 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 228949
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FINPOLICYMASTERCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FINPOLICYMBUSINESSUNITCODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FINPOLICYMPOLICYTEUGENGRPTECOD` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `FINPOLICYMASTERPOLICYTYPECODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `FINPOLICYMINCMYCSMSUPTYPE` | CHAR(1) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `FINPOLICYMINCMYCSMSUPCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 6 | `FINPOLICYMASTERPOLICYNO` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 7 | `FINPOLICYMASTERPOLICYDATE` | DATE | NOT NULL | PK FK | primary_key foreign_key |  |
+| 8 | `LINENO` | INTEGER | NOT NULL | PK | primary_key |  |
+| 9 | `FROMDATE` | DATE |  |  |  | Inclusive start of a validity period. |
+| 10 | `TODATE` | DATE |  |  |  | End of a validity period. |
+| 11 | `AMOUNT` | DECIMAL(18,5) |  |  |  |  |
+| 12 | `TYPE` | CHAR(1) |  |  |  |  |
+| 13 | `INVOICENO` | CHAR(15) |  |  |  |  |
+| 14 | `INVOICEDATE` | DATE |  |  |  |  |
+| 15 | `ITEMTYPE` | CHAR(3) |  |  |  |  |
+| 16 | `QUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 17 | `NETAMOUNT` | DECIMAL(18,5) |  |  |  |  |
+| 18 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 19 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 20 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 21 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 22 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 23 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 24 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `FINPOLICYMASTER_TRANSITIN` | `FINPOLICYMASTERCOMPANYCODE`, `FINPOLICYMBUSINESSUNITCODE`, `FINPOLICYMPOLICYTEUGENGRPTECOD`, `FINPOLICYMASTERPOLICYTYPECODE`, `FINPOLICYMINCMYCSMSUPTYPE`, `FINPOLICYMINCMYCSMSUPCODE`, `FINPOLICYMASTERPOLICYNO`, `FINPOLICYMASTERPOLICYDATE` | [`FINPOLICYMASTER`](../FINANCE/FINPOLICYMASTER.md) | `COMPANYCODE`, `BUSINESSUNITCODE`, `POLICYTEUGENERICGROUPTYPECODE`, `POLICYTYPECODE`, `INCOMPANYCUSTOMERSUPPLIERTYPE`, `INCOMPANYCUSTOMERSUPPLIERCODE`, `POLICYNO`, `POLICYDATE` | RESTRICT | `FINTRANSITDETAIL.FINPOLICYMASTERCOMPANYCODE = FINPOLICYMASTER.COMPANYCODE AND FINTRANSITDETAIL.FINPOLICYMBUSINESSUNITCODE = FINPOLICYMASTER.BUSINESSUNITCODE AND FINTRANSITDETAIL.FINPOLICYMPOLICYTEUGENGRPTECOD = FINPOLICYMASTER.POLICYTEUGENERICGROUPTYPECODE AND FINTRANSITDETAIL.FINPOLICYMASTERPOLICYTYPECODE = FINPOLICYMASTER.POLICYTYPECODE AND FINTRANSITDETAIL.FINPOLICYMINCMYCSMSUPTYPE = FINPOLICYMASTER.INCOMPANYCUSTOMERSUPPLIERTYPE AND FINTRANSITDETAIL.FINPOLICYMINCMYCSMSUPCODE = FINPOLICYMASTER.INCOMPANYCUSTOMERSUPPLIERCODE AND FINTRANSITDETAIL.FINPOLICYMASTERPOLICYNO = FINPOLICYMASTER.POLICYNO AND FINTRANSITDETAIL.FINPOLICYMASTERPOLICYDATE = FINPOLICYMASTER.POLICYDATE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `FINTRANSITDETAILUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FINPOLICYMASTERCOMPANYCODE,
+       t.FINPOLICYMBUSINESSUNITCODE,
+       t.FINPOLICYMPOLICYTEUGENGRPTECOD,
+       t.FINPOLICYMASTERPOLICYTYPECODE,
+       t.FINPOLICYMINCMYCSMSUPTYPE,
+       t.FINPOLICYMINCMYCSMSUPCODE,
+       t.FINPOLICYMASTERPOLICYNO,
+       t.FINPOLICYMASTERPOLICYDATE,
+       t.LINENO,
+       t.FROMDATE,
+       t.TODATE,
+       t.AMOUNT
+FROM   DB2ADMIN.FINTRANSITDETAIL t
+FETCH FIRST 100 ROWS ONLY;
+```

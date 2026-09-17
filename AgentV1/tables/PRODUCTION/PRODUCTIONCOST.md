@@ -1,0 +1,94 @@
+# DB2ADMIN.PRODUCTIONCOST
+
+- **Module**: `PRODUCTION` (high confidence — table name starts with 'PRODUCTION')
+- **Roles**: `business_data`
+- **Columns**: 45
+- **Primary key**: `COMPANYCODE`, `COUNTERCODE`, `CODE`, `COSTNUMBER`
+- **FK degree**: referenced by 3 constraint(s), references 0 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 51095
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK | primary_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `COUNTERCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 2 | `CODE` | CHAR(15) | NOT NULL | PK | primary_key | Business (natural) key of a master-data table, typically the last primary-key column. |
+| 3 | `COSTNUMBER` | INTEGER | NOT NULL | PK | primary_key |  |
+| 4 | `DEMANDPROGRESSSTATUS` | CHAR(2) |  |  |  |  |
+| 5 | `STATUS` | CHAR(1) |  |  |  |  |
+| 6 | `UNITCOSTINBASECURRENCY` | DECIMAL(18,5) |  |  |  |  |
+| 7 | `COSTUNITCODE` | CHAR(3) |  |  |  |  |
+| 8 | `PERCENTCATEGORY1` | DECIMAL(6,3) |  |  |  |  |
+| 9 | `PERCENTCATEGORY2` | DECIMAL(6,3) |  |  |  |  |
+| 10 | `PERCENTCATEGORY3` | DECIMAL(6,3) |  |  |  |  |
+| 11 | `PERCENTCATEGORY4` | DECIMAL(6,3) |  |  |  |  |
+| 12 | `PERCENTCATEGORY5` | DECIMAL(6,3) |  |  |  |  |
+| 13 | `PERCENTCATEGORY6` | DECIMAL(6,3) |  |  |  |  |
+| 14 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 15 | `COUNTERCOMPANYCODE` | CHAR(3) | NOT NULL |  |  |  |
+| 16 | `UNITCOSTINBASECURBEFOREADDCST` | DECIMAL(18,5) |  |  |  |  |
+| 17 | `PERCENTCATEGORY7` | DECIMAL(6,3) |  |  |  |  |
+| 18 | `PERCENTCATEGORY8` | DECIMAL(6,3) |  |  |  |  |
+| 19 | `PERCENTCATEGORY9` | DECIMAL(6,3) |  |  |  |  |
+| 20 | `PERCENTCATEGORY10` | DECIMAL(6,3) |  |  |  |  |
+| 21 | `PERCENTCATEGORY11` | DECIMAL(6,3) |  |  |  |  |
+| 22 | `PERCENTCATEGORY12` | DECIMAL(6,3) |  |  |  |  |
+| 23 | `PERCENTCATEGORY0` | DECIMAL(6,3) |  |  |  |  |
+| 24 | `UNITCOSTINSNDCURRENCY` | DECIMAL(18,5) |  |  |  |  |
+| 25 | `UNITCOSTINSNDCURBEFOREADDCST` | DECIMAL(18,5) |  |  |  |  |
+| 26 | `PERCENTCATEGORYSNDCUR1` | DECIMAL(6,3) |  |  |  |  |
+| 27 | `PERCENTCATEGORYSNDCUR2` | DECIMAL(6,3) |  |  |  |  |
+| 28 | `PERCENTCATEGORYSNDCUR3` | DECIMAL(6,3) |  |  |  |  |
+| 29 | `PERCENTCATEGORYSNDCUR4` | DECIMAL(6,3) |  |  |  |  |
+| 30 | `PERCENTCATEGORYSNDCUR5` | DECIMAL(6,3) |  |  |  |  |
+| 31 | `PERCENTCATEGORYSNDCUR6` | DECIMAL(6,3) |  |  |  |  |
+| 32 | `PERCENTCATEGORYSNDCUR7` | DECIMAL(6,3) |  |  |  |  |
+| 33 | `PERCENTCATEGORYSNDCUR8` | DECIMAL(6,3) |  |  |  |  |
+| 34 | `PERCENTCATEGORYSNDCUR9` | DECIMAL(6,3) |  |  |  |  |
+| 35 | `PERCENTCATEGORYSNDCUR10` | DECIMAL(6,3) |  |  |  |  |
+| 36 | `PERCENTCATEGORYSNDCUR11` | DECIMAL(6,3) |  |  |  |  |
+| 37 | `PERCENTCATEGORYSNDCUR12` | DECIMAL(6,3) |  |  |  |  |
+| 38 | `PERCENTCATEGORYSNDCUR0` | DECIMAL(6,3) |  |  |  |  |
+| 39 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 40 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 41 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 42 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 43 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 44 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+
+## References (this table → parent) — 0
+
+_None._
+
+## Referenced by (child → this table) — 3
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `PRODUCTIONCOST_COSTEXCHANGERATE` | [`PRODUCTIONCOSTEXCHANGERATE`](../PRODUCTION/PRODUCTIONCOSTEXCHANGERATE.md) | `PRODUCTIONCOSTCOMPANYCODE`, `PRODUCTIONCOSTCOUNTERCODE`, `PRODUCTIONCOSTCODE`, `PRODUCTIONCOSTCOSTNUMBER` | `PRODUCTIONCOSTEXCHANGERATE.PRODUCTIONCOSTCOMPANYCODE = PRODUCTIONCOST.COMPANYCODE AND PRODUCTIONCOSTEXCHANGERATE.PRODUCTIONCOSTCOUNTERCODE = PRODUCTIONCOST.COUNTERCODE AND PRODUCTIONCOSTEXCHANGERATE.PRODUCTIONCOSTCODE = PRODUCTIONCOST.CODE AND PRODUCTIONCOSTEXCHANGERATE.PRODUCTIONCOSTCOSTNUMBER = PRODUCTIONCOST.COSTNUMBER` |
+| `PRODUCTIONCOST_RESERVATION` | [`PRODUCTIONRESERVATIONCOST`](../PRODUCTION/PRODUCTIONRESERVATIONCOST.md) | `PRODUCTIONCOSTCOMPANYCODE`, `PRODUCTIONCOSTCOUNTERCODE`, `PRODUCTIONCOSTCODE`, `PRODUCTIONCOSTCOSTNUMBER` | `PRODUCTIONRESERVATIONCOST.PRODUCTIONCOSTCOMPANYCODE = PRODUCTIONCOST.COMPANYCODE AND PRODUCTIONRESERVATIONCOST.PRODUCTIONCOSTCOUNTERCODE = PRODUCTIONCOST.COUNTERCODE AND PRODUCTIONRESERVATIONCOST.PRODUCTIONCOSTCODE = PRODUCTIONCOST.CODE AND PRODUCTIONRESERVATIONCOST.PRODUCTIONCOSTCOSTNUMBER = PRODUCTIONCOST.COSTNUMBER` |
+| `PRODUCTIONCOST_STEP` | [`PRODUCTIONSTEPCOST`](../PRODUCTION/PRODUCTIONSTEPCOST.md) | `PRODUCTIONCOSTCOMPANYCODE`, `PRODUCTIONCOSTCOUNTERCODE`, `PRODUCTIONCOSTCODE`, `PRODUCTIONCOSTCOSTNUMBER` | `PRODUCTIONSTEPCOST.PRODUCTIONCOSTCOMPANYCODE = PRODUCTIONCOST.COMPANYCODE AND PRODUCTIONSTEPCOST.PRODUCTIONCOSTCOUNTERCODE = PRODUCTIONCOST.COUNTERCODE AND PRODUCTIONSTEPCOST.PRODUCTIONCOSTCODE = PRODUCTIONCOST.CODE AND PRODUCTIONSTEPCOST.PRODUCTIONCOSTCOSTNUMBER = PRODUCTIONCOST.COSTNUMBER` |
+
+## Indexes
+
+- `PRODUCTIONCOSTUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.COUNTERCODE,
+       t.CODE,
+       t.COSTNUMBER,
+       t.DEMANDPROGRESSSTATUS,
+       t.STATUS,
+       t.UNITCOSTINBASECURRENCY,
+       t.COSTUNITCODE,
+       t.PERCENTCATEGORY1,
+       t.PERCENTCATEGORY2,
+       t.PERCENTCATEGORY3,
+       t.PERCENTCATEGORY4
+FROM   DB2ADMIN.PRODUCTIONCOST t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

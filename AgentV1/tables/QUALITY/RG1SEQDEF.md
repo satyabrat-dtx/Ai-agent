@@ -1,0 +1,68 @@
+# DB2ADMIN.RG1SEQDEF
+
+- **Module**: `QUALITY` (low confidence — FK neighbourhood: 1 of 1 related tables are QUALITY)
+- **Roles**: `business_data`
+- **Columns**: 19
+- **Primary key**: `RG1TEMPLATECOMPANYCODE`, `RG1TEMPLATEDIVISIONCODE`, `RG1TEMPLATECODE`, `SEQNO`, `EFFECTIVEFROMDATE`
+- **FK degree**: referenced by 2 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 142390
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `RG1TEMPLATECOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `RG1TEMPLATEDIVISIONCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `RG1TEMPLATECODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `SEQNO` | INTEGER | NOT NULL | PK | primary_key |  |
+| 4 | `EFFECTIVEFROMDATE` | DATE | NOT NULL | PK | primary_key |  |
+| 5 | `EFFECTIVETODATE` | DATE |  |  |  |  |
+| 6 | `LONGDESCRIPTION` | VARCHAR(200) | NOT NULL |  | description | Long human-readable label. |
+| 7 | `SHORTDESCRIPTION` | VARCHAR(80) |  |  | description | Short human-readable label. |
+| 8 | `SEARCHDESCRIPTION` | VARCHAR(120) |  |  | description | Normalised/uppercased label used for lookup and search screens. |
+| 9 | `TYPE` | INTEGER | NOT NULL |  |  |  |
+| 10 | `CUMULATIVE` | CHAR(3) |  |  |  |  |
+| 11 | `ADDDEDUCT` | INTEGER | NOT NULL |  |  |  |
+| 12 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 13 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 14 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 15 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 16 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 17 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 18 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `RG1TEMPLATE_SEQDEF` | `RG1TEMPLATECOMPANYCODE`, `RG1TEMPLATEDIVISIONCODE`, `RG1TEMPLATECODE` | [`RG1TEMPLATE`](../QUALITY/RG1TEMPLATE.md) | `COMPANYCODE`, `DIVISIONCODE`, `CODE` | RESTRICT | `RG1SEQDEF.RG1TEMPLATECOMPANYCODE = RG1TEMPLATE.COMPANYCODE AND RG1SEQDEF.RG1TEMPLATEDIVISIONCODE = RG1TEMPLATE.DIVISIONCODE AND RG1SEQDEF.RG1TEMPLATECODE = RG1TEMPLATE.CODE` |
+
+## Referenced by (child → this table) — 2
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `RG1SEQDEF_INVOICETYPE` | [`RG1INVOICETYPE`](../QUALITY/RG1INVOICETYPE.md) | `RG1SEQDEFRG1TMPCOMPANYCODE`, `RG1SEQDEFRG1TMPDIVISIONCODE`, `RG1SEQDEFRG1TEMPLATECODE`, `RG1SEQDEFSEQNO`, `RG1SEQDEFEFFECTIVEFROMDATE` | `RG1INVOICETYPE.RG1SEQDEFRG1TMPCOMPANYCODE = RG1SEQDEF.RG1TEMPLATECOMPANYCODE AND RG1INVOICETYPE.RG1SEQDEFRG1TMPDIVISIONCODE = RG1SEQDEF.RG1TEMPLATEDIVISIONCODE AND RG1INVOICETYPE.RG1SEQDEFRG1TEMPLATECODE = RG1SEQDEF.RG1TEMPLATECODE AND RG1INVOICETYPE.RG1SEQDEFSEQNO = RG1SEQDEF.SEQNO AND RG1INVOICETYPE.RG1SEQDEFEFFECTIVEFROMDATE = RG1SEQDEF.EFFECTIVEFROMDATE` |
+| `RG1SEQDEF_STOCKTRANSACTIONTEMPLATE` | [`RG1STOCKTRANSACTIONTEMPLATE`](../QUALITY/RG1STOCKTRANSACTIONTEMPLATE.md) | `RG1SEQDEFRG1TMPCOMPANYCODE`, `RG1SEQDEFRG1TMPDIVISIONCODE`, `RG1SEQDEFRG1TEMPLATECODE`, `RG1SEQDEFSEQNO`, `RG1SEQDEFEFFECTIVEFROMDATE` | `RG1STOCKTRANSACTIONTEMPLATE.RG1SEQDEFRG1TMPCOMPANYCODE = RG1SEQDEF.RG1TEMPLATECOMPANYCODE AND RG1STOCKTRANSACTIONTEMPLATE.RG1SEQDEFRG1TMPDIVISIONCODE = RG1SEQDEF.RG1TEMPLATEDIVISIONCODE AND RG1STOCKTRANSACTIONTEMPLATE.RG1SEQDEFRG1TEMPLATECODE = RG1SEQDEF.RG1TEMPLATECODE AND RG1STOCKTRANSACTIONTEMPLATE.RG1SEQDEFSEQNO = RG1SEQDEF.SEQNO AND RG1STOCKTRANSACTIONTEMPLATE.RG1SEQDEFEFFECTIVEFROMDATE = RG1SEQDEF.EFFECTIVEFROMDATE` |
+
+## Indexes
+
+- `RG1SEQDEFUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.RG1TEMPLATECOMPANYCODE,
+       t.RG1TEMPLATEDIVISIONCODE,
+       t.RG1TEMPLATECODE,
+       t.SEQNO,
+       t.EFFECTIVEFROMDATE,
+       t.EFFECTIVETODATE,
+       t.LONGDESCRIPTION,
+       t.SHORTDESCRIPTION,
+       t.SEARCHDESCRIPTION,
+       t.TYPE,
+       t.CUMULATIVE,
+       t.ADDDEDUCT
+FROM   DB2ADMIN.RG1SEQDEF t
+FETCH FIRST 100 ROWS ONLY;
+```

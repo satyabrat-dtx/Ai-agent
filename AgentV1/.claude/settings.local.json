@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/DB2ADMIN_DDL/**)",
+      "Bash(python kb/tools/kb.py find-column BUSINESSPARTNERNUMBERID)",
+      "Bash(python kb/tools/kb.py search \"business partner name\")",
+      "Bash(python kb/tools/kb.py describe ADDRESS)",
+      "Bash(python kb/tools/kb.py search \"BUSINESSPARTNER\")",
+      "Bash(python -c ' *)",
+      "Bash(python kb/tools/kb.py search \"tax template\")",
+      "Bash(python kb/tools/kb.py find-column TAXTEMPLATECODE)",
+      "Bash(python kb/tools/kb.py search \"TAXTEMPLATE\")"
+    ]
+  }
+}

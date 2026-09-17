@@ -1,0 +1,75 @@
+# DB2ADMIN.FINCHEQUELINE
+
+- **Module**: `FINANCE` (high confidence — table name starts with 'FIN')
+- **Roles**: `business_data`
+- **Columns**: 27
+- **Primary key**: `FINCHEQUECOMPANYCODE`, `FINCHEQUEGLCODE`, `FINCHEQUECODE`, `CHEQUENO`
+- **FK degree**: referenced by 0 constraint(s), references 3 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 174487
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FINCHEQUECOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FINCHEQUEGLCODE` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FINCHEQUECODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `CHEQUENO` | CHAR(20) | NOT NULL | PK | primary_key |  |
+| 4 | `FDBUSINESSUNITCODE` | CHAR(10) |  | FK | foreign_key |  |
+| 5 | `FDFINANCIALYEARCODE` | DECIMAL(4,0) |  | FK | foreign_key |  |
+| 6 | `FDDOCUMENTTEMPLATECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 7 | `FDSTATISTICALGROUPCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 8 | `FDCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 9 | `CHEQUEAMOUNT` | DECIMAL(18,5) | NOT NULL |  |  |  |
+| 10 | `CHEQUECLEARINGDATE` | DATE |  |  |  |  |
+| 11 | `CURRENTSTATUS` | CHAR(2) | NOT NULL |  |  |  |
+| 12 | `REAUGENGROUPTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 13 | `REASONUSERGENERICGROUPTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 14 | `REASONCODE` | CHAR(10) |  | FK | foreign_key |  |
+| 15 | `PRINTCOUNT` | INTEGER | NOT NULL |  |  |  |
+| 16 | `FIRSTPRINTDATE` | DATE |  |  |  |  |
+| 17 | `FIRSTPRINTUSER` | CHAR(50) |  |  |  |  |
+| 18 | `LASTPRINTDATE` | DATE |  |  |  |  |
+| 19 | `LASTPRINTUSER` | CHAR(50) |  |  |  |  |
+| 20 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 21 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 22 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 23 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 24 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 25 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 26 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 3
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `FINCHEQUE_LINE` | `FINCHEQUECOMPANYCODE`, `FINCHEQUEGLCODE`, `FINCHEQUECODE` | [`FINCHEQUE`](../FINANCE/FINCHEQUE.md) | `COMPANYCODE`, `GLCODE`, `CODE` | RESTRICT | `FINCHEQUELINE.FINCHEQUECOMPANYCODE = FINCHEQUE.COMPANYCODE AND FINCHEQUELINE.FINCHEQUEGLCODE = FINCHEQUE.GLCODE AND FINCHEQUELINE.FINCHEQUECODE = FINCHEQUE.CODE` |
+| `FINDOCUMENT_FD` | `FINCHEQUECOMPANYCODE`, `FDBUSINESSUNITCODE`, `FDFINANCIALYEARCODE`, `FDDOCUMENTTEMPLATECODE`, `FDSTATISTICALGROUPCODE`, `FDCODE` | [`FINDOCUMENT`](../FINANCE/FINDOCUMENT.md) | `COMPANYCODE`, `BUSINESSUNITCODE`, `FINANCIALYEARCODE`, `DOCUMENTTEMPLATECODE`, `STATISTICALGROUPCODE`, `CODE` | RESTRICT | `FINCHEQUELINE.FINCHEQUECOMPANYCODE = FINDOCUMENT.COMPANYCODE AND FINCHEQUELINE.FDBUSINESSUNITCODE = FINDOCUMENT.BUSINESSUNITCODE AND FINCHEQUELINE.FDFINANCIALYEARCODE = FINDOCUMENT.FINANCIALYEARCODE AND FINCHEQUELINE.FDDOCUMENTTEMPLATECODE = FINDOCUMENT.DOCUMENTTEMPLATECODE AND FINCHEQUELINE.FDSTATISTICALGROUPCODE = FINDOCUMENT.STATISTICALGROUPCODE AND FINCHEQUELINE.FDCODE = FINDOCUMENT.CODE` |
+| `USERGENERICGROUP_REASON` | `REAUGENGROUPTYPECOMPANYCODE`, `REASONUSERGENERICGROUPTYPECODE`, `REASONCODE` | [`USERGENERICGROUP`](../CORE_MASTER/USERGENERICGROUP.md) | `USERGENGROUPTYPECOMPANYCODE`, `USERGENERICGROUPTYPECODE`, `CODE` | RESTRICT | `FINCHEQUELINE.REAUGENGROUPTYPECOMPANYCODE = USERGENERICGROUP.USERGENGROUPTYPECOMPANYCODE AND FINCHEQUELINE.REASONUSERGENERICGROUPTYPECODE = USERGENERICGROUP.USERGENERICGROUPTYPECODE AND FINCHEQUELINE.REASONCODE = USERGENERICGROUP.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `FINCHEQUELINEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FINCHEQUECOMPANYCODE,
+       t.FINCHEQUEGLCODE,
+       t.FINCHEQUECODE,
+       t.CHEQUENO,
+       t.FDBUSINESSUNITCODE,
+       t.FDFINANCIALYEARCODE,
+       t.FDDOCUMENTTEMPLATECODE,
+       t.FDSTATISTICALGROUPCODE,
+       t.FDCODE,
+       t.CHEQUEAMOUNT,
+       t.CHEQUECLEARINGDATE,
+       t.CURRENTSTATUS
+FROM   DB2ADMIN.FINCHEQUELINE t
+FETCH FIRST 100 ROWS ONLY;
+```

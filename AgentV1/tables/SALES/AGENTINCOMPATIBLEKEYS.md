@@ -1,0 +1,59 @@
+# DB2ADMIN.AGENTINCOMPATIBLEKEYS
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 1 of 1 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 13
+- **Primary key**: `AGTCHSKEYSAGTCHSKEYSHDRCMYCOD`, `AGTCHSKEYSAGTCHSKEYSHDRORDTYPE`, `AGTCHSKEYSAGTCHSKEYSHDRTYPE`, `AGTCHSKEYSAGTCHSKEYSHDRCODE`, `AGENTCHOOSEKEYSSEQUENCE`, `INCOMPATIBLESEQUENCESEQUENCE`
+- **FK degree**: referenced by 0 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 215165
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `AGTCHSKEYSAGTCHSKEYSHDRCMYCOD` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `AGTCHSKEYSAGTCHSKEYSHDRORDTYPE` | CHAR(1) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `AGTCHSKEYSAGTCHSKEYSHDRTYPE` | CHAR(2) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `AGTCHSKEYSAGTCHSKEYSHDRCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `AGENTCHOOSEKEYSSEQUENCE` | DECIMAL(2,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `INCOMPATIBLESEQUENCESEQUENCE` | DECIMAL(2,0) | NOT NULL | PK | primary_key |  |
+| 6 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 7 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 8 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 9 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 10 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 11 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 12 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `AGENTCHOOSEKEYS_INCOMPATIBLEKEYS` | `AGTCHSKEYSAGTCHSKEYSHDRCMYCOD`, `AGTCHSKEYSAGTCHSKEYSHDRORDTYPE`, `AGTCHSKEYSAGTCHSKEYSHDRTYPE`, `AGTCHSKEYSAGTCHSKEYSHDRCODE`, `AGENTCHOOSEKEYSSEQUENCE` | [`AGENTCHOOSEKEYS`](../SALES/AGENTCHOOSEKEYS.md) | `AGTCHSKEYSHEADERCOMPANYCODE`, `AGENTCHOOSEKEYSHEADERORDERTYPE`, `AGENTCHOOSEKEYSHEADERTYPE`, `AGENTCHOOSEKEYSHEADERCODE`, `SEQUENCE` | RESTRICT | `AGENTINCOMPATIBLEKEYS.AGTCHSKEYSAGTCHSKEYSHDRCMYCOD = AGENTCHOOSEKEYS.AGTCHSKEYSHEADERCOMPANYCODE AND AGENTINCOMPATIBLEKEYS.AGTCHSKEYSAGTCHSKEYSHDRORDTYPE = AGENTCHOOSEKEYS.AGENTCHOOSEKEYSHEADERORDERTYPE AND AGENTINCOMPATIBLEKEYS.AGTCHSKEYSAGTCHSKEYSHDRTYPE = AGENTCHOOSEKEYS.AGENTCHOOSEKEYSHEADERTYPE AND AGENTINCOMPATIBLEKEYS.AGTCHSKEYSAGTCHSKEYSHDRCODE = AGENTCHOOSEKEYS.AGENTCHOOSEKEYSHEADERCODE AND AGENTINCOMPATIBLEKEYS.AGENTCHOOSEKEYSSEQUENCE = AGENTCHOOSEKEYS.SEQUENCE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `AGENTINCOMPATIBLEKEYSUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.AGTCHSKEYSAGTCHSKEYSHDRCMYCOD,
+       t.AGTCHSKEYSAGTCHSKEYSHDRORDTYPE,
+       t.AGTCHSKEYSAGTCHSKEYSHDRTYPE,
+       t.AGTCHSKEYSAGTCHSKEYSHDRCODE,
+       t.AGENTCHOOSEKEYSSEQUENCE,
+       t.INCOMPATIBLESEQUENCESEQUENCE,
+       t.CREATIONDATETIME,
+       t.CREATIONUSER,
+       t.LASTUPDATEDATETIME,
+       t.LASTUPDATEUSER,
+       t.CREATIONDATETIMEUTC,
+       t.LASTUPDATEDATETIMEUTC
+FROM   DB2ADMIN.AGENTINCOMPATIBLEKEYS t
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,57 @@
+# DB2ADMIN.MCADDRESS
+
+- **Module**: `OTHER` (none confidence — no known prefix matched)
+- **Roles**: `business_data`
+- **Columns**: 10
+- **Primary key**: `UNIQUEID`, `CODE`, `LOGINCOMPANYCODE`
+- **FK degree**: referenced by 0 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 112287
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `UNIQUEID` | BIGINT | NOT NULL | PK | primary_key |  |
+| 1 | `CODE` | CHAR(8) | NOT NULL | PK | primary_key | Business (natural) key of a master-data table, typically the last primary-key column. |
+| 2 | `LOGINCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `FIRSTCARRIERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 4 | `FIRSTCARRIERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 5 | `SECONDCARRIERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 6 | `SECONDCARRIERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 7 | `THIRDCARRIERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 8 | `THIRDCARRIERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 9 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_LOGINCOMPANY` | `LOGINCOMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `MCADDRESS.LOGINCOMPANYCODE = COMPANY.CODE` |
+| `CUSTOMERSUPPLIERDATA_FIRSTCARRIER` | `LOGINCOMPANYCODE`, `FIRSTCARRIERTYPE`, `FIRSTCARRIERCODE` | [`CUSTOMERSUPPLIERDATA`](../CORE_MASTER/CUSTOMERSUPPLIERDATA.md) | `COMPANYCODE`, `TYPE`, `CODE` | RESTRICT | `MCADDRESS.LOGINCOMPANYCODE = CUSTOMERSUPPLIERDATA.COMPANYCODE AND MCADDRESS.FIRSTCARRIERTYPE = CUSTOMERSUPPLIERDATA.TYPE AND MCADDRESS.FIRSTCARRIERCODE = CUSTOMERSUPPLIERDATA.CODE` |
+| `CUSTOMERSUPPLIERDATA_SECONDCARRIER` | `LOGINCOMPANYCODE`, `SECONDCARRIERTYPE`, `SECONDCARRIERCODE` | [`CUSTOMERSUPPLIERDATA`](../CORE_MASTER/CUSTOMERSUPPLIERDATA.md) | `COMPANYCODE`, `TYPE`, `CODE` | RESTRICT | `MCADDRESS.LOGINCOMPANYCODE = CUSTOMERSUPPLIERDATA.COMPANYCODE AND MCADDRESS.SECONDCARRIERTYPE = CUSTOMERSUPPLIERDATA.TYPE AND MCADDRESS.SECONDCARRIERCODE = CUSTOMERSUPPLIERDATA.CODE` |
+| `CUSTOMERSUPPLIERDATA_THIRDCARRIER` | `LOGINCOMPANYCODE`, `THIRDCARRIERTYPE`, `THIRDCARRIERCODE` | [`CUSTOMERSUPPLIERDATA`](../CORE_MASTER/CUSTOMERSUPPLIERDATA.md) | `COMPANYCODE`, `TYPE`, `CODE` | RESTRICT | `MCADDRESS.LOGINCOMPANYCODE = CUSTOMERSUPPLIERDATA.COMPANYCODE AND MCADDRESS.THIRDCARRIERTYPE = CUSTOMERSUPPLIERDATA.TYPE AND MCADDRESS.THIRDCARRIERCODE = CUSTOMERSUPPLIERDATA.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `MCADDRESSUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.UNIQUEID,
+       t.CODE,
+       t.LOGINCOMPANYCODE,
+       t.FIRSTCARRIERTYPE,
+       t.FIRSTCARRIERCODE,
+       t.SECONDCARRIERTYPE,
+       t.SECONDCARRIERCODE,
+       t.THIRDCARRIERTYPE,
+       t.THIRDCARRIERCODE,
+       t.ABSUNIQUEID
+FROM   DB2ADMIN.MCADDRESS t
+FETCH FIRST 100 ROWS ONLY;
+```

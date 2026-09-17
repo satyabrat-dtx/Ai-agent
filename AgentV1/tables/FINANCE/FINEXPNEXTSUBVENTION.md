@@ -1,0 +1,70 @@
+# DB2ADMIN.FINEXPNEXTSUBVENTION
+
+- **Module**: `FINANCE` (high confidence — table name starts with 'FIN')
+- **Roles**: `business_data`
+- **Columns**: 23
+- **Primary key**: `FINEXPNEXTFINEXPNCOMPANYCODE`, `FINEXPNEXTFINEXPNCODE`, `FINEXPNEXTEXTENSIONBANKREFNO`, `FINEXPNEXTEXTENSIONBANKDATE`, `FINEXPNEGOTIATIONEXTLINENO`, `INTERESTGLCODE`
+- **FK degree**: referenced by 0 constraint(s), references 2 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 201745
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FINEXPNEXTFINEXPNCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FINEXPNEXTFINEXPNCODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FINEXPNEXTEXTENSIONBANKREFNO` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `FINEXPNEXTEXTENSIONBANKDATE` | DATE | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `FINEXPNEGOTIATIONEXTLINENO` | INTEGER | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `INTERESTRATE` | DECIMAL(5,2) |  |  |  |  |
+| 6 | `INTERESTGLCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 7 | `INTERESTGLCODE` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 8 | `INTERESTAMOUNT` | DECIMAL(18,5) |  |  |  |  |
+| 9 | `POSTINGDATE` | DATE |  |  |  |  |
+| 10 | `FINDOCBUSINESSUNITCODE` | CHAR(10) |  |  |  |  |
+| 11 | `FINDOCFINANCIALYEARCODE` | DECIMAL(4,0) |  |  |  |  |
+| 12 | `FINDOCTEMPLATECODE` | CHAR(3) |  |  |  |  |
+| 13 | `FINDOCSTATISTICALGROUPCODE` | CHAR(6) |  |  |  |  |
+| 14 | `FINDOCCODE` | CHAR(15) |  |  |  |  |
+| 15 | `REMARK` | VARCHAR(255) |  |  |  |  |
+| 16 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 17 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 18 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 19 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 20 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 21 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 22 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 2
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `FINEXPNEGOTIATIONEXT_SUBVENTIONEXT` | `FINEXPNEXTFINEXPNCOMPANYCODE`, `FINEXPNEXTFINEXPNCODE`, `FINEXPNEXTEXTENSIONBANKREFNO`, `FINEXPNEXTEXTENSIONBANKDATE`, `FINEXPNEGOTIATIONEXTLINENO` | [`FINEXPNEGOTIATIONEXT`](../FINANCE/FINEXPNEGOTIATIONEXT.md) | `FINEXPNEGOTIATIONCOMPANYCODE`, `FINEXPNEGOTIATIONCODE`, `EXTENSIONBANKREFNO`, `EXTENSIONBANKDATE`, `LINENO` | RESTRICT | `FINEXPNEXTSUBVENTION.FINEXPNEXTFINEXPNCOMPANYCODE = FINEXPNEGOTIATIONEXT.FINEXPNEGOTIATIONCOMPANYCODE AND FINEXPNEXTSUBVENTION.FINEXPNEXTFINEXPNCODE = FINEXPNEGOTIATIONEXT.FINEXPNEGOTIATIONCODE AND FINEXPNEXTSUBVENTION.FINEXPNEXTEXTENSIONBANKREFNO = FINEXPNEGOTIATIONEXT.EXTENSIONBANKREFNO AND FINEXPNEXTSUBVENTION.FINEXPNEXTEXTENSIONBANKDATE = FINEXPNEGOTIATIONEXT.EXTENSIONBANKDATE AND FINEXPNEXTSUBVENTION.FINEXPNEGOTIATIONEXTLINENO = FINEXPNEGOTIATIONEXT.LINENO` |
+| `GLMASTER_INTERESTGL` | `INTERESTGLCOMPANYCODE`, `INTERESTGLCODE` | [`GLMASTER`](../CORE_MASTER/GLMASTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `FINEXPNEXTSUBVENTION.INTERESTGLCOMPANYCODE = GLMASTER.COMPANYCODE AND FINEXPNEXTSUBVENTION.INTERESTGLCODE = GLMASTER.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `FINEXPNEXTSUBVENTIONUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FINEXPNEXTFINEXPNCOMPANYCODE,
+       t.FINEXPNEXTFINEXPNCODE,
+       t.FINEXPNEXTEXTENSIONBANKREFNO,
+       t.FINEXPNEXTEXTENSIONBANKDATE,
+       t.FINEXPNEGOTIATIONEXTLINENO,
+       t.INTERESTRATE,
+       t.INTERESTGLCOMPANYCODE,
+       t.INTERESTGLCODE,
+       t.INTERESTAMOUNT,
+       t.POSTINGDATE,
+       t.FINDOCBUSINESSUNITCODE,
+       t.FINDOCFINANCIALYEARCODE
+FROM   DB2ADMIN.FINEXPNEXTSUBVENTION t
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,167 @@
+# DB2ADMIN.MILSALORDLINEIMP
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 2 of 2 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 118
+- **Primary key**: `MILSALORDIMPCC`, `MILSALORDIMPIC`, `ORDERLINE`, `ORDERSUBLINE`, `COMPONENTORDERLINE`
+- **FK degree**: referenced by 2 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 33862
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `MILSALORDIMPCC` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `MILSALORDIMPIC` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `IMPORTOPERATION` | INTEGER | NOT NULL |  |  |  |
+| 3 | `TERMSOFLOGCODE` | CHAR(2) |  |  |  |  |
+| 4 | `LOGREASONCODE` | CHAR(2) |  |  |  |  |
+| 5 | `ORDERTYPE` | CHAR(1) | NOT NULL |  |  |  |
+| 6 | `DOCUMENTTYPETYPE` | CHAR(3) | NOT NULL |  |  |  |
+| 7 | `SALESORDERIMPORTCOUNTERCODE` | CHAR(8) |  |  |  |  |
+| 8 | `SALESORDERIMPORTCODE` | CHAR(15) |  |  |  |  |
+| 9 | `ORDERLINE` | DECIMAL(5,0) | NOT NULL | PK | primary_key |  |
+| 10 | `ORDERSUBLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 11 | `COMPONENTORDERLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 12 | `ASRSALESORDERCOUNTERCODE` | CHAR(8) |  |  |  |  |
+| 13 | `ASSORTMENTSALESORDERCODE` | CHAR(15) |  |  |  |  |
+| 14 | `ASSORTMENTNUMBERID` | DECIMAL(11,0) |  |  |  |  |
+| 15 | `LINETEMPLATECODE` | CHAR(3) | NOT NULL |  |  |  |
+| 16 | `EXTERNALREFERENCE` | VARCHAR(100) |  |  |  |  |
+| 17 | `EXTERNALREFERENCEDATE` | DATE |  |  |  |  |
+| 18 | `INTERNALREFERENCE` | VARCHAR(100) |  |  |  |  |
+| 19 | `INTERNALREFERENCEDATE` | DATE |  |  |  |  |
+| 20 | `ITEMTYPEAFICODE` | CHAR(3) |  |  |  |  |
+| 21 | `ITEMNATURE` | CHAR(1) | NOT NULL |  |  |  |
+| 22 | `SUBCODE01` | CHAR(20) |  |  | generic_classification_code |  |
+| 23 | `SUBCODE02` | CHAR(10) |  |  | generic_classification_code |  |
+| 24 | `SUBCODE03` | CHAR(10) |  |  | generic_classification_code |  |
+| 25 | `SUBCODE04` | CHAR(10) |  |  | generic_classification_code |  |
+| 26 | `SUBCODE05` | CHAR(10) |  |  | generic_classification_code |  |
+| 27 | `SUBCODE06` | CHAR(10) |  |  | generic_classification_code |  |
+| 28 | `SUBCODE07` | CHAR(10) |  |  | generic_classification_code |  |
+| 29 | `SUBCODE08` | CHAR(10) |  |  | generic_classification_code |  |
+| 30 | `SUBCODE09` | CHAR(10) |  |  | generic_classification_code |  |
+| 31 | `SUBCODE10` | CHAR(10) |  |  | generic_classification_code |  |
+| 32 | `FULLITEMIDENTIFIER` | DECIMAL(11,0) |  |  |  |  |
+| 33 | `SELLINGITEMIDENTIFIER` | DECIMAL(11,0) |  |  |  |  |
+| 34 | `EXTERNALITEM` | CHAR(30) |  |  |  |  |
+| 35 | `ITEMDESCRIPTION` | VARCHAR(100) |  |  |  |  |
+| 36 | `OBSOLETEDISCARDEDITEM` | INTEGER | NOT NULL |  |  |  |
+| 37 | `USERPRIMARYUOMCODE` | CHAR(3) |  |  |  |  |
+| 38 | `USERPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 39 | `BASEPRIMARYUOMCODE` | CHAR(3) |  |  |  |  |
+| 40 | `BASEPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 41 | `USERSECONDARYUOMCODE` | CHAR(3) |  |  |  |  |
+| 42 | `USERSECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 43 | `BASESECONDARYUOMCODE` | CHAR(3) |  |  |  |  |
+| 44 | `BASESECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 45 | `USERPACKAGINGUOMCODE` | CHAR(3) |  |  |  |  |
+| 46 | `USERPACKAGINGQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 47 | `CANCELLEDUSERPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 48 | `CANCELLEDBASEPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 49 | `CANCELLEDUSERSECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 50 | `CANCELLEDBASESECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 51 | `CANCELLEDUSERPACKAGINGQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 52 | `ORIGINALUSERPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 53 | `ORIGINALUSERSECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 54 | `ORIGINALUSERPACKAGINGQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 55 | `QUALITYCODE` | DECIMAL(2,0) |  |  |  |  |
+| 56 | `LINESTATUS` | CHAR(2) | NOT NULL |  |  |  |
+| 57 | `PROGRESSSTATUS` | CHAR(2) | NOT NULL |  |  |  |
+| 58 | `STATISTICALGROUPCODE` | CHAR(6) |  |  |  |  |
+| 59 | `COLLECTIONGROUPCODE` | CHAR(6) |  |  |  |  |
+| 60 | `PROJECTCODE` | CHAR(20) |  |  |  |  |
+| 61 | `LINEGROUP` | CHAR(3) |  |  |  |  |
+| 62 | `WAREHOUSECODE` | CHAR(8) |  |  |  |  |
+| 63 | `UPDATEWAREHOUSEAVAILABILITY` | SMALLINT | NOT NULL |  |  |  |
+| 64 | `COST` | DECIMAL(18,5) |  |  |  |  |
+| 65 | `COSTCENTERCODE` | CHAR(20) |  |  |  |  |
+| 66 | `RELEASETYPE` | CHAR(2) |  |  |  |  |
+| 67 | `RELEASEPRIORITY` | INTEGER | NOT NULL |  |  |  |
+| 68 | `LEFTOVERLOSS` | SMALLINT | NOT NULL |  |  |  |
+| 69 | `JOINEDALBSALORDIMPIMPORTCODE` | CHAR(15) |  |  |  |  |
+| 70 | `JOINEDCOMPONENTORDERLINE` | DECIMAL(3,0) |  |  |  |  |
+| 71 | `JOINEDORDERLINE` | DECIMAL(5,0) |  |  |  |  |
+| 72 | `JOINEDORDERSUBLINE` | DECIMAL(3,0) |  |  |  |  |
+| 73 | `LINESOURCE` | CHAR(2) | NOT NULL |  |  |  |
+| 74 | `PREVIOUSLINETEMPLATECODE` | CHAR(3) |  |  |  |  |
+| 75 | `PREVIOUSCOUNTERCODE` | CHAR(8) |  |  |  |  |
+| 76 | `PREVIOUSDOCUMENTTYPEORDERTYPE` | CHAR(1) |  |  |  |  |
+| 77 | `PREVIOUSDOCUMENTTYPETYPE` | CHAR(3) |  |  |  |  |
+| 78 | `PREVIOUSCODE` | CHAR(15) |  |  |  |  |
+| 79 | `PREVIOUSORDERLINE` | DECIMAL(5,0) |  |  |  |  |
+| 80 | `PREVIOUSORDERSUBLINE` | DECIMAL(3,0) |  |  |  |  |
+| 81 | `PREVIOUSCOMPONENTORDERLINE` | DECIMAL(3,0) |  |  |  |  |
+| 82 | `PREVIOUSDELIVERYLINE` | DECIMAL(3,0) |  |  |  |  |
+| 83 | `CURRENCYCODE` | CHAR(4) |  |  |  |  |
+| 84 | `ENTRYEXCHANGERATE` | DECIMAL(28,15) |  |  |  |  |
+| 85 | `CONDITIONRETRIEVINGDATE` | DATE | NOT NULL |  |  |  |
+| 86 | `PAYMENTMETHODCODE` | CHAR(3) |  |  |  |  |
+| 87 | `PRICELISTCODE` | CHAR(8) |  |  |  |  |
+| 88 | `DISCOUNTCATEGORYCODE` | CHAR(3) |  |  |  |  |
+| 89 | `PRICEUNITOFMEASURECODE` | CHAR(3) |  |  |  |  |
+| 90 | `PRICE` | DECIMAL(18,5) |  |  |  |  |
+| 91 | `PRICETYPE` | CHAR(2) |  |  |  |  |
+| 92 | `ONLYBYAMOUNT` | SMALLINT | NOT NULL |  |  |  |
+| 93 | `PRICESIGN` | CHAR(2) | NOT NULL |  |  |  |
+| 94 | `PRICEINCLUDINGTAX` | SMALLINT | NOT NULL |  |  |  |
+| 95 | `PRICERETRIEVED` | DECIMAL(18,5) |  |  |  |  |
+| 96 | `ORIGINALAMOUNT` | DECIMAL(18,5) |  |  |  |  |
+| 97 | `NETVALUE` | DECIMAL(18,5) |  |  |  |  |
+| 98 | `UPDATEVALUE` | SMALLINT | NOT NULL |  |  |  |
+| 99 | `TAXCODE` | CHAR(3) |  |  |  |  |
+| 100 | `FREEGIFTTAXDEBIT` | CHAR(1) |  |  |  |  |
+| 101 | `TAXABLEINCOMEVALUE` | DECIMAL(18,5) |  |  |  |  |
+| 102 | `NETVALUEINCLUDINGTAX` | DECIMAL(18,5) |  |  |  |  |
+| 103 | `AGENT1CODE` | CHAR(3) |  |  |  |  |
+| 104 | `COMMISSIONLIQUIDATIONTYPE1` | INTEGER | NOT NULL |  |  |  |
+| 105 | `AGENT2CODE` | CHAR(3) |  |  |  |  |
+| 106 | `COMMISSIONLIQUIDATIONTYPE2` | INTEGER | NOT NULL |  |  |  |
+| 107 | `AGENT3CODE` | CHAR(3) |  |  |  |  |
+| 108 | `COMMISSIONLIQUIDATIONTYPE3` | INTEGER | NOT NULL |  |  |  |
+| 109 | `AGENT4CODE` | CHAR(3) |  |  |  |  |
+| 110 | `COMMISSIONLIQUIDATIONTYPE4` | INTEGER | NOT NULL |  |  |  |
+| 111 | `AGENT5CODE` | CHAR(3) |  |  |  |  |
+| 112 | `COMMISSIONLIQUIDATIONTYPE5` | INTEGER | NOT NULL |  |  |  |
+| 113 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 114 | `CREATIONUSER` | CHAR(25) |  |  | audit | User who created the row (audit). |
+| 115 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 116 | `LASTUPDATEUSER` | CHAR(25) |  |  | audit | User who last modified the row (audit). |
+| 117 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `MILSALORDIMP_LINE` | `MILSALORDIMPCC`, `MILSALORDIMPIC` | [`MILSALORDIMP`](../SALES/MILSALORDIMP.md) | `CC`, `IC` | RESTRICT | `MILSALORDLINEIMP.MILSALORDIMPCC = MILSALORDIMP.CC AND MILSALORDLINEIMP.MILSALORDIMPIC = MILSALORDIMP.IC` |
+
+## Referenced by (child → this table) — 2
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `MILSALORDLINEIMP_LINEIMPORT` | [`MILSALORDIMPERR`](../SALES/MILSALORDIMPERR.md) | `HEADERIMPORTCC`, `HEADERIMPORTIC`, `LINEIMPORTORDERLINE`, `LINEIMPORTORDERSUBLINE`, `LINEIMPORTCOMPONENTORDERLINE` | `MILSALORDIMPERR.HEADERIMPORTCC = MILSALORDLINEIMP.MILSALORDIMPCC AND MILSALORDIMPERR.HEADERIMPORTIC = MILSALORDLINEIMP.MILSALORDIMPIC AND MILSALORDIMPERR.LINEIMPORTORDERLINE = MILSALORDLINEIMP.ORDERLINE AND MILSALORDIMPERR.LINEIMPORTORDERSUBLINE = MILSALORDLINEIMP.ORDERSUBLINE AND MILSALORDIMPERR.LINEIMPORTCOMPONENTORDERLINE = MILSALORDLINEIMP.COMPONENTORDERLINE` |
+| `MILSALORDLINEIMP_DELIVERY` | [`MILSALORDDELIVERYIMP`](../CORE_MASTER/MILSALORDDELIVERYIMP.md) | `MILSALORDLINEIMPMILSALORDIMPCC`, `MILSALORDLINEIMPMILSALORDIMPIC`, `MILSALORDLINEIMPORDERLINE`, `MILSALORDLINEIMPORDERSUBLINE`, `MILSALORDLINEIMPCMPORDERLINE` | `MILSALORDDELIVERYIMP.MILSALORDLINEIMPMILSALORDIMPCC = MILSALORDLINEIMP.MILSALORDIMPCC AND MILSALORDDELIVERYIMP.MILSALORDLINEIMPMILSALORDIMPIC = MILSALORDLINEIMP.MILSALORDIMPIC AND MILSALORDDELIVERYIMP.MILSALORDLINEIMPORDERLINE = MILSALORDLINEIMP.ORDERLINE AND MILSALORDDELIVERYIMP.MILSALORDLINEIMPORDERSUBLINE = MILSALORDLINEIMP.ORDERSUBLINE AND MILSALORDDELIVERYIMP.MILSALORDLINEIMPCMPORDERLINE = MILSALORDLINEIMP.COMPONENTORDERLINE` |
+
+## Indexes
+
+- `MILSALORDLINEIMPUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.MILSALORDIMPCC,
+       t.MILSALORDIMPIC,
+       t.IMPORTOPERATION,
+       t.TERMSOFLOGCODE,
+       t.LOGREASONCODE,
+       t.ORDERTYPE,
+       t.DOCUMENTTYPETYPE,
+       t.SALESORDERIMPORTCOUNTERCODE,
+       t.SALESORDERIMPORTCODE,
+       t.ORDERLINE,
+       t.ORDERSUBLINE,
+       t.COMPONENTORDERLINE
+FROM   DB2ADMIN.MILSALORDLINEIMP t
+FETCH FIRST 100 ROWS ONLY;
+```

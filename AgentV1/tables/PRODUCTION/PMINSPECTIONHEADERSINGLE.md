@@ -1,0 +1,141 @@
+# DB2ADMIN.PMINSPECTIONHEADERSINGLE
+
+- **Module**: `PRODUCTION` (low confidence — FK neighbourhood: 1 of 1 related tables are PRODUCTION)
+- **Roles**: `business_data`
+- **Columns**: 86
+- **Primary key**: `COMPANYCODE`, `LINENO`
+- **FK degree**: referenced by 0 constraint(s), references 9 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 108562
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `INSPECTIONDATE` | DATE | NOT NULL |  |  |  |
+| 2 | `INSPECTIONITEMCOUNTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 3 | `INSPECTIONITEMCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 4 | `LINENO` | BIGINT | NOT NULL | PK | primary_key |  |
+| 5 | `SHORTDESCRIPTION` | VARCHAR(80) |  |  | description | Short human-readable label. |
+| 6 | `PLANTCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 7 | `PLANTCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 8 | `DEPARTMENTCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 9 | `HALLUSERGENGRPTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 10 | `HALLUSERGENERICGROUPTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 11 | `HALLCODE` | CHAR(10) |  | FK | foreign_key |  |
+| 12 | `WORKCENTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 13 | `PMBOMCOUNTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 14 | `PMBOMCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 15 | `FIELD1` | CHAR(10) |  |  |  |  |
+| 16 | `FIELD2` | CHAR(10) |  |  |  |  |
+| 17 | `FIELD3` | CHAR(10) |  |  |  |  |
+| 18 | `FIELD4` | CHAR(10) |  |  |  |  |
+| 19 | `FIELD5` | CHAR(10) |  |  |  |  |
+| 20 | `FIELD6` | CHAR(10) |  |  |  |  |
+| 21 | `FIELD7` | CHAR(10) |  |  |  |  |
+| 22 | `FIELD8` | CHAR(10) |  |  |  |  |
+| 23 | `FIELD9` | CHAR(10) |  |  |  |  |
+| 24 | `FIELD10` | CHAR(10) |  |  |  |  |
+| 25 | `FIELD11` | CHAR(10) |  |  |  |  |
+| 26 | `FIELD12` | CHAR(10) |  |  |  |  |
+| 27 | `FIELD13` | CHAR(10) |  |  |  |  |
+| 28 | `FIELD14` | CHAR(10) |  |  |  |  |
+| 29 | `FIELD15` | CHAR(10) |  |  |  |  |
+| 30 | `FIELD16` | CHAR(10) |  |  |  |  |
+| 31 | `FIELD17` | CHAR(10) |  |  |  |  |
+| 32 | `FIELD18` | CHAR(10) |  |  |  |  |
+| 33 | `FIELD19` | CHAR(10) |  |  |  |  |
+| 34 | `FIELD20` | CHAR(10) |  |  |  |  |
+| 35 | `FIELD21` | CHAR(10) |  |  |  |  |
+| 36 | `FIELD22` | CHAR(10) |  |  |  |  |
+| 37 | `FIELD23` | CHAR(10) |  |  |  |  |
+| 38 | `FIELD24` | CHAR(10) |  |  |  |  |
+| 39 | `FIELD25` | CHAR(10) |  |  |  |  |
+| 40 | `FIELD26` | CHAR(10) |  |  |  |  |
+| 41 | `FIELD27` | CHAR(10) |  |  |  |  |
+| 42 | `FIELD28` | CHAR(10) |  |  |  |  |
+| 43 | `FIELD29` | CHAR(10) |  |  |  |  |
+| 44 | `FIELD30` | CHAR(10) |  |  |  |  |
+| 45 | `FIELD31` | CHAR(10) |  |  |  |  |
+| 46 | `FIELD32` | CHAR(10) |  |  |  |  |
+| 47 | `FIELD33` | CHAR(10) |  |  |  |  |
+| 48 | `FIELD34` | CHAR(10) |  |  |  |  |
+| 49 | `FIELD35` | CHAR(10) |  |  |  |  |
+| 50 | `FIELD36` | CHAR(10) |  |  |  |  |
+| 51 | `FIELD37` | CHAR(10) |  |  |  |  |
+| 52 | `FIELD38` | CHAR(10) |  |  |  |  |
+| 53 | `FIELD39` | CHAR(10) |  |  |  |  |
+| 54 | `FIELD40` | CHAR(10) |  |  |  |  |
+| 55 | `FIELD41` | CHAR(10) |  |  |  |  |
+| 56 | `FIELD42` | CHAR(10) |  |  |  |  |
+| 57 | `FIELD43` | CHAR(10) |  |  |  |  |
+| 58 | `FIELD44` | CHAR(10) |  |  |  |  |
+| 59 | `FIELD45` | CHAR(10) |  |  |  |  |
+| 60 | `FIELD46` | CHAR(10) |  |  |  |  |
+| 61 | `FIELD47` | CHAR(10) |  |  |  |  |
+| 62 | `FIELD48` | CHAR(10) |  |  |  |  |
+| 63 | `FIELD49` | CHAR(10) |  |  |  |  |
+| 64 | `FIELD50` | CHAR(10) |  |  |  |  |
+| 65 | `FIELD51` | CHAR(10) |  |  |  |  |
+| 66 | `FIELD52` | CHAR(10) |  |  |  |  |
+| 67 | `FIELD53` | CHAR(10) |  |  |  |  |
+| 68 | `FIELD54` | CHAR(10) |  |  |  |  |
+| 69 | `FIELD55` | CHAR(10) |  |  |  |  |
+| 70 | `FIELD56` | CHAR(10) |  |  |  |  |
+| 71 | `FIELD57` | CHAR(10) |  |  |  |  |
+| 72 | `FIELD58` | CHAR(10) |  |  |  |  |
+| 73 | `FIELD59` | CHAR(10) |  |  |  |  |
+| 74 | `FIELD60` | CHAR(10) |  |  |  |  |
+| 75 | `INSPECTIONTIME` | TIMESTAMP |  |  |  |  |
+| 76 | `STATUS` | INTEGER | NOT NULL |  |  |  |
+| 77 | `INSPECTIONBY` | CHAR(100) |  |  |  |  |
+| 78 | `REMARKS` | CHAR(100) |  |  |  |  |
+| 79 | `EMPLOYEECODE` | CHAR(10) |  |  |  |  |
+| 80 | `SHIFT` | CHAR(1) |  |  |  |  |
+| 81 | `UGCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 82 | `UGCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 83 | `PROCESSCODUSERGENGRPTYPECMYCOD` | CHAR(3) |  | FK | foreign_key |  |
+| 84 | `PROCESSCODECODE` | CHAR(10) |  | FK | foreign_key |  |
+| 85 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 9
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.COMPANYCODE = COMPANY.CODE` |
+| `DEPARTMENT_DEPARTMENT` | `COMPANYCODE`, `DEPARTMENTCODE` | [`DEPARTMENT`](../WAREHOUSE/DEPARTMENT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.COMPANYCODE = DEPARTMENT.COMPANYCODE AND PMINSPECTIONHEADERSINGLE.DEPARTMENTCODE = DEPARTMENT.CODE` |
+| `PLANT_PLANT` | `PLANTCOMPANYCODE`, `PLANTCODE` | [`PLANT`](../CORE_MASTER/PLANT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.PLANTCOMPANYCODE = PLANT.COMPANYCODE AND PMINSPECTIONHEADERSINGLE.PLANTCODE = PLANT.CODE` |
+| `PMBOM_PMBOM` | `COMPANYCODE`, `PMBOMCOUNTERCODE`, `PMBOMCODE` | [`PMBOM`](../CORE_MASTER/PMBOM.md) | `COMPANYCODE`, `COUNTERCODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.COMPANYCODE = PMBOM.COMPANYCODE AND PMINSPECTIONHEADERSINGLE.PMBOMCOUNTERCODE = PMBOM.COUNTERCODE AND PMINSPECTIONHEADERSINGLE.PMBOMCODE = PMBOM.CODE` |
+| `PMINSPECTIONITEMSINGLE_INSPECTIONITEM` | `COMPANYCODE`, `INSPECTIONITEMCOUNTERCODE`, `INSPECTIONITEMCODE` | [`PMINSPECTIONITEMSINGLE`](../PRODUCTION/PMINSPECTIONITEMSINGLE.md) | `COMPANYCODE`, `COUNTERCODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.COMPANYCODE = PMINSPECTIONITEMSINGLE.COMPANYCODE AND PMINSPECTIONHEADERSINGLE.INSPECTIONITEMCOUNTERCODE = PMINSPECTIONITEMSINGLE.COUNTERCODE AND PMINSPECTIONHEADERSINGLE.INSPECTIONITEMCODE = PMINSPECTIONITEMSINGLE.CODE` |
+| `USERGENERICGROUPTYPE_UG` | `UGCOMPANYCODE`, `UGCODE` | [`USERGENERICGROUPTYPE`](../CORE_MASTER/USERGENERICGROUPTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.UGCOMPANYCODE = USERGENERICGROUPTYPE.COMPANYCODE AND PMINSPECTIONHEADERSINGLE.UGCODE = USERGENERICGROUPTYPE.CODE` |
+| `USERGENERICGROUP_HALL` | `HALLUSERGENGRPTYPECOMPANYCODE`, `HALLUSERGENERICGROUPTYPECODE`, `HALLCODE` | [`USERGENERICGROUP`](../CORE_MASTER/USERGENERICGROUP.md) | `USERGENGROUPTYPECOMPANYCODE`, `USERGENERICGROUPTYPECODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.HALLUSERGENGRPTYPECOMPANYCODE = USERGENERICGROUP.USERGENGROUPTYPECOMPANYCODE AND PMINSPECTIONHEADERSINGLE.HALLUSERGENERICGROUPTYPECODE = USERGENERICGROUP.USERGENERICGROUPTYPECODE AND PMINSPECTIONHEADERSINGLE.HALLCODE = USERGENERICGROUP.CODE` |
+| `USERGENERICGROUP_PROCESSCODE` | `PROCESSCODUSERGENGRPTYPECMYCOD`, `UGCODE`, `PROCESSCODECODE` | [`USERGENERICGROUP`](../CORE_MASTER/USERGENERICGROUP.md) | `USERGENGROUPTYPECOMPANYCODE`, `USERGENERICGROUPTYPECODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.PROCESSCODUSERGENGRPTYPECMYCOD = USERGENERICGROUP.USERGENGROUPTYPECOMPANYCODE AND PMINSPECTIONHEADERSINGLE.UGCODE = USERGENERICGROUP.USERGENERICGROUPTYPECODE AND PMINSPECTIONHEADERSINGLE.PROCESSCODECODE = USERGENERICGROUP.CODE` |
+| `WORKCENTER_WORKCENTER` | `COMPANYCODE`, `WORKCENTERCODE` | [`WORKCENTER`](../PRODUCTION/WORKCENTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PMINSPECTIONHEADERSINGLE.COMPANYCODE = WORKCENTER.COMPANYCODE AND PMINSPECTIONHEADERSINGLE.WORKCENTERCODE = WORKCENTER.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `PMINSPECTIONHEADERSINGLEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.INSPECTIONDATE,
+       t.INSPECTIONITEMCOUNTERCODE,
+       t.INSPECTIONITEMCODE,
+       t.LINENO,
+       t.SHORTDESCRIPTION,
+       t.PLANTCOMPANYCODE,
+       t.PLANTCODE,
+       t.DEPARTMENTCODE,
+       t.HALLUSERGENGRPTYPECOMPANYCODE,
+       t.HALLUSERGENERICGROUPTYPECODE,
+       t.HALLCODE
+FROM   DB2ADMIN.PMINSPECTIONHEADERSINGLE t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

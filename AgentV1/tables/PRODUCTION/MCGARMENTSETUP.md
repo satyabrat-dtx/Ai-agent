@@ -1,0 +1,50 @@
+# DB2ADMIN.MCGARMENTSETUP
+
+- **Module**: `PRODUCTION` (low confidence — FK neighbourhood: 1 of 1 related tables are PRODUCTION)
+- **Roles**: `business_data`
+- **Columns**: 7
+- **Primary key**: `UNIQUEID`, `LOGINCOMPANYCODE`
+- **FK degree**: referenced by 0 constraint(s), references 3 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 105760
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `UNIQUEID` | BIGINT | NOT NULL | PK | primary_key |  |
+| 1 | `LOGINCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `PROGRESSTEMPLATECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 3 | `RECPROGRESSTEMPLATECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 4 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 5 | `PROGRESSTEMPLATECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 6 | `RECPROGRESSTEMPLATECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+
+## References (this table → parent) — 3
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_LOGINCOMPANY` | `LOGINCOMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `MCGARMENTSETUP.LOGINCOMPANYCODE = COMPANY.CODE` |
+| `PRODUCTIONPROGRESSTEMPLATE_PROGRESSTEMPLATE` | `PROGRESSTEMPLATECOMPANYCODE`, `PROGRESSTEMPLATECODE` | [`PRODUCTIONPROGRESSTEMPLATE`](../PRODUCTION/PRODUCTIONPROGRESSTEMPLATE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `MCGARMENTSETUP.PROGRESSTEMPLATECOMPANYCODE = PRODUCTIONPROGRESSTEMPLATE.COMPANYCODE AND MCGARMENTSETUP.PROGRESSTEMPLATECODE = PRODUCTIONPROGRESSTEMPLATE.CODE` |
+| `PRODUCTIONPROGRESSTEMPLATE_RECPROGRESSTEMPLATE` | `RECPROGRESSTEMPLATECOMPANYCODE`, `RECPROGRESSTEMPLATECODE` | [`PRODUCTIONPROGRESSTEMPLATE`](../PRODUCTION/PRODUCTIONPROGRESSTEMPLATE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `MCGARMENTSETUP.RECPROGRESSTEMPLATECOMPANYCODE = PRODUCTIONPROGRESSTEMPLATE.COMPANYCODE AND MCGARMENTSETUP.RECPROGRESSTEMPLATECODE = PRODUCTIONPROGRESSTEMPLATE.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `MCGARMENTSETUPUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.UNIQUEID,
+       t.LOGINCOMPANYCODE,
+       t.PROGRESSTEMPLATECODE,
+       t.RECPROGRESSTEMPLATECODE,
+       t.ABSUNIQUEID,
+       t.PROGRESSTEMPLATECOMPANYCODE,
+       t.RECPROGRESSTEMPLATECOMPANYCODE
+FROM   DB2ADMIN.MCGARMENTSETUP t
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,61 @@
+# DB2ADMIN.WRKPURCHASEDELIVERY
+
+- **Module**: `WORK_DOCUMENTS` (medium confidence — table name starts with 'WRK')
+- **Roles**: `business_data`
+- **Columns**: 21
+- **Primary key**: `CREATIONTIMESTAMP`, `LINE`, `DLVPURORDLINEPURORDCMYCODE`, `DLVPURORDLINEPURORDCNTCODE`, `DLVPURORDLINEPURORDERCODE`, `DLVPURCHASEORDERLINEORDERLINE`, `DLVPURORDERLINEORDERSUBLINE`, `DELIVERYDELIVERYLINE`
+- **FK degree**: referenced by 0 constraint(s), references 0 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 35131
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `CREATIONTIMESTAMP` | BIGINT | NOT NULL | PK | primary_key audit |  |
+| 1 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 2 | `LINE` | INTEGER | NOT NULL | PK | primary_key |  |
+| 3 | `DLVPURORDLINEPURORDCMYCODE` | CHAR(3) | NOT NULL | PK | primary_key |  |
+| 4 | `DLVPURORDLINEPURORDCNTCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 5 | `DLVPURORDLINEPURORDERCODE` | CHAR(15) | NOT NULL | PK | primary_key |  |
+| 6 | `DLVPURCHASEORDERLINEORDERLINE` | DECIMAL(7,0) | NOT NULL | PK | primary_key |  |
+| 7 | `DLVPURORDERLINEORDERSUBLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 8 | `DELIVERYDELIVERYLINE` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 9 | `REMAINEDUSERPRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 10 | `REMAINEDUSERSECONDARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 11 | `REMAINEDUSERPACKAGINGQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 12 | `PRIMARYQUANTITYDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 13 | `SECONDARYQTYDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 14 | `PACKAGINGQTYDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 15 | `DELIVERYPOINTUNIQUEID` | BIGINT | NOT NULL |  |  |  |
+| 16 | `DELIVERYPOINTCODE` | CHAR(8) |  |  |  |  |
+| 17 | `TERMSOFDLVLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 18 | `TERMSOFSHPLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 19 | `QUALITYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 20 | `ONLYONESHIPPINGPARAMETERS` | SMALLINT | NOT NULL |  |  |  |
+
+## References (this table → parent) — 0
+
+_None._
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Starter query
+
+```sql
+SELECT t.CREATIONTIMESTAMP,
+       t.CREATIONUSER,
+       t.LINE,
+       t.DLVPURORDLINEPURORDCMYCODE,
+       t.DLVPURORDLINEPURORDCNTCODE,
+       t.DLVPURORDLINEPURORDERCODE,
+       t.DLVPURCHASEORDERLINEORDERLINE,
+       t.DLVPURORDERLINEORDERSUBLINE,
+       t.DELIVERYDELIVERYLINE,
+       t.REMAINEDUSERPRIMARYQUANTITY,
+       t.REMAINEDUSERSECONDARYQUANTITY,
+       t.REMAINEDUSERPACKAGINGQUANTITY
+FROM   DB2ADMIN.WRKPURCHASEDELIVERY t
+FETCH FIRST 100 ROWS ONLY;
+```

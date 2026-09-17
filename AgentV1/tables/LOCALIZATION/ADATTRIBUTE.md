@@ -1,0 +1,62 @@
+# DB2ADMIN.ADATTRIBUTE
+
+- **Module**: `LOCALIZATION` (low confidence — FK neighbourhood: 1 of 1 related tables are LOCALIZATION)
+- **Roles**: `business_data`
+- **Columns**: 11
+- **Primary key**: `ENTITYNAME`, `FIELDNAME`
+- **FK degree**: referenced by 5 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 1184
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `ENTITYNAME` | CHAR(50) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FIELDNAME` | VARCHAR(120) | NOT NULL | PK | primary_key |  |
+| 2 | `JAVATYPE` | CHAR(3) | NOT NULL |  |  |  |
+| 3 | `KEYSEQUENCE` | INTEGER | NOT NULL |  |  |  |
+| 4 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 5 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 6 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 7 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 8 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 9 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 10 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `ADENTITY_ENTITY` | `ENTITYNAME` | [`ADENTITY`](../LOCALIZATION/ADENTITY.md) | `NAME` | RESTRICT | `ADATTRIBUTE.ENTITYNAME = ADENTITY.NAME` |
+
+## Referenced by (child → this table) — 5
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `ADATTRIBUTE_FIELDNAME` | [`ADSHARINGDEFINITIONS`](../LOCALIZATION/ADSHARINGDEFINITIONS.md) | `ADADDITIONALDATAENTITYNAME`, `FIELDNAMEFIELDNAME` | `ADSHARINGDEFINITIONS.ADADDITIONALDATAENTITYNAME = ADATTRIBUTE.ENTITYNAME AND ADSHARINGDEFINITIONS.FIELDNAMEFIELDNAME = ADATTRIBUTE.FIELDNAME` |
+| `ADATTRIBUTE_FIELDNAME` | [`ADEXISTENCECONDITIONS`](../LOCALIZATION/ADEXISTENCECONDITIONS.md) | `ADADDITIONALDATAENTITYNAME`, `FIELDNAMEFIELDNAME` | `ADEXISTENCECONDITIONS.ADADDITIONALDATAENTITYNAME = ADATTRIBUTE.ENTITYNAME AND ADEXISTENCECONDITIONS.FIELDNAMEFIELDNAME = ADATTRIBUTE.FIELDNAME` |
+| `ADATTRIBUTE_TOLATTRIBUTE` | [`TOLATTRIBUTES`](../LOCALIZATION/TOLATTRIBUTES.md) | `TOLENTITIESTOLENTITYNAME`, `TOLATTRIBUTEFIELDNAME` | `TOLATTRIBUTES.TOLENTITIESTOLENTITYNAME = ADATTRIBUTE.ENTITYNAME AND TOLATTRIBUTES.TOLATTRIBUTEFIELDNAME = ADATTRIBUTE.FIELDNAME` |
+| `ADATTRIBUTE_CSRMTOLATTRIBUTE` | [`CSRMTOLATTRIBUTES`](../LOCALIZATION/CSRMTOLATTRIBUTES.md) | `CSRMTOLATTRIBUTEENTITYNAME`, `CSRMTOLATTRIBUTEFIELDNAME` | `CSRMTOLATTRIBUTES.CSRMTOLATTRIBUTEENTITYNAME = ADATTRIBUTE.ENTITYNAME AND CSRMTOLATTRIBUTES.CSRMTOLATTRIBUTEFIELDNAME = ADATTRIBUTE.FIELDNAME` |
+| `ADATTRIBUTE_TOLATTRIBUTE` | [`NETTOLATTRIBUTES`](../LOCALIZATION/NETTOLATTRIBUTES.md) | `NETTOLENTITIESTOLENTITYNAME`, `TOLATTRIBUTEFIELDNAME` | `NETTOLATTRIBUTES.NETTOLENTITIESTOLENTITYNAME = ADATTRIBUTE.ENTITYNAME AND NETTOLATTRIBUTES.TOLATTRIBUTEFIELDNAME = ADATTRIBUTE.FIELDNAME` |
+
+## Indexes
+
+- `ADATTRIBUTEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.ENTITYNAME,
+       t.FIELDNAME,
+       t.JAVATYPE,
+       t.KEYSEQUENCE,
+       t.CREATIONDATETIME,
+       t.CREATIONUSER,
+       t.LASTUPDATEDATETIME,
+       t.LASTUPDATEUSER,
+       t.ABSUNIQUEID,
+       t.CREATIONDATETIMEUTC,
+       t.LASTUPDATEDATETIMEUTC
+FROM   DB2ADMIN.ADATTRIBUTE t
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,67 @@
+# DB2ADMIN.INTRASTATCUSTOMIZEDOPTBYCOU
+
+- **Module**: `INTRASTAT` (high confidence — table name starts with 'INTRASTAT')
+- **Roles**: `business_data`
+- **Columns**: 19
+- **Primary key**: `INTRASTATCUSTOMIZEDOPTCMPCOD`, `COUNTRYCODE`
+- **FK degree**: referenced by 0 constraint(s), references 3 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 208395
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `INTRASTATCUSTOMIZEDOPTCMPCOD` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `COUNTRYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `INTRASTATDECLARATIONPOLICYCODE` | CHAR(20) |  |  |  |  |
+| 3 | `PURCHASESPERIOD` | CHAR(1) | NOT NULL |  |  |  |
+| 4 | `SALESPERIOD` | CHAR(1) | NOT NULL |  |  |  |
+| 5 | `PURCHASESSTATISTICAMOUNT` | SMALLINT | NOT NULL |  |  |  |
+| 6 | `SALESSTATISTICAMOUNT` | SMALLINT | NOT NULL |  |  |  |
+| 7 | `PURCHASESFORFISCAL` | SMALLINT | NOT NULL |  |  |  |
+| 8 | `PURCHASESFORSTATISTIC` | SMALLINT | NOT NULL |  |  |  |
+| 9 | `SALESFORFISCAL` | SMALLINT | NOT NULL |  |  |  |
+| 10 | `SALESFORSTATISTIC` | SMALLINT | NOT NULL |  |  |  |
+| 11 | `DECLARERADDRESSUNIQUEID` | BIGINT | NOT NULL | FK | foreign_key |  |
+| 12 | `DECLARERADDRESSCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 13 | `FILLNATUREB` | SMALLINT | NOT NULL |  |  |  |
+| 14 | `CUSTOMCODE` | CHAR(6) |  |  |  |  |
+| 15 | `THIRDPARTYDECLARANT` | SMALLINT | NOT NULL |  |  |  |
+| 16 | `THIRDPARTYTAXREGNUM` | CHAR(15) |  |  |  |  |
+| 17 | `FILEPATH` | VARCHAR(250) | NOT NULL |  |  |  |
+| 18 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 3
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `ADDRESS_DECLARERADDRESS` | `DECLARERADDRESSUNIQUEID`, `DECLARERADDRESSCODE` | [`ADDRESS`](../CORE_MASTER/ADDRESS.md) | `UNIQUEID`, `CODE` | RESTRICT | `INTRASTATCUSTOMIZEDOPTBYCOU.DECLARERADDRESSUNIQUEID = ADDRESS.UNIQUEID AND INTRASTATCUSTOMIZEDOPTBYCOU.DECLARERADDRESSCODE = ADDRESS.CODE` |
+| `COUNTRY_COUNTRY` | `COUNTRYCODE` | [`COUNTRY`](../CORE_MASTER/COUNTRY.md) | `CODE` | RESTRICT | `INTRASTATCUSTOMIZEDOPTBYCOU.COUNTRYCODE = COUNTRY.CODE` |
+| `INTRASTATCUSTOMIZEDOPTION_COUNTRIES` | `INTRASTATCUSTOMIZEDOPTCMPCOD` | [`INTRASTATCUSTOMIZEDOPTION`](../INTRASTAT/INTRASTATCUSTOMIZEDOPTION.md) | `COMPANYCODE` | RESTRICT | `INTRASTATCUSTOMIZEDOPTBYCOU.INTRASTATCUSTOMIZEDOPTCMPCOD = INTRASTATCUSTOMIZEDOPTION.COMPANYCODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `RASTATCUSTOMIZEDOPTBYCOUUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.INTRASTATCUSTOMIZEDOPTCMPCOD,
+       t.COUNTRYCODE,
+       t.INTRASTATDECLARATIONPOLICYCODE,
+       t.PURCHASESPERIOD,
+       t.SALESPERIOD,
+       t.PURCHASESSTATISTICAMOUNT,
+       t.SALESSTATISTICAMOUNT,
+       t.PURCHASESFORFISCAL,
+       t.PURCHASESFORSTATISTIC,
+       t.SALESFORFISCAL,
+       t.SALESFORSTATISTIC,
+       t.DECLARERADDRESSUNIQUEID
+FROM   DB2ADMIN.INTRASTATCUSTOMIZEDOPTBYCOU t
+FETCH FIRST 100 ROWS ONLY;
+```

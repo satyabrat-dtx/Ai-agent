@@ -1,0 +1,79 @@
+# DB2ADMIN.PDMSUP0
+
+- **Module**: `PDM` (medium confidence — table name starts with 'PDM')
+- **Roles**: `business_data`
+- **Columns**: 26
+- **Primary key**: `COMPANYCODE`, `AFRECTYCODE`, `AFTPREC`, `AFCITEM`, `AFVERNR`, `AFVERST`, `CSTSUPPCUSTOMERSUPPLIERTYPE`, `CSTSUPPCUSTOMERSUPPLIERCODE`
+- **FK degree**: referenced by 2 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 48049
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `AFRECTYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `AFTPREC` | DECIMAL(1,0) | NOT NULL | PK | primary_key |  |
+| 3 | `AFCITEM` | CHAR(15) | NOT NULL | PK | primary_key |  |
+| 4 | `AFVERNR` | CHAR(3) | NOT NULL | PK | primary_key |  |
+| 5 | `AFVERST` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 6 | `CSTSUPPCUSTOMERSUPPLIERTYPE` | CHAR(1) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 7 | `CSTSUPPCUSTOMERSUPPLIERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 8 | `AFARTCD` | CHAR(50) |  |  |  |  |
+| 9 | `AFARTDS` | CHAR(50) |  |  |  |  |
+| 10 | `AFFLUSE` | CHAR(1) |  |  |  |  |
+| 11 | `AFFLFAV` | CHAR(1) |  |  |  |  |
+| 12 | `ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 13 | `SUBCODE01` | CHAR(20) | NOT NULL |  | generic_classification_code |  |
+| 14 | `SUBCODE02` | CHAR(10) |  |  | generic_classification_code |  |
+| 15 | `SUBCODE03` | CHAR(10) |  |  | generic_classification_code |  |
+| 16 | `SUBCODE04` | CHAR(10) |  |  | generic_classification_code |  |
+| 17 | `SUBCODE05` | CHAR(10) |  |  | generic_classification_code |  |
+| 18 | `SUBCODE06` | CHAR(10) |  |  | generic_classification_code |  |
+| 19 | `SUBCODE07` | CHAR(10) |  |  | generic_classification_code |  |
+| 20 | `SUBCODE08` | CHAR(10) |  |  | generic_classification_code |  |
+| 21 | `SUBCODE09` | CHAR(10) |  |  | generic_classification_code |  |
+| 22 | `SUBCODE10` | CHAR(10) |  |  | generic_classification_code |  |
+| 23 | `AFRECTYCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 24 | `ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 25 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `PDMSUP0.COMPANYCODE = COMPANY.CODE` |
+| `ITEMTYPE_AFRECTY` | `AFRECTYCOMPANYCODE`, `AFRECTYCODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PDMSUP0.AFRECTYCOMPANYCODE = ITEMTYPE.COMPANYCODE AND PDMSUP0.AFRECTYCODE = ITEMTYPE.CODE` |
+| `ITEMTYPE_ITEMTYPE` | `ITEMTYPECOMPANYCODE`, `ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PDMSUP0.ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND PDMSUP0.ITEMTYPECODE = ITEMTYPE.CODE` |
+| `ORDERPARTNER_CSTSUPP` | `COMPANYCODE`, `CSTSUPPCUSTOMERSUPPLIERTYPE`, `CSTSUPPCUSTOMERSUPPLIERCODE` | [`ORDERPARTNER`](../CORE_MASTER/ORDERPARTNER.md) | `CUSTOMERSUPPLIERCOMPANYCODE`, `CUSTOMERSUPPLIERTYPE`, `CUSTOMERSUPPLIERCODE` | RESTRICT | `PDMSUP0.COMPANYCODE = ORDERPARTNER.CUSTOMERSUPPLIERCOMPANYCODE AND PDMSUP0.CSTSUPPCUSTOMERSUPPLIERTYPE = ORDERPARTNER.CUSTOMERSUPPLIERTYPE AND PDMSUP0.CSTSUPPCUSTOMERSUPPLIERCODE = ORDERPARTNER.CUSTOMERSUPPLIERCODE` |
+
+## Referenced by (child → this table) — 2
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `PDMSUP0_COLSEC` | [`PDMSUP1`](../PDM/PDMSUP1.md) | `PDMSUP0COMPANYCODE`, `PDMSUP0AFRECTYCODE`, `PDMSUP0AFTPREC`, `PDMSUP0AFCITEM`, `PDMSUP0AFVERNR`, `PDMSUP0AFVERST`, `PDMSUP0CSTSUPPCSMSUPPLIERTYPE`, `PDMSUP0CSTSUPPCSMSUPPLIERCODE` | `PDMSUP1.PDMSUP0COMPANYCODE = PDMSUP0.COMPANYCODE AND PDMSUP1.PDMSUP0AFRECTYCODE = PDMSUP0.AFRECTYCODE AND PDMSUP1.PDMSUP0AFTPREC = PDMSUP0.AFTPREC AND PDMSUP1.PDMSUP0AFCITEM = PDMSUP0.AFCITEM AND PDMSUP1.PDMSUP0AFVERNR = PDMSUP0.AFVERNR AND PDMSUP1.PDMSUP0AFVERST = PDMSUP0.AFVERST AND PDMSUP1.PDMSUP0CSTSUPPCSMSUPPLIERTYPE = PDMSUP0.CSTSUPPCUSTOMERSUPPLIERTYPE AND PDMSUP1.PDMSUP0CSTSUPPCSMSUPPLIERCODE = PDMSUP0.CSTSUPPCUSTOMERSUPPLIERCODE` |
+| `PDMSUP0_SIZES` | [`PDMSUP2`](../PDM/PDMSUP2.md) | `PDMSUP0COMPANYCODE`, `PDMSUP0AFRECTYCODE`, `PDMSUP0AFTPREC`, `PDMSUP0AFCITEM`, `PDMSUP0AFVERNR`, `PDMSUP0AFVERST`, `PDMSUP0CSTSUPPCSMSUPPLIERTYPE`, `PDMSUP0CSTSUPPCSMSUPPLIERCODE` | `PDMSUP2.PDMSUP0COMPANYCODE = PDMSUP0.COMPANYCODE AND PDMSUP2.PDMSUP0AFRECTYCODE = PDMSUP0.AFRECTYCODE AND PDMSUP2.PDMSUP0AFTPREC = PDMSUP0.AFTPREC AND PDMSUP2.PDMSUP0AFCITEM = PDMSUP0.AFCITEM AND PDMSUP2.PDMSUP0AFVERNR = PDMSUP0.AFVERNR AND PDMSUP2.PDMSUP0AFVERST = PDMSUP0.AFVERST AND PDMSUP2.PDMSUP0CSTSUPPCSMSUPPLIERTYPE = PDMSUP0.CSTSUPPCUSTOMERSUPPLIERTYPE AND PDMSUP2.PDMSUP0CSTSUPPCSMSUPPLIERCODE = PDMSUP0.CSTSUPPCUSTOMERSUPPLIERCODE` |
+
+## Indexes
+
+- `PDMSUP0UID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.AFRECTYCODE,
+       t.AFTPREC,
+       t.AFCITEM,
+       t.AFVERNR,
+       t.AFVERST,
+       t.CSTSUPPCUSTOMERSUPPLIERTYPE,
+       t.CSTSUPPCUSTOMERSUPPLIERCODE,
+       t.AFARTCD,
+       t.AFARTDS,
+       t.AFFLUSE,
+       t.AFFLFAV
+FROM   DB2ADMIN.PDMSUP0 t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

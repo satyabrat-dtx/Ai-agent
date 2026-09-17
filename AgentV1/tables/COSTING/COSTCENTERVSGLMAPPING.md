@@ -1,0 +1,67 @@
+# DB2ADMIN.COSTCENTERVSGLMAPPING
+
+- **Module**: `COSTING` (high confidence — table name starts with 'COST')
+- **Roles**: `business_data`
+- **Columns**: 15
+- **Primary key**: `COMPANYCODE`, `GLCODE`, `COSTCENTERCODE`, `COSTELEMENTITEMTYPECODE`, `COSTELEMENTSUBCODE01`
+- **FK degree**: referenced by 1 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 199738
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `GLCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 2 | `GLCODE` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `COSTELEMENTCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 4 | `COSTELEMENTITEMTYPECODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `COSTELEMENTSUBCODE01` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 6 | `COSTCENTERCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 7 | `COSTCENTERCODE` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 8 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 9 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 10 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 11 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 12 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 13 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 14 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `COSTCENTERVSGLMAPPING.COMPANYCODE = COMPANY.CODE` |
+| `COSTCENTER_COSTCENTER` | `COSTCENTERCOMPANYCODE`, `COSTCENTERCODE` | [`COSTCENTER`](../COSTING/COSTCENTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `COSTCENTERVSGLMAPPING.COSTCENTERCOMPANYCODE = COSTCENTER.COMPANYCODE AND COSTCENTERVSGLMAPPING.COSTCENTERCODE = COSTCENTER.CODE` |
+| `COSTELEMENT_COSTELEMENT` | `COSTELEMENTCOMPANYCODE`, `COSTELEMENTITEMTYPECODE`, `COSTELEMENTSUBCODE01` | [`COSTELEMENT`](../COSTING/COSTELEMENT.md) | `COMPANYCODE`, `ITEMTYPECODE`, `SUBCODE01` | RESTRICT | `COSTCENTERVSGLMAPPING.COSTELEMENTCOMPANYCODE = COSTELEMENT.COMPANYCODE AND COSTCENTERVSGLMAPPING.COSTELEMENTITEMTYPECODE = COSTELEMENT.ITEMTYPECODE AND COSTCENTERVSGLMAPPING.COSTELEMENTSUBCODE01 = COSTELEMENT.SUBCODE01` |
+| `GLMASTER_GL` | `GLCOMPANYCODE`, `GLCODE` | [`GLMASTER`](../CORE_MASTER/GLMASTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `COSTCENTERVSGLMAPPING.GLCOMPANYCODE = GLMASTER.COMPANYCODE AND COSTCENTERVSGLMAPPING.GLCODE = GLMASTER.CODE` |
+
+## Referenced by (child → this table) — 1
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `COSTCENTERVSGLMAPPING_LINE` | [`COSTCENTERVSGLMAPPINGDETAIL`](../COSTING/COSTCENTERVSGLMAPPINGDETAIL.md) | `CSTCTRVSGLMAPPINGCOMPANYCODE`, `COSTCENTERVSGLMAPPINGGLCODE`, `CSTCTRVSGLMPCOSTCENTERCODE`, `CSTCTRVSGLMPCOSTELMITYPECODE`, `CSTCTRVSGLMPCOSTELMSUBCODE01` | `COSTCENTERVSGLMAPPINGDETAIL.CSTCTRVSGLMAPPINGCOMPANYCODE = COSTCENTERVSGLMAPPING.COMPANYCODE AND COSTCENTERVSGLMAPPINGDETAIL.COSTCENTERVSGLMAPPINGGLCODE = COSTCENTERVSGLMAPPING.GLCODE AND COSTCENTERVSGLMAPPINGDETAIL.CSTCTRVSGLMPCOSTCENTERCODE = COSTCENTERVSGLMAPPING.COSTCENTERCODE AND COSTCENTERVSGLMAPPINGDETAIL.CSTCTRVSGLMPCOSTELMITYPECODE = COSTCENTERVSGLMAPPING.COSTELEMENTITEMTYPECODE AND COSTCENTERVSGLMAPPINGDETAIL.CSTCTRVSGLMPCOSTELMSUBCODE01 = COSTCENTERVSGLMAPPING.COSTELEMENTSUBCODE01` |
+
+## Indexes
+
+- `COSTCENTERVSGLMAPPINGUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.GLCOMPANYCODE,
+       t.GLCODE,
+       t.COSTELEMENTCOMPANYCODE,
+       t.COSTELEMENTITEMTYPECODE,
+       t.COSTELEMENTSUBCODE01,
+       t.COSTCENTERCOMPANYCODE,
+       t.COSTCENTERCODE,
+       t.CREATIONDATETIME,
+       t.CREATIONUSER,
+       t.LASTUPDATEDATETIME,
+       t.LASTUPDATEUSER
+FROM   DB2ADMIN.COSTCENTERVSGLMAPPING t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

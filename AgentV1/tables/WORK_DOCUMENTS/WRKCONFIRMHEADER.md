@@ -1,0 +1,89 @@
+# DB2ADMIN.WRKCONFIRMHEADER
+
+- **Module**: `WORK_DOCUMENTS` (medium confidence — table name starts with 'WRK')
+- **Roles**: `business_data`
+- **Columns**: 49
+- **Primary key**: `CREATIONTIMESTAMP`, `LINE`, `SALESORDERCOMPANYCODE`, `SALESORDERCOUNTERCODE`, `SALESORDERCODE`
+- **FK degree**: referenced by 0 constraint(s), references 0 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 35326
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `CREATIONTIMESTAMP` | BIGINT | NOT NULL | PK | primary_key audit |  |
+| 1 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 2 | `LINE` | INTEGER | NOT NULL | PK | primary_key |  |
+| 3 | `SALESORDERCOMPANYCODE` | CHAR(3) | NOT NULL | PK | primary_key |  |
+| 4 | `SALESORDERCOUNTERCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 5 | `SALESORDERCODE` | CHAR(15) | NOT NULL | PK | primary_key |  |
+| 6 | `LANGUAGECODE` | CHAR(2) |  |  |  |  |
+| 7 | `CONFIRMATION` | CHAR(15) |  |  |  |  |
+| 8 | `ORDERPARTNEREXTERNALCODE` | CHAR(10) |  |  |  |  |
+| 9 | `ORDERPARTNERFISCALCODE` | CHAR(16) |  |  |  |  |
+| 10 | `ORDERPARTNERCOUNTRYCODE` | CHAR(3) |  |  |  |  |
+| 11 | `ORDPRNCOUNTRYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 12 | `ORDERPARTNERLEGALNAME1` | VARCHAR(200) | NOT NULL |  |  |  |
+| 13 | `ORDERPARTNERLEGALNAME2` | VARCHAR(200) |  |  |  |  |
+| 14 | `ORDERPARTNERADDRESSLINE1` | VARCHAR(200) | NOT NULL |  |  |  |
+| 15 | `ORDERPARTNERADDRESSLINE2` | VARCHAR(200) |  |  |  |  |
+| 16 | `ORDERPARTNERADDRESSLINE3` | VARCHAR(200) |  |  |  |  |
+| 17 | `ORDERPARTNERPOSTALCODE` | CHAR(20) |  |  |  |  |
+| 18 | `ORDERPARTNERTOWN` | VARCHAR(200) |  |  |  |  |
+| 19 | `ORDERPARTNERDISTRICT` | VARCHAR(200) |  |  |  |  |
+| 20 | `ORDERPARTNERTRANSPORTZONECODE` | CHAR(3) |  |  |  |  |
+| 21 | `ORDPRNTRANSPORTZONELONGDES` | VARCHAR(200) |  |  |  |  |
+| 22 | `FNCORDERPARTNERFISCALCODE` | CHAR(16) |  |  |  |  |
+| 23 | `FNCORDERPARTNERCOUNTRYCODE` | CHAR(3) |  |  |  |  |
+| 24 | `FNCORDPRNCNYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 25 | `FNCORDERPARTNERLEGALNAME1` | VARCHAR(200) |  |  |  |  |
+| 26 | `FNCORDERPARTNERLEGALNAME2` | VARCHAR(200) |  |  |  |  |
+| 27 | `FNCORDERPARTNERADDRESSLINE1` | VARCHAR(200) |  |  |  |  |
+| 28 | `FNCORDERPARTNERADDRESSLINE2` | VARCHAR(200) |  |  |  |  |
+| 29 | `FNCORDERPARTNERADDRESSLINE3` | VARCHAR(200) |  |  |  |  |
+| 30 | `FNCORDERPARTNERPOSTALCODE` | CHAR(20) |  |  |  |  |
+| 31 | `FINANCIALORDERPARTNERTOWN` | VARCHAR(200) |  |  |  |  |
+| 32 | `FINANCIALORDERPARTNERDISTRICT` | VARCHAR(200) |  |  |  |  |
+| 33 | `FNCORDPRNTRANSPORTZONECODE` | CHAR(3) |  |  |  |  |
+| 34 | `FNCORDPRNTRANSPORTZONELONGDES` | VARCHAR(200) |  |  |  |  |
+| 35 | `DELIVERYPOINTUNIQUEID` | BIGINT | NOT NULL |  |  |  |
+| 36 | `DELIVERYPOINTCODE` | CHAR(8) |  |  |  |  |
+| 37 | `COMPANYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 38 | `DELIVERYCNYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 39 | `DLVTRANSPORTZONELONGDES` | VARCHAR(200) |  |  |  |  |
+| 40 | `STCGROUPLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 41 | `PROJECTLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 42 | `TERMSOFDLVLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 43 | `TERMSOFSHPLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 44 | `FIRSTCARRIERLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 45 | `SECONDCARRIERLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 46 | `THIRDCARRIERLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 47 | `PAYMENTMETHODLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 48 | `CURRENCYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+
+## References (this table → parent) — 0
+
+_None._
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Starter query
+
+```sql
+SELECT t.CREATIONTIMESTAMP,
+       t.CREATIONUSER,
+       t.LINE,
+       t.SALESORDERCOMPANYCODE,
+       t.SALESORDERCOUNTERCODE,
+       t.SALESORDERCODE,
+       t.LANGUAGECODE,
+       t.CONFIRMATION,
+       t.ORDERPARTNEREXTERNALCODE,
+       t.ORDERPARTNERFISCALCODE,
+       t.ORDERPARTNERCOUNTRYCODE,
+       t.ORDPRNCOUNTRYLONGDESCRIPTION
+FROM   DB2ADMIN.WRKCONFIRMHEADER t
+FETCH FIRST 100 ROWS ONLY;
+```

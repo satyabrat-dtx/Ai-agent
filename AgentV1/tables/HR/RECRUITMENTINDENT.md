@@ -1,0 +1,94 @@
+# DB2ADMIN.RECRUITMENTINDENT
+
+- **Module**: `HR` (high confidence — table name starts with 'RECRUIT')
+- **Roles**: `business_data`
+- **Columns**: 40
+- **Primary key**: `COMPANYCODE`, `DIVISIONCODE`, `FACTORYCODE`, `DEPARTMENTDEPARTMENTCODE`, `SECTIONSECTIONICSTABLECODE`, `SECTIONSECTIONCODE`, `INTENTNUMBER`
+- **FK degree**: referenced by 0 constraint(s), references 8 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 201372
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `DIVISIONCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key | Division within a company; second-level organisational discriminator. |
+| 2 | `FACTORYCOMPANYCODE` | CHAR(3) | NOT NULL |  |  |  |
+| 3 | `FACTORYCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 4 | `DEPARTMENTDEPARTMENTCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 5 | `SECTIONSECTIONICSTABLECODE` | CHAR(4) | NOT NULL | PK | primary_key |  |
+| 6 | `SECTIONSECTIONCODE` | CHAR(6) | NOT NULL | PK | primary_key |  |
+| 7 | `INTENTNUMBER` | DECIMAL(10,0) | NOT NULL | PK | primary_key |  |
+| 8 | `RECRUITTYPEICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 9 | `RECRUITTYPECODE` | CHAR(6) |  | FK | foreign_key |  |
+| 10 | `EMPLOYEMENTTYPE` | INTEGER | NOT NULL |  |  |  |
+| 11 | `DESIGNATIONICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 12 | `DESIGNATIONCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 13 | `POSITIONSREQUIREDMALE` | DECIMAL(4,0) |  |  |  |  |
+| 14 | `POSITIONSREQUIREDFEMALE` | DECIMAL(4,0) |  |  |  |  |
+| 15 | `EXPECTEDDATE` | DATE |  |  |  |  |
+| 16 | `MINIMUMAGE` | DECIMAL(2,0) |  |  |  |  |
+| 17 | `MAXIMUMAGE` | DECIMAL(2,0) |  |  |  |  |
+| 18 | `MARITALSTATUSICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 19 | `MARITALSTATUSCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 20 | `EDUCATIONICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 21 | `EDUCATIONCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 22 | `EXPERTISE` | VARCHAR(255) |  |  |  |  |
+| 23 | `JOBEXPERIENCE` | VARCHAR(255) |  |  |  |  |
+| 24 | `OTHERREQUIREMENTS` | VARCHAR(255) |  |  |  |  |
+| 25 | `JOBRESPONSIBILITIES` | VARCHAR(255) |  |  |  |  |
+| 26 | `INDENTDATE` | DATE |  |  |  |  |
+| 27 | `INTENDEDBYCODE` | CHAR(9) |  | FK | foreign_key |  |
+| 28 | `APPROVEDBYCODE` | CHAR(9) |  | FK | foreign_key |  |
+| 29 | `AUTHORIZATIONFLAG` | CHAR(2) | NOT NULL |  |  |  |
+| 30 | `INDENTSTATUS` | CHAR(2) | NOT NULL |  |  |  |
+| 31 | `INDENTCLOSINGDATE` | DATE |  |  |  |  |
+| 32 | `REMARKSBYHR` | VARCHAR(140) |  |  |  |  |
+| 33 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 34 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 35 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 36 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 37 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 38 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 39 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 8
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = COMPANY.CODE` |
+| `DIVISION_DIVISION` | `COMPANYCODE`, `DIVISIONCODE` | [`DIVISION`](../CORE_MASTER/DIVISION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = DIVISION.COMPANYCODE AND RECRUITMENTINDENT.DIVISIONCODE = DIVISION.CODE` |
+| `EMPLOYEE_APPROVEDBY` | `COMPANYCODE`, `APPROVEDBYCODE` | [`EMPLOYEE`](../HR/EMPLOYEE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = EMPLOYEE.COMPANYCODE AND RECRUITMENTINDENT.APPROVEDBYCODE = EMPLOYEE.CODE` |
+| `EMPLOYEE_INTENDEDBY` | `COMPANYCODE`, `INTENDEDBYCODE` | [`EMPLOYEE`](../HR/EMPLOYEE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = EMPLOYEE.COMPANYCODE AND RECRUITMENTINDENT.INTENDEDBYCODE = EMPLOYEE.CODE` |
+| `ICSENTITY_DESIGNATION` | `COMPANYCODE`, `DESIGNATIONICSTABLECODE`, `DESIGNATIONCODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = ICSENTITY.COMPANYCODE AND RECRUITMENTINDENT.DESIGNATIONICSTABLECODE = ICSENTITY.ICSTABLECODE AND RECRUITMENTINDENT.DESIGNATIONCODE = ICSENTITY.CODE` |
+| `ICSENTITY_EDUCATION` | `COMPANYCODE`, `EDUCATIONICSTABLECODE`, `EDUCATIONCODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = ICSENTITY.COMPANYCODE AND RECRUITMENTINDENT.EDUCATIONICSTABLECODE = ICSENTITY.ICSTABLECODE AND RECRUITMENTINDENT.EDUCATIONCODE = ICSENTITY.CODE` |
+| `ICSENTITY_MARITALSTATUS` | `COMPANYCODE`, `MARITALSTATUSICSTABLECODE`, `MARITALSTATUSCODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = ICSENTITY.COMPANYCODE AND RECRUITMENTINDENT.MARITALSTATUSICSTABLECODE = ICSENTITY.ICSTABLECODE AND RECRUITMENTINDENT.MARITALSTATUSCODE = ICSENTITY.CODE` |
+| `ICSENTITY_RECRUITTYPE` | `COMPANYCODE`, `RECRUITTYPEICSTABLECODE`, `RECRUITTYPECODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `RECRUITMENTINDENT.COMPANYCODE = ICSENTITY.COMPANYCODE AND RECRUITMENTINDENT.RECRUITTYPEICSTABLECODE = ICSENTITY.ICSTABLECODE AND RECRUITMENTINDENT.RECRUITTYPECODE = ICSENTITY.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `RECRUITMENTINDENTUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.DIVISIONCODE,
+       t.FACTORYCOMPANYCODE,
+       t.FACTORYCODE,
+       t.DEPARTMENTDEPARTMENTCODE,
+       t.SECTIONSECTIONICSTABLECODE,
+       t.SECTIONSECTIONCODE,
+       t.INTENTNUMBER,
+       t.RECRUITTYPEICSTABLECODE,
+       t.RECRUITTYPECODE,
+       t.EMPLOYEMENTTYPE,
+       t.DESIGNATIONICSTABLECODE
+FROM   DB2ADMIN.RECRUITMENTINDENT t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

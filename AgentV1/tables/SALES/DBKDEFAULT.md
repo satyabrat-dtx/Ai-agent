@@ -1,0 +1,77 @@
+# DB2ADMIN.DBKDEFAULT
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 1 of 1 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 23
+- **Primary key**: `COMPANYCODE`, `DIVISIONCODE`
+- **FK degree**: referenced by 1 constraint(s), references 6 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 136908
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `DIVISIONCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key | Division within a company; second-level organisational discriminator. |
+| 2 | `FIRMCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 3 | `NAMEOFPERSON` | CHAR(15) | NOT NULL |  |  |  |
+| 4 | `DESIGNATION` | CHAR(15) | NOT NULL |  |  |  |
+| 5 | `COUNTRYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 6 | `ADDRESSLINE1` | VARCHAR(150) |  |  |  |  |
+| 7 | `ADDRESSLINE2` | VARCHAR(150) |  |  |  |  |
+| 8 | `ADDRESSLINE3` | VARCHAR(150) |  |  |  |  |
+| 9 | `ADDRESSLINE4` | VARCHAR(150) |  |  |  |  |
+| 10 | `ADDRESSLINE5` | VARCHAR(150) |  |  |  |  |
+| 11 | `POSTALCODE` | CHAR(20) |  |  |  |  |
+| 12 | `TOWN` | VARCHAR(200) |  |  |  |  |
+| 13 | `DISTRICT` | VARCHAR(200) |  |  |  |  |
+| 14 | `TRANSPORTZONECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 15 | `ADDRESSPHONENUMBER` | VARCHAR(80) |  |  |  |  |
+| 16 | `ADDRESSFAXNUMBER` | VARCHAR(80) |  |  |  |  |
+| 17 | `DFTSALTAXTEMPLATETEMPLATETYPE` | CHAR(2) |  |  |  |  |
+| 18 | `DFTSALESTAXTEMPLATECODE` | CHAR(3) |  |  |  |  |
+| 19 | `DFTPURTAXTEMPLATETEMPLATETYPE` | CHAR(2) |  |  |  |  |
+| 20 | `DFTPURCHASETAXTEMPLATECODE` | CHAR(3) |  |  |  |  |
+| 21 | `DEFAULTCURRENCYCODE` | CHAR(4) |  | FK | foreign_key |  |
+| 22 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 6
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `DBKDEFAULT.COMPANYCODE = COMPANY.CODE` |
+| `COUNTRY_COUNTRY` | `COUNTRYCODE` | [`COUNTRY`](../CORE_MASTER/COUNTRY.md) | `CODE` | RESTRICT | `DBKDEFAULT.COUNTRYCODE = COUNTRY.CODE` |
+| `CURRENCY_DEFAULTCURRENCY` | `DEFAULTCURRENCYCODE` | [`CURRENCY`](../CORE_MASTER/CURRENCY.md) | `CODE` | RESTRICT | `DBKDEFAULT.DEFAULTCURRENCYCODE = CURRENCY.CODE` |
+| `DIVISION_DIVISION` | `COMPANYCODE`, `DIVISIONCODE` | [`DIVISION`](../CORE_MASTER/DIVISION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `DBKDEFAULT.COMPANYCODE = DIVISION.COMPANYCODE AND DBKDEFAULT.DIVISIONCODE = DIVISION.CODE` |
+| `DIVISION_FIRM` | `COMPANYCODE`, `FIRMCODE` | [`DIVISION`](../CORE_MASTER/DIVISION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `DBKDEFAULT.COMPANYCODE = DIVISION.COMPANYCODE AND DBKDEFAULT.FIRMCODE = DIVISION.CODE` |
+| `TRANSPORTZONE_TRANSPORTZONE` | `COUNTRYCODE`, `TRANSPORTZONECODE` | [`TRANSPORTZONE`](../CORE_MASTER/TRANSPORTZONE.md) | `COUNTRYCODE`, `CODE` | RESTRICT | `DBKDEFAULT.COUNTRYCODE = TRANSPORTZONE.COUNTRYCODE AND DBKDEFAULT.TRANSPORTZONECODE = TRANSPORTZONE.CODE` |
+
+## Referenced by (child → this table) — 1
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `DBKDEFAULT_DETAIL2` | [`DBKALLOWEDTAXDETAIL`](../SALES/DBKALLOWEDTAXDETAIL.md) | `DBKDEFAULTCOMPANYCODE`, `DBKDEFAULTDIVISIONCODE` | `DBKALLOWEDTAXDETAIL.DBKDEFAULTCOMPANYCODE = DBKDEFAULT.COMPANYCODE AND DBKALLOWEDTAXDETAIL.DBKDEFAULTDIVISIONCODE = DBKDEFAULT.DIVISIONCODE` |
+
+## Indexes
+
+- `DBKDEFAULTUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.DIVISIONCODE,
+       t.FIRMCODE,
+       t.NAMEOFPERSON,
+       t.DESIGNATION,
+       t.COUNTRYCODE,
+       t.ADDRESSLINE1,
+       t.ADDRESSLINE2,
+       t.ADDRESSLINE3,
+       t.ADDRESSLINE4,
+       t.ADDRESSLINE5,
+       t.POSTALCODE
+FROM   DB2ADMIN.DBKDEFAULT t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

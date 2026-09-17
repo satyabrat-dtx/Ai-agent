@@ -1,0 +1,113 @@
+# DB2ADMIN.MICERTIFICATE
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 2 of 2 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 54
+- **Primary key**: `COMPANYCODE`, `DIVISIONCODE`, `MICNO`
+- **FK degree**: referenced by 2 constraint(s), references 10 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 140194
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `DIVISIONCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key | Division within a company; second-level organisational discriminator. |
+| 2 | `MICNO` | CHAR(12) | NOT NULL | PK | primary_key |  |
+| 3 | `MICDATE` | DATE | NOT NULL |  |  |  |
+| 4 | `PLANTINVOICECODE` | CHAR(15) |  | FK | foreign_key |  |
+| 5 | `FIRMCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 6 | `FACTORYCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 7 | `FACTORYCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 8 | `IPPOLICYNO` | CHAR(30) |  | FK | foreign_key |  |
+| 9 | `IPPOLICYDATE` | DATE |  | FK | foreign_key |  |
+| 10 | `VESSELFLIGHTNO` | CHAR(15) |  |  |  |  |
+| 11 | `PORTOFLOADINGCODE` | CHAR(10) |  | FK | foreign_key |  |
+| 12 | `PORTOFDISCHARGECODE` | CHAR(10) |  | FK | foreign_key |  |
+| 13 | `INSURANCEMARKUP` | DECIMAL(9,5) |  |  |  |  |
+| 14 | `INSURANCEAMOUNT` | DECIMAL(18,5) |  |  |  |  |
+| 15 | `INVOICECURRENCYCODE` | CHAR(4) |  | FK | foreign_key |  |
+| 16 | `EXCHANGERATEOFCONTRACT` | DECIMAL(28,15) |  |  |  |  |
+| 17 | `AMOUNTININR` | DECIMAL(18,5) |  |  |  |  |
+| 18 | `IMPLINE1` | CHAR(50) |  |  |  |  |
+| 19 | `IMPLINE2` | CHAR(50) |  |  |  |  |
+| 20 | `IMPLINE3` | CHAR(50) |  |  |  |  |
+| 21 | `IMPLINE4` | CHAR(50) |  |  |  |  |
+| 22 | `IMPLINE5` | CHAR(50) |  |  |  |  |
+| 23 | `IMPLINE6` | CHAR(50) |  |  |  |  |
+| 24 | `GROSSWEIGHT` | DECIMAL(18,5) |  |  |  |  |
+| 25 | `NETTWEIGHT` | DECIMAL(18,5) |  |  |  |  |
+| 26 | `WEIGHTUMCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 27 | `CONTAINERNO` | CHAR(15) |  |  |  |  |
+| 28 | `BOTTLESEALNO` | CHAR(15) |  |  |  |  |
+| 29 | `INSTCARGOCLSA` | CHAR(50) |  |  |  |  |
+| 30 | `INSTCARGOCLSB` | CHAR(50) |  |  |  |  |
+| 31 | `INSTCARGOCLSC` | CHAR(50) |  |  |  |  |
+| 32 | `INSTWARCLSCARGO` | CHAR(50) |  |  |  |  |
+| 33 | `INSTSTRIKECLSCARGO` | CHAR(50) |  |  |  |  |
+| 34 | `INSTCARGOCLSAIRCARGO` | CHAR(50) |  |  |  |  |
+| 35 | `INSTWARCLSAIRCARGO` | CHAR(50) |  |  |  |  |
+| 36 | `INSTSTRIKECLSAIRCARGO` | CHAR(50) |  |  |  |  |
+| 37 | `INSTCLASSIFICATIONCLS` | CHAR(50) |  |  |  |  |
+| 38 | `INSTRACONTMNCLS` | CHAR(50) |  |  |  |  |
+| 39 | `IMPNOTICE` | CHAR(50) |  |  |  |  |
+| 40 | `UDCLS1` | CHAR(50) |  |  |  |  |
+| 41 | `UDCLS1TEXT` | CHAR(50) |  |  |  |  |
+| 42 | `UDCLS2` | CHAR(50) |  |  |  |  |
+| 43 | `UDCLS2TEXT` | CHAR(50) |  |  |  |  |
+| 44 | `UDCLS3` | CHAR(50) |  |  |  |  |
+| 45 | `UDCLS3TEXT` | CHAR(50) |  |  |  |  |
+| 46 | `UDCLS4` | CHAR(50) |  |  |  |  |
+| 47 | `UDCLS4TEXT` | CHAR(50) |  |  |  |  |
+| 48 | `UDCLS5` | CHAR(50) |  |  |  |  |
+| 49 | `UDCLS5TEXT` | CHAR(50) |  |  |  |  |
+| 50 | `AGENCYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 51 | `INSCOSRNO` | CHAR(25) |  |  |  |  |
+| 52 | `STEP` | CHAR(1) |  |  |  |  |
+| 53 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 10
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `AGENT_AGENCY` | `COMPANYCODE`, `AGENCYCODE` | [`AGENT`](../CORE_MASTER/AGENT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `MICERTIFICATE.COMPANYCODE = AGENT.COMPANYCODE AND MICERTIFICATE.AGENCYCODE = AGENT.CODE` |
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `MICERTIFICATE.COMPANYCODE = COMPANY.CODE` |
+| `CURRENCY_INVOICECURRENCY` | `INVOICECURRENCYCODE` | [`CURRENCY`](../CORE_MASTER/CURRENCY.md) | `CODE` | RESTRICT | `MICERTIFICATE.INVOICECURRENCYCODE = CURRENCY.CODE` |
+| `DIVISION_FIRM` | `COMPANYCODE`, `FIRMCODE` | [`DIVISION`](../CORE_MASTER/DIVISION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `MICERTIFICATE.COMPANYCODE = DIVISION.COMPANYCODE AND MICERTIFICATE.FIRMCODE = DIVISION.CODE` |
+| `INSURANCEPOLICY_IP` | `COMPANYCODE`, `DIVISIONCODE`, `IPPOLICYNO`, `IPPOLICYDATE` | [`INSURANCEPOLICY`](../SALES/INSURANCEPOLICY.md) | `COMPANYCODE`, `DIVISIONCODE`, `POLICYNO`, `POLICYDATE` | RESTRICT | `MICERTIFICATE.COMPANYCODE = INSURANCEPOLICY.COMPANYCODE AND MICERTIFICATE.DIVISIONCODE = INSURANCEPOLICY.DIVISIONCODE AND MICERTIFICATE.IPPOLICYNO = INSURANCEPOLICY.POLICYNO AND MICERTIFICATE.IPPOLICYDATE = INSURANCEPOLICY.POLICYDATE` |
+| `PLANTINVOICE_PLANTINVOICE` | `COMPANYCODE`, `DIVISIONCODE`, `PLANTINVOICECODE` | [`PLANTINVOICE`](../CORE_MASTER/PLANTINVOICE.md) | `COMPANYCODE`, `DIVISIONCODE`, `CODE` | RESTRICT | `MICERTIFICATE.COMPANYCODE = PLANTINVOICE.COMPANYCODE AND MICERTIFICATE.DIVISIONCODE = PLANTINVOICE.DIVISIONCODE AND MICERTIFICATE.PLANTINVOICECODE = PLANTINVOICE.CODE` |
+| `PLANT_FACTORY` | `FACTORYCOMPANYCODE`, `FACTORYCODE` | [`PLANT`](../CORE_MASTER/PLANT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `MICERTIFICATE.FACTORYCOMPANYCODE = PLANT.COMPANYCODE AND MICERTIFICATE.FACTORYCODE = PLANT.CODE` |
+| `PORT_PORTOFDISCHARGE` | `PORTOFDISCHARGECODE` | [`PORT`](../CORE_MASTER/PORT.md) | `CODE` | RESTRICT | `MICERTIFICATE.PORTOFDISCHARGECODE = PORT.CODE` |
+| `PORT_PORTOFLOADING` | `PORTOFLOADINGCODE` | [`PORT`](../CORE_MASTER/PORT.md) | `CODE` | RESTRICT | `MICERTIFICATE.PORTOFLOADINGCODE = PORT.CODE` |
+| `UNITOFMEASURE_WEIGHTUM` | `WEIGHTUMCODE` | [`UNITOFMEASURE`](../CORE_MASTER/UNITOFMEASURE.md) | `CODE` | RESTRICT | `MICERTIFICATE.WEIGHTUMCODE = UNITOFMEASURE.CODE` |
+
+## Referenced by (child → this table) — 2
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `MICERTIFICATE_LINE` | [`MICERTIFICATELINE`](../SALES/MICERTIFICATELINE.md) | `MICERTIFICATECOMPANYCODE`, `MICERTIFICATEDIVISIONCODE`, `MICERTIFICATEMICNO` | `MICERTIFICATELINE.MICERTIFICATECOMPANYCODE = MICERTIFICATE.COMPANYCODE AND MICERTIFICATELINE.MICERTIFICATEDIVISIONCODE = MICERTIFICATE.DIVISIONCODE AND MICERTIFICATELINE.MICERTIFICATEMICNO = MICERTIFICATE.MICNO` |
+| `MICERTIFICATE_MARINEINSURANCE` | [`PRECOMMINVOICE`](../SALES/PRECOMMINVOICE.md) | `COMPANYCODE`, `DIVISIONCODE`, `MARINEINSURANCEMICNO` | `PRECOMMINVOICE.COMPANYCODE = MICERTIFICATE.COMPANYCODE AND PRECOMMINVOICE.DIVISIONCODE = MICERTIFICATE.DIVISIONCODE AND PRECOMMINVOICE.MARINEINSURANCEMICNO = MICERTIFICATE.MICNO` |
+
+## Indexes
+
+- `MICERTIFICATEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.DIVISIONCODE,
+       t.MICNO,
+       t.MICDATE,
+       t.PLANTINVOICECODE,
+       t.FIRMCODE,
+       t.FACTORYCOMPANYCODE,
+       t.FACTORYCODE,
+       t.IPPOLICYNO,
+       t.IPPOLICYDATE,
+       t.VESSELFLIGHTNO,
+       t.PORTOFLOADINGCODE
+FROM   DB2ADMIN.MICERTIFICATE t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

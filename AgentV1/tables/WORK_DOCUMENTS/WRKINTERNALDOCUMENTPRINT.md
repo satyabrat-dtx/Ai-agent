@@ -1,0 +1,95 @@
+# DB2ADMIN.WRKINTERNALDOCUMENTPRINT
+
+- **Module**: `WORK_DOCUMENTS` (medium confidence — table name starts with 'WRK')
+- **Roles**: `business_data`
+- **Columns**: 55
+- **Primary key**: `CREATIONTIMESTAMP`, `LINE`
+- **FK degree**: referenced by 0 constraint(s), references 0 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 17834
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `CREATIONTIMESTAMP` | BIGINT | NOT NULL | PK | primary_key audit |  |
+| 1 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 2 | `LINE` | INTEGER | NOT NULL | PK | primary_key |  |
+| 3 | `INTERNALDOCUMENTCOMPANYCODE` | CHAR(3) |  |  |  |  |
+| 4 | `INTDOCPROVISIONALCOUNTERCODE` | CHAR(8) |  |  |  |  |
+| 5 | `INTDOCUMENTPROVISIONALCODE` | CHAR(15) |  |  |  |  |
+| 6 | `LANGUAGECODE` | CHAR(2) |  |  |  |  |
+| 7 | `DELIVERYPOINTLEGALNAME1` | VARCHAR(200) |  |  |  |  |
+| 8 | `DELIVERYPOINTLEGALNAME2` | VARCHAR(200) |  |  |  |  |
+| 9 | `DELIVERYPOINTADDRESSLINE1` | VARCHAR(200) |  |  |  |  |
+| 10 | `DELIVERYPOINTADDRESSLINE2` | VARCHAR(200) |  |  |  |  |
+| 11 | `DELIVERYPOINTADDRESSLINE3` | VARCHAR(200) |  |  |  |  |
+| 12 | `DELIVERYPOINTPOSTALCODE` | CHAR(20) |  |  |  |  |
+| 13 | `DELIVERYPOINTTOWN` | VARCHAR(200) |  |  |  |  |
+| 14 | `DELIVERYPOINTDISTRICT` | VARCHAR(200) |  |  |  |  |
+| 15 | `DELIVERYPOINTCOUNTRYCODE` | CHAR(3) |  |  |  |  |
+| 16 | `DELIVERYCNYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 17 | `DOCUMENTADDRESSLEGALNAME1` | VARCHAR(200) |  |  |  |  |
+| 18 | `DOCUMENTADDRESSLEGALNAME2` | VARCHAR(200) |  |  |  |  |
+| 19 | `DOCUMENTADDRESSADDRESSLINE1` | VARCHAR(200) |  |  |  |  |
+| 20 | `DOCUMENTADDRESSADDRESSLINE2` | VARCHAR(200) |  |  |  |  |
+| 21 | `DOCUMENTADDRESSADDRESSLINE3` | VARCHAR(200) |  |  |  |  |
+| 22 | `DOCUMENTADDRESSPOSTALCODE` | CHAR(20) |  |  |  |  |
+| 23 | `DOCUMENTADDRESSTOWN` | VARCHAR(200) |  |  |  |  |
+| 24 | `DOCUMENTADDRESSDISTRICT` | VARCHAR(200) |  |  |  |  |
+| 25 | `DOCUMENTADDRESSCOUNTRYCODE` | CHAR(3) |  |  |  |  |
+| 26 | `DOCADDRESSCNYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 27 | `DOCUMENTADDRESSFISCALCODE` | CHAR(16) |  |  |  |  |
+| 28 | `COMPANYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 29 | `DIVISIONLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 30 | `STCGROUPLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 31 | `PROJECTLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 32 | `TERMSOFDLVLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 33 | `TERMSOFSHPLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 34 | `TRANSPORTREALONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 35 | `AREALONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 36 | `FIRSTCARRIERLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 37 | `SECONDCARRIERLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 38 | `THIRDCARRIERLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 39 | `ORDERCATEGORYLONGDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 40 | `APPEARANCEDESCRIPTION` | VARCHAR(200) |  |  |  |  |
+| 41 | `TRUCKDRIVERCODE` | CHAR(3) |  |  |  |  |
+| 42 | `NUMBERPLATE` | VARCHAR(80) |  |  |  |  |
+| 43 | `TRANSPORTSTARTDATE` | DATE |  |  |  |  |
+| 44 | `TRANSPORTSTARTTIME` | TIME |  |  |  |  |
+| 45 | `NUMBERPARCEL` | DECIMAL(5,0) |  |  |  |  |
+| 46 | `VOLUMEUNITOFMEASURECODE` | CHAR(3) |  |  |  |  |
+| 47 | `VOLUME` | DECIMAL(15,5) |  |  |  |  |
+| 48 | `VOLUMEDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 49 | `WEIGHTUNITOFMEASURECODE` | CHAR(3) |  |  |  |  |
+| 50 | `WEIGHTGROSS` | DECIMAL(15,5) |  |  |  |  |
+| 51 | `WEIGHTNET` | DECIMAL(15,5) |  |  |  |  |
+| 52 | `WEIGHTREALNET` | DECIMAL(15,5) |  |  |  |  |
+| 53 | `WEIGHTDECIMALNUMBER` | INTEGER | NOT NULL |  |  |  |
+| 54 | `TRUCKDRIVERCOMPANYCODE` | CHAR(3) |  |  |  |  |
+
+## References (this table → parent) — 0
+
+_None._
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Starter query
+
+```sql
+SELECT t.CREATIONTIMESTAMP,
+       t.CREATIONUSER,
+       t.LINE,
+       t.INTERNALDOCUMENTCOMPANYCODE,
+       t.INTDOCPROVISIONALCOUNTERCODE,
+       t.INTDOCUMENTPROVISIONALCODE,
+       t.LANGUAGECODE,
+       t.DELIVERYPOINTLEGALNAME1,
+       t.DELIVERYPOINTLEGALNAME2,
+       t.DELIVERYPOINTADDRESSLINE1,
+       t.DELIVERYPOINTADDRESSLINE2,
+       t.DELIVERYPOINTADDRESSLINE3
+FROM   DB2ADMIN.WRKINTERNALDOCUMENTPRINT t
+FETCH FIRST 100 ROWS ONLY;
+```

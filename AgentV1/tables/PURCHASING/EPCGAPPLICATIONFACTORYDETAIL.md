@@ -1,0 +1,66 @@
+# DB2ADMIN.EPCGAPPLICATIONFACTORYDETAIL
+
+- **Module**: `PURCHASING` (low confidence — FK neighbourhood: 1 of 1 related tables are PURCHASING)
+- **Roles**: `business_data`
+- **Columns**: 17
+- **Primary key**: `EPCGAPPLICATIONCOMPANYCODE`, `EPCGAPPLICATIONCODE`, `FACTORYCODE`
+- **FK degree**: referenced by 0 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 138056
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `EPCGAPPLICATIONCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `EPCGAPPLICATIONCODE` | CHAR(30) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FACTORYCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 3 | `FACTORYCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `COUNTRYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 5 | `ADDRESSLINE1` | VARCHAR(150) | NOT NULL |  |  |  |
+| 6 | `ADDRESSLINE2` | VARCHAR(150) |  |  |  |  |
+| 7 | `ADDRESSLINE3` | VARCHAR(150) |  |  |  |  |
+| 8 | `ADDRESSLINE4` | VARCHAR(150) |  |  |  |  |
+| 9 | `ADDRESSLINE5` | VARCHAR(150) |  |  |  |  |
+| 10 | `POSTALCODE` | CHAR(20) |  |  |  |  |
+| 11 | `TOWN` | VARCHAR(200) |  |  |  |  |
+| 12 | `DISTRICT` | VARCHAR(200) |  |  |  |  |
+| 13 | `TRANSPORTZONECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 14 | `ADDRESSPHONENUMBER` | VARCHAR(80) |  |  |  |  |
+| 15 | `ADDRESSFAXNUMBER` | VARCHAR(80) |  |  |  |  |
+| 16 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COUNTRY_COUNTRY` | `COUNTRYCODE` | [`COUNTRY`](../CORE_MASTER/COUNTRY.md) | `CODE` | RESTRICT | `EPCGAPPLICATIONFACTORYDETAIL.COUNTRYCODE = COUNTRY.CODE` |
+| `EPCGAPPLICATION_FACTORYDETAILLINE` | `EPCGAPPLICATIONCOMPANYCODE`, `EPCGAPPLICATIONCODE` | [`EPCGAPPLICATION`](../PURCHASING/EPCGAPPLICATION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `EPCGAPPLICATIONFACTORYDETAIL.EPCGAPPLICATIONCOMPANYCODE = EPCGAPPLICATION.COMPANYCODE AND EPCGAPPLICATIONFACTORYDETAIL.EPCGAPPLICATIONCODE = EPCGAPPLICATION.CODE` |
+| `PLANT_FACTORY` | `FACTORYCOMPANYCODE`, `FACTORYCODE` | [`PLANT`](../CORE_MASTER/PLANT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `EPCGAPPLICATIONFACTORYDETAIL.FACTORYCOMPANYCODE = PLANT.COMPANYCODE AND EPCGAPPLICATIONFACTORYDETAIL.FACTORYCODE = PLANT.CODE` |
+| `TRANSPORTZONE_TRANSPORTZONE` | `COUNTRYCODE`, `TRANSPORTZONECODE` | [`TRANSPORTZONE`](../CORE_MASTER/TRANSPORTZONE.md) | `COUNTRYCODE`, `CODE` | RESTRICT | `EPCGAPPLICATIONFACTORYDETAIL.COUNTRYCODE = TRANSPORTZONE.COUNTRYCODE AND EPCGAPPLICATIONFACTORYDETAIL.TRANSPORTZONECODE = TRANSPORTZONE.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `EPCGAPPFACTORYDETAILUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.EPCGAPPLICATIONCOMPANYCODE,
+       t.EPCGAPPLICATIONCODE,
+       t.FACTORYCOMPANYCODE,
+       t.FACTORYCODE,
+       t.COUNTRYCODE,
+       t.ADDRESSLINE1,
+       t.ADDRESSLINE2,
+       t.ADDRESSLINE3,
+       t.ADDRESSLINE4,
+       t.ADDRESSLINE5,
+       t.POSTALCODE,
+       t.TOWN
+FROM   DB2ADMIN.EPCGAPPLICATIONFACTORYDETAIL t
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,66 @@
+# DB2ADMIN.VATPLAFONDUSAGE
+
+- **Module**: `SALES` (low confidence — FK neighbourhood: 1 of 1 related tables are SALES)
+- **Roles**: `business_data`
+- **Columns**: 16
+- **Primary key**: `COMPANYCODE`, `DIVISIONCODE`, `YEARSTRING`, `CODE`, `IDENTIFICATIONCODE`
+- **FK degree**: referenced by 0 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 236280
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `DIVISIONCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key | Division within a company; second-level organisational discriminator. |
+| 2 | `YEARSTRING` | CHAR(4) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `CODE` | DECIMAL(5,0) | NOT NULL | PK FK | primary_key foreign_key | Business (natural) key of a master-data table, typically the last primary-key column. |
+| 4 | `IDENTIFICATIONCODE` | DECIMAL(5,0) | NOT NULL | PK | primary_key |  |
+| 5 | `INTERNALVOUCHERCODE` | DECIMAL(15,0) |  |  |  |  |
+| 6 | `CUSTOMERSUPPLIERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 7 | `ORDPRNCUSTOMERSUPPLIERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 8 | `SALESDOCPROVCOUNTERCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 9 | `SALESDOCPROVCOUNTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 10 | `SALESDOCPROVISIONALCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 11 | `DATEUSAGE` | DATE |  |  |  |  |
+| 12 | `AMOUNTUSAGE` | DECIMAL(17,2) |  |  |  |  |
+| 13 | `AMOUNTUSAGESIGNED` | DECIMAL(17,2) |  |  |  |  |
+| 14 | `DEBITCREDITINDICATOR` | CHAR(1) |  |  |  |  |
+| 15 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COUNTER_SALESDOCPROVCOUNTER` | `SALESDOCPROVCOUNTERCOMPANYCODE`, `SALESDOCPROVCOUNTERCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `VATPLAFONDUSAGE.SALESDOCPROVCOUNTERCOMPANYCODE = COUNTER.COMPANYCODE AND VATPLAFONDUSAGE.SALESDOCPROVCOUNTERCODE = COUNTER.CODE` |
+| `ORDERPARTNER_ORDERPARTNER` | `COMPANYCODE`, `CUSTOMERSUPPLIERTYPE`, `ORDPRNCUSTOMERSUPPLIERCODE` | [`ORDERPARTNER`](../CORE_MASTER/ORDERPARTNER.md) | `CUSTOMERSUPPLIERCOMPANYCODE`, `CUSTOMERSUPPLIERTYPE`, `CUSTOMERSUPPLIERCODE` | RESTRICT | `VATPLAFONDUSAGE.COMPANYCODE = ORDERPARTNER.CUSTOMERSUPPLIERCOMPANYCODE AND VATPLAFONDUSAGE.CUSTOMERSUPPLIERTYPE = ORDERPARTNER.CUSTOMERSUPPLIERTYPE AND VATPLAFONDUSAGE.ORDPRNCUSTOMERSUPPLIERCODE = ORDERPARTNER.CUSTOMERSUPPLIERCODE` |
+| `SALESDOCUMENT_SALESDOC` | `COMPANYCODE`, `SALESDOCPROVCOUNTERCODE`, `SALESDOCPROVISIONALCODE` | [`SALESDOCUMENT`](../SALES/SALESDOCUMENT.md) | `COMPANYCODE`, `PROVISIONALCOUNTERCODE`, `PROVISIONALCODE` | RESTRICT | `VATPLAFONDUSAGE.COMPANYCODE = SALESDOCUMENT.COMPANYCODE AND VATPLAFONDUSAGE.SALESDOCPROVCOUNTERCODE = SALESDOCUMENT.PROVISIONALCOUNTERCODE AND VATPLAFONDUSAGE.SALESDOCPROVISIONALCODE = SALESDOCUMENT.PROVISIONALCODE` |
+| `VATPLAFONDDECLARATION_DECLARATIONUSAGE` | `COMPANYCODE`, `DIVISIONCODE`, `YEARSTRING`, `CODE` | [`VATPLAFONDDECLARATION`](../SALES/VATPLAFONDDECLARATION.md) | `COMPANYCODE`, `DIVISIONCODE`, `YEARSTRING`, `CODE` | RESTRICT | `VATPLAFONDUSAGE.COMPANYCODE = VATPLAFONDDECLARATION.COMPANYCODE AND VATPLAFONDUSAGE.DIVISIONCODE = VATPLAFONDDECLARATION.DIVISIONCODE AND VATPLAFONDUSAGE.YEARSTRING = VATPLAFONDDECLARATION.YEARSTRING AND VATPLAFONDUSAGE.CODE = VATPLAFONDDECLARATION.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `VATPLAFONDUSAGEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.DIVISIONCODE,
+       t.YEARSTRING,
+       t.CODE,
+       t.IDENTIFICATIONCODE,
+       t.INTERNALVOUCHERCODE,
+       t.CUSTOMERSUPPLIERTYPE,
+       t.ORDPRNCUSTOMERSUPPLIERCODE,
+       t.SALESDOCPROVCOUNTERCOMPANYCODE,
+       t.SALESDOCPROVCOUNTERCODE,
+       t.SALESDOCPROVISIONALCODE,
+       t.DATEUSAGE
+FROM   DB2ADMIN.VATPLAFONDUSAGE t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

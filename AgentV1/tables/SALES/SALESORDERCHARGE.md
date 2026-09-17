@@ -1,0 +1,77 @@
+# DB2ADMIN.SALESORDERCHARGE
+
+- **Module**: `SALES` (high confidence — table name starts with 'SALESORDER')
+- **Roles**: `business_data`
+- **Columns**: 27
+- **Primary key**: `SALESORDERCOMPANYCODE`, `SALESORDERCOUNTERCODE`, `SALESORDERCODE`, `NUMBERID`
+- **FK degree**: referenced by 0 constraint(s), references 5 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 6269
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `SALESORDERCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `SALESORDERCOUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `SALESORDERCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `NUMBERID` | DECIMAL(11,0) | NOT NULL | PK | primary_key |  |
+| 4 | `SEQUENCE` | DECIMAL(3,0) | NOT NULL |  |  |  |
+| 5 | `ITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 6 | `CHARGESSUBCODE01` | CHAR(20) |  |  |  |  |
+| 7 | `CHARGETYPE` | CHAR(2) | NOT NULL |  |  |  |
+| 8 | `VALUE` | DECIMAL(18,5) | NOT NULL |  |  |  |
+| 9 | `CHARGECURRENCYCODE` | CHAR(4) |  | FK | foreign_key |  |
+| 10 | `SIGN` | CHAR(2) | NOT NULL |  |  |  |
+| 11 | `CALCULATIONTYPE` | CHAR(2) | NOT NULL |  |  |  |
+| 12 | `AMOUNTCALCULATIONTYPE` | CHAR(2) |  |  |  |  |
+| 13 | `CREATIONTYPE` | CHAR(1) | NOT NULL |  |  |  |
+| 14 | `DEFSALCHRDEFINITIONNUMBERID` | DECIMAL(11,0) |  | FK | foreign_key |  |
+| 15 | `DEFINITIONNUMBERLINEID` | DECIMAL(3,0) |  | FK | foreign_key |  |
+| 16 | `TERMSOFLOGORDERTYPE` | CHAR(1) |  |  |  |  |
+| 17 | `TERMSOFLOGCODE` | CHAR(2) |  |  |  |  |
+| 18 | `LOGREASONCODE` | CHAR(2) |  | FK | foreign_key |  |
+| 19 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 20 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 21 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 22 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 23 | `ITEMTYPECOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 24 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 25 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 26 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+
+## References (this table → parent) — 5
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `CURRENCY_CHARGECURRENCY` | `CHARGECURRENCYCODE` | [`CURRENCY`](../CORE_MASTER/CURRENCY.md) | `CODE` | RESTRICT | `SALESORDERCHARGE.CHARGECURRENCYCODE = CURRENCY.CODE` |
+| `ITEMTYPE_ITEMTYPE` | `ITEMTYPECOMPANYCODE`, `ITEMTYPECODE` | [`ITEMTYPE`](../CORE_MASTER/ITEMTYPE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `SALESORDERCHARGE.ITEMTYPECOMPANYCODE = ITEMTYPE.COMPANYCODE AND SALESORDERCHARGE.ITEMTYPECODE = ITEMTYPE.CODE` |
+| `LOGREASON_LOGREASON` | `SALESORDERCOMPANYCODE`, `LOGREASONCODE` | [`LOGREASON`](../LOGISTICS/LOGREASON.md) | `COMPANYCODE`, `CODE` | RESTRICT | `SALESORDERCHARGE.SALESORDERCOMPANYCODE = LOGREASON.COMPANYCODE AND SALESORDERCHARGE.LOGREASONCODE = LOGREASON.CODE` |
+| `SALESCHARGESDEFINITIONDETAIL_DEFINITION` | `SALESORDERCOMPANYCODE`, `DEFSALCHRDEFINITIONNUMBERID`, `DEFINITIONNUMBERLINEID` | [`SALESCHARGESDEFINITIONDETAIL`](../SALES/SALESCHARGESDEFINITIONDETAIL.md) | `SALCHRDEFINITIONCOMPANYCODE`, `SALESCHARGESDEFINITIONNUMBERID`, `NUMBERLINEID` | RESTRICT | `SALESORDERCHARGE.SALESORDERCOMPANYCODE = SALESCHARGESDEFINITIONDETAIL.SALCHRDEFINITIONCOMPANYCODE AND SALESORDERCHARGE.DEFSALCHRDEFINITIONNUMBERID = SALESCHARGESDEFINITIONDETAIL.SALESCHARGESDEFINITIONNUMBERID AND SALESORDERCHARGE.DEFINITIONNUMBERLINEID = SALESCHARGESDEFINITIONDETAIL.NUMBERLINEID` |
+| `SALESORDER_CHARGE` | `SALESORDERCOMPANYCODE`, `SALESORDERCOUNTERCODE`, `SALESORDERCODE` | [`SALESORDER`](../SALES/SALESORDER.md) | `COMPANYCODE`, `COUNTERCODE`, `CODE` | RESTRICT | `SALESORDERCHARGE.SALESORDERCOMPANYCODE = SALESORDER.COMPANYCODE AND SALESORDERCHARGE.SALESORDERCOUNTERCODE = SALESORDER.COUNTERCODE AND SALESORDERCHARGE.SALESORDERCODE = SALESORDER.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `SALESORDERCHARGEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.SALESORDERCOMPANYCODE,
+       t.SALESORDERCOUNTERCODE,
+       t.SALESORDERCODE,
+       t.NUMBERID,
+       t.SEQUENCE,
+       t.ITEMTYPECODE,
+       t.CHARGESSUBCODE01,
+       t.CHARGETYPE,
+       t.VALUE,
+       t.CHARGECURRENCYCODE,
+       t.SIGN,
+       t.CALCULATIONTYPE
+FROM   DB2ADMIN.SALESORDERCHARGE t
+FETCH FIRST 100 ROWS ONLY;
+```

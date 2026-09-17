@@ -1,0 +1,79 @@
+# DB2ADMIN.EMPLOYEEEDUCATION
+
+- **Module**: `HR` (high confidence — table name starts with 'EMPLOYEE')
+- **Roles**: `business_data`
+- **Columns**: 24
+- **Primary key**: `COMPANYCODE`, `EMPLOYEEIDCODE`, `EDUCATIONICSTABLECODE`, `EDUCATIONCODE`
+- **FK degree**: referenced by 0 constraint(s), references 9 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 152240
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `EMPLOYEEIDCODE` | CHAR(9) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `EDUCATIONICSTABLECODE` | CHAR(4) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `EDUCATIONCODE` | CHAR(6) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `EDUCATIONTYPEICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 5 | `EDUCATIONTYPECODE` | CHAR(6) |  | FK | foreign_key |  |
+| 6 | `DURATION` | DECIMAL(5,0) |  |  |  |  |
+| 7 | `EDUCATIONINSTITUTEICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 8 | `EDUCATIONINSTITUTECODE` | CHAR(6) |  | FK | foreign_key |  |
+| 9 | `COUNTRYICSTABLECODE` | CHAR(4) |  | FK | foreign_key |  |
+| 10 | `COUNTRYCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 11 | `STATECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 12 | `DISTRICTDISTRICTCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 13 | `INSTITUTIONLOCATIONCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 14 | `YEAROFPASSING` | DECIMAL(5,0) |  |  |  |  |
+| 15 | `MARKSGRADE` | CHAR(50) |  |  |  |  |
+| 16 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 17 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 18 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 19 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 20 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 21 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 22 | `REQUESTFLAG` | INTEGER | NOT NULL |  |  |  |
+| 23 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 9
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `CITY_INSTITUTIONLOCATION` | `INSTITUTIONLOCATIONCODE` | [`CITY`](../HR/CITY.md) | `CODE` | RESTRICT | `EMPLOYEEEDUCATION.INSTITUTIONLOCATIONCODE = CITY.CODE` |
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `EMPLOYEEEDUCATION.COMPANYCODE = COMPANY.CODE` |
+| `EMPLOYEE_EMPLOYEEID` | `COMPANYCODE`, `EMPLOYEEIDCODE` | [`EMPLOYEE`](../HR/EMPLOYEE.md) | `COMPANYCODE`, `CODE` | RESTRICT | `EMPLOYEEEDUCATION.COMPANYCODE = EMPLOYEE.COMPANYCODE AND EMPLOYEEEDUCATION.EMPLOYEEIDCODE = EMPLOYEE.CODE` |
+| `ICSENTITY_COUNTRY` | `COMPANYCODE`, `COUNTRYICSTABLECODE`, `COUNTRYCODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `EMPLOYEEEDUCATION.COMPANYCODE = ICSENTITY.COMPANYCODE AND EMPLOYEEEDUCATION.COUNTRYICSTABLECODE = ICSENTITY.ICSTABLECODE AND EMPLOYEEEDUCATION.COUNTRYCODE = ICSENTITY.CODE` |
+| `ICSENTITY_EDUCATION` | `COMPANYCODE`, `EDUCATIONICSTABLECODE`, `EDUCATIONCODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `EMPLOYEEEDUCATION.COMPANYCODE = ICSENTITY.COMPANYCODE AND EMPLOYEEEDUCATION.EDUCATIONICSTABLECODE = ICSENTITY.ICSTABLECODE AND EMPLOYEEEDUCATION.EDUCATIONCODE = ICSENTITY.CODE` |
+| `ICSENTITY_EDUCATIONINSTITUTE` | `COMPANYCODE`, `EDUCATIONINSTITUTEICSTABLECODE`, `EDUCATIONINSTITUTECODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `EMPLOYEEEDUCATION.COMPANYCODE = ICSENTITY.COMPANYCODE AND EMPLOYEEEDUCATION.EDUCATIONINSTITUTEICSTABLECODE = ICSENTITY.ICSTABLECODE AND EMPLOYEEEDUCATION.EDUCATIONINSTITUTECODE = ICSENTITY.CODE` |
+| `ICSENTITY_EDUCATIONTYPE` | `COMPANYCODE`, `EDUCATIONTYPEICSTABLECODE`, `EDUCATIONTYPECODE` | [`ICSENTITY`](../CORE_MASTER/ICSENTITY.md) | `COMPANYCODE`, `ICSTABLECODE`, `CODE` | RESTRICT | `EMPLOYEEEDUCATION.COMPANYCODE = ICSENTITY.COMPANYCODE AND EMPLOYEEEDUCATION.EDUCATIONTYPEICSTABLECODE = ICSENTITY.ICSTABLECODE AND EMPLOYEEEDUCATION.EDUCATIONTYPECODE = ICSENTITY.CODE` |
+| `STATEVSDISTRICT_DISTRICT` | `STATECODE`, `DISTRICTDISTRICTCODE` | [`STATEVSDISTRICT`](../HR/STATEVSDISTRICT.md) | `STATECODE`, `DISTRICTCODE` | RESTRICT | `EMPLOYEEEDUCATION.STATECODE = STATEVSDISTRICT.STATECODE AND EMPLOYEEEDUCATION.DISTRICTDISTRICTCODE = STATEVSDISTRICT.DISTRICTCODE` |
+| `STATE_STATE` | `STATECODE` | [`STATE`](../HR/STATE.md) | `CODE` | RESTRICT | `EMPLOYEEEDUCATION.STATECODE = STATE.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `EMPLOYEEEDUCATIONUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.EMPLOYEEIDCODE,
+       t.EDUCATIONICSTABLECODE,
+       t.EDUCATIONCODE,
+       t.EDUCATIONTYPEICSTABLECODE,
+       t.EDUCATIONTYPECODE,
+       t.DURATION,
+       t.EDUCATIONINSTITUTEICSTABLECODE,
+       t.EDUCATIONINSTITUTECODE,
+       t.COUNTRYICSTABLECODE,
+       t.COUNTRYCODE,
+       t.STATECODE
+FROM   DB2ADMIN.EMPLOYEEEDUCATION t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

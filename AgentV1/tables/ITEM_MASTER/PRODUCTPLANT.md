@@ -1,0 +1,75 @@
+# DB2ADMIN.PRODUCTPLANT
+
+- **Module**: `ITEM_MASTER` (high confidence — table name starts with 'PRODUCT')
+- **Roles**: `business_data`
+- **Columns**: 25
+- **Primary key**: `PRODUCTCOMPANYCODE`, `PRODUCTITEMTYPECODE`, `PRODUCTSUBCODE01`, `PRODUCTSUBCODE02`, `PRODUCTSUBCODE03`, `PRODUCTSUBCODE04`, `PRODUCTSUBCODE05`, `PRODUCTSUBCODE06`, `PRODUCTSUBCODE07`, `PRODUCTSUBCODE08`, `PRODUCTSUBCODE09`, `PRODUCTSUBCODE10`, `COMPANYCODE`, `PLANTCOMPANYCODE`, `PLANTCODE`
+- **FK degree**: referenced by 0 constraint(s), references 4 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 215488
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `PRODUCTCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `PRODUCTITEMTYPECODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `PRODUCTSUBCODE01` | CHAR(20) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `PRODUCTSUBCODE02` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `PRODUCTSUBCODE03` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `PRODUCTSUBCODE04` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 6 | `PRODUCTSUBCODE05` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 7 | `PRODUCTSUBCODE06` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 8 | `PRODUCTSUBCODE07` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 9 | `PRODUCTSUBCODE08` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 10 | `PRODUCTSUBCODE09` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 11 | `PRODUCTSUBCODE10` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 12 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 13 | `PLANTCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 14 | `PLANTCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 15 | `LASTSTEPWCAOAWORKCENTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 16 | `LASTSTEPWCAOAOPERATIONCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 17 | `LASTSTEPWCAOACODE` | CHAR(20) |  | FK | foreign_key |  |
+| 18 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 19 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 20 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 21 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 22 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 23 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 24 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 4
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `PRODUCTPLANT.COMPANYCODE = COMPANY.CODE` |
+| `PLANT_PLANT` | `PLANTCOMPANYCODE`, `PLANTCODE` | [`PLANT`](../CORE_MASTER/PLANT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `PRODUCTPLANT.PLANTCOMPANYCODE = PLANT.COMPANYCODE AND PRODUCTPLANT.PLANTCODE = PLANT.CODE` |
+| `PRODUCT_PLANT` | `PRODUCTCOMPANYCODE`, `PRODUCTITEMTYPECODE`, `PRODUCTSUBCODE01`, `PRODUCTSUBCODE02`, `PRODUCTSUBCODE03`, `PRODUCTSUBCODE04`, `PRODUCTSUBCODE05`, `PRODUCTSUBCODE06`, `PRODUCTSUBCODE07`, `PRODUCTSUBCODE08`, `PRODUCTSUBCODE09`, `PRODUCTSUBCODE10` | [`PRODUCT`](../ITEM_MASTER/PRODUCT.md) | `COMPANYCODE`, `ITEMTYPECODE`, `SUBCODE01`, `SUBCODE02`, `SUBCODE03`, `SUBCODE04`, `SUBCODE05`, `SUBCODE06`, `SUBCODE07`, `SUBCODE08`, `SUBCODE09`, `SUBCODE10` | RESTRICT | `PRODUCTPLANT.PRODUCTCOMPANYCODE = PRODUCT.COMPANYCODE AND PRODUCTPLANT.PRODUCTITEMTYPECODE = PRODUCT.ITEMTYPECODE AND PRODUCTPLANT.PRODUCTSUBCODE01 = PRODUCT.SUBCODE01 AND PRODUCTPLANT.PRODUCTSUBCODE02 = PRODUCT.SUBCODE02 AND PRODUCTPLANT.PRODUCTSUBCODE03 = PRODUCT.SUBCODE03 AND PRODUCTPLANT.PRODUCTSUBCODE04 = PRODUCT.SUBCODE04 AND PRODUCTPLANT.PRODUCTSUBCODE05 = PRODUCT.SUBCODE05 AND PRODUCTPLANT.PRODUCTSUBCODE06 = PRODUCT.SUBCODE06 AND PRODUCTPLANT.PRODUCTSUBCODE07 = PRODUCT.SUBCODE07 AND PRODUCTPLANT.PRODUCTSUBCODE08 = PRODUCT.SUBCODE08 AND PRODUCTPLANT.PRODUCTSUBCODE09 = PRODUCT.SUBCODE09 AND PRODUCTPLANT.PRODUCTSUBCODE10 = PRODUCT.SUBCODE10` |
+| `WORKCENTERANDOPERATTRIBUTES_LASTSTEPWCAOA` | `COMPANYCODE`, `LASTSTEPWCAOAWORKCENTERCODE`, `LASTSTEPWCAOAOPERATIONCODE`, `LASTSTEPWCAOACODE` | [`WORKCENTERANDOPERATTRIBUTES`](../PRODUCTION/WORKCENTERANDOPERATTRIBUTES.md) | `COMPANYCODE`, `WORKCENTERCODE`, `OPERATIONCODE`, `CODE` | RESTRICT | `PRODUCTPLANT.COMPANYCODE = WORKCENTERANDOPERATTRIBUTES.COMPANYCODE AND PRODUCTPLANT.LASTSTEPWCAOAWORKCENTERCODE = WORKCENTERANDOPERATTRIBUTES.WORKCENTERCODE AND PRODUCTPLANT.LASTSTEPWCAOAOPERATIONCODE = WORKCENTERANDOPERATTRIBUTES.OPERATIONCODE AND PRODUCTPLANT.LASTSTEPWCAOACODE = WORKCENTERANDOPERATTRIBUTES.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `PRODUCTPLANTUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.PRODUCTCOMPANYCODE,
+       t.PRODUCTITEMTYPECODE,
+       t.PRODUCTSUBCODE01,
+       t.PRODUCTSUBCODE02,
+       t.PRODUCTSUBCODE03,
+       t.PRODUCTSUBCODE04,
+       t.PRODUCTSUBCODE05,
+       t.PRODUCTSUBCODE06,
+       t.PRODUCTSUBCODE07,
+       t.PRODUCTSUBCODE08,
+       t.PRODUCTSUBCODE09,
+       t.PRODUCTSUBCODE10
+FROM   DB2ADMIN.PRODUCTPLANT t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

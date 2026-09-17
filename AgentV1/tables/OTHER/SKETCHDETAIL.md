@@ -1,0 +1,52 @@
+# DB2ADMIN.SKETCHDETAIL
+
+- **Module**: `OTHER` (none confidence — no known prefix matched)
+- **Roles**: `business_data`
+- **Columns**: 6
+- **Primary key**: `SKETCHCOMPANYCODE`, `SKETCHCODE`, `SKETCHITEMTYPECODE`, `SKETCHPRODUCTUNIQUEID`, `SKETCHTYPEDETAILCODE`
+- **FK degree**: referenced by 1 constraint(s), references 1 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 215984
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `SKETCHCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `SKETCHCODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `SKETCHITEMTYPECODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `SKETCHPRODUCTUNIQUEID` | BIGINT | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `SKETCHTYPEDETAILCODE` | CHAR(10) | NOT NULL | PK | primary_key |  |
+| 5 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 1
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `SKETCH_DETAIL` | `SKETCHCOMPANYCODE`, `SKETCHCODE`, `SKETCHITEMTYPECODE`, `SKETCHPRODUCTUNIQUEID` | [`SKETCH`](../OTHER/SKETCH.md) | `COMPANYCODE`, `CODE`, `ITEMTYPECODE`, `PRODUCTUNIQUEID` | RESTRICT | `SKETCHDETAIL.SKETCHCOMPANYCODE = SKETCH.COMPANYCODE AND SKETCHDETAIL.SKETCHCODE = SKETCH.CODE AND SKETCHDETAIL.SKETCHITEMTYPECODE = SKETCH.ITEMTYPECODE AND SKETCHDETAIL.SKETCHPRODUCTUNIQUEID = SKETCH.PRODUCTUNIQUEID` |
+
+## Referenced by (child → this table) — 1
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `SKETCHDETAIL_GROUPSIZE` | [`SKETCHDETAILSIZE`](../OTHER/SKETCHDETAILSIZE.md) | `SKETCHDETAILSKETCHCOMPANYCODE`, `SKETCHDETAILSKETCHCODE`, `SKETCHDETAILSKETCHITEMTYPECODE`, `SKETCHDLTSKETCHPRDUNIQUEID`, `SKETCHDLTSKETCHTYPEDETAILCODE` | `SKETCHDETAILSIZE.SKETCHDETAILSKETCHCOMPANYCODE = SKETCHDETAIL.SKETCHCOMPANYCODE AND SKETCHDETAILSIZE.SKETCHDETAILSKETCHCODE = SKETCHDETAIL.SKETCHCODE AND SKETCHDETAILSIZE.SKETCHDETAILSKETCHITEMTYPECODE = SKETCHDETAIL.SKETCHITEMTYPECODE AND SKETCHDETAILSIZE.SKETCHDLTSKETCHPRDUNIQUEID = SKETCHDETAIL.SKETCHPRODUCTUNIQUEID AND SKETCHDETAILSIZE.SKETCHDLTSKETCHTYPEDETAILCODE = SKETCHDETAIL.SKETCHTYPEDETAILCODE` |
+
+## Implicit links (NOT declared in the DDL — inferred)
+
+- child `SKETCHDETAILSIZEBEAN`.`FATHERID` → this table's `ABSUNIQUEID` (medium confidence)
+
+## Indexes
+
+- `SKETCHDETAILUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.SKETCHCOMPANYCODE,
+       t.SKETCHCODE,
+       t.SKETCHITEMTYPECODE,
+       t.SKETCHPRODUCTUNIQUEID,
+       t.SKETCHTYPEDETAILCODE,
+       t.ABSUNIQUEID
+FROM   DB2ADMIN.SKETCHDETAIL t
+FETCH FIRST 100 ROWS ONLY;
+```

@@ -1,0 +1,91 @@
+# DB2ADMIN.EXTOPCUSTOMIZEDOPTIONS
+
+- **Module**: `SUBCONTRACTING` (medium confidence — table name starts with 'EXTOP')
+- **Roles**: `business_data`
+- **Columns**: 40
+- **Primary key**: `COMPANYCODE`
+- **FK degree**: referenced by 0 constraint(s), references 5 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 29957
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `EXTOPERATIONLINECOUNTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 2 | `EXTOPERATIONDOCCOUNTERPROVCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 3 | `EXTOPERATIONDOCCOUNTERDEFCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 4 | `CUSTOMEXTOPERATIONCODE` | CHAR(20) |  |  |  |  |
+| 5 | `CHECKEXTOPERATIONCODE` | CHAR(20) |  |  |  |  |
+| 6 | `CUSTOMEXTDOCUMENTCODE` | CHAR(20) |  |  |  |  |
+| 7 | `CHECKEXTDOCUMENTCODE` | CHAR(20) |  |  |  |  |
+| 8 | `CLOSURERULEPOLICYCODE` | CHAR(20) |  |  |  |  |
+| 9 | `QUANTITYPLYREFCODE` | CHAR(20) |  |  |  |  |
+| 10 | `STATISTICALGROUPREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 11 | `COLLECTIONREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 12 | `PROJECTREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 13 | `COSTCENTERREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 14 | `DELIVERYPOINTREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 15 | `INVOICEADDRESSREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 16 | `TERMSOFDELIVERYREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 17 | `TERMSOFSHIPPINGREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 18 | `TRANSPORTREASONREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 19 | `FIRSTCARRIERREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 20 | `SECONDCARRIERREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 21 | `THIRDCARRIERREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 22 | `REQUIREDDELIVERYDATEREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 23 | `CONFIRMEDDELIVERYDATEREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 24 | `PAYMENTMETHODREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 25 | `PRICELISTREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 26 | `BANKINFORMATIONREQUIRED` | INTEGER | NOT NULL |  |  |  |
+| 27 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 28 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 29 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 30 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 31 | `EXTOPERATIONLINECNTCMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 32 | `EXTOPERATIONDOCCNTPROVCMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 33 | `EXTOPERATIONDOCCNTDEFCMYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 34 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 35 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 36 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 37 | `LOGMANAGEMENT` | SMALLINT | NOT NULL |  |  |  |
+| 38 | `TERMSOFLOGORDERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 39 | `TERMSOFLOGCODE` | CHAR(2) |  | FK | foreign_key |  |
+
+## References (this table → parent) — 5
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `EXTOPCUSTOMIZEDOPTIONS.COMPANYCODE = COMPANY.CODE` |
+| `COUNTER_EXTOPERATIONDOCCOUNTERDEF` | `EXTOPERATIONDOCCNTDEFCMYCODE`, `EXTOPERATIONDOCCOUNTERDEFCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `EXTOPCUSTOMIZEDOPTIONS.EXTOPERATIONDOCCNTDEFCMYCODE = COUNTER.COMPANYCODE AND EXTOPCUSTOMIZEDOPTIONS.EXTOPERATIONDOCCOUNTERDEFCODE = COUNTER.CODE` |
+| `COUNTER_EXTOPERATIONDOCCOUNTERPROV` | `EXTOPERATIONDOCCNTPROVCMYCODE`, `EXTOPERATIONDOCCOUNTERPROVCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `EXTOPCUSTOMIZEDOPTIONS.EXTOPERATIONDOCCNTPROVCMYCODE = COUNTER.COMPANYCODE AND EXTOPCUSTOMIZEDOPTIONS.EXTOPERATIONDOCCOUNTERPROVCODE = COUNTER.CODE` |
+| `COUNTER_EXTOPERATIONLINECOUNTER` | `EXTOPERATIONLINECNTCMYCODE`, `EXTOPERATIONLINECOUNTERCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `EXTOPCUSTOMIZEDOPTIONS.EXTOPERATIONLINECNTCMYCODE = COUNTER.COMPANYCODE AND EXTOPCUSTOMIZEDOPTIONS.EXTOPERATIONLINECOUNTERCODE = COUNTER.CODE` |
+| `TERMSOFLOG_TERMSOFLOG` | `COMPANYCODE`, `TERMSOFLOGORDERTYPE`, `TERMSOFLOGCODE` | [`TERMSOFLOG`](../CORE_MASTER/TERMSOFLOG.md) | `COMPANYCODE`, `ORDERTYPE`, `CODE` | RESTRICT | `EXTOPCUSTOMIZEDOPTIONS.COMPANYCODE = TERMSOFLOG.COMPANYCODE AND EXTOPCUSTOMIZEDOPTIONS.TERMSOFLOGORDERTYPE = TERMSOFLOG.ORDERTYPE AND EXTOPCUSTOMIZEDOPTIONS.TERMSOFLOGCODE = TERMSOFLOG.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `EXTOPCUSTOMIZEDOPTIONSUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.EXTOPERATIONLINECOUNTERCODE,
+       t.EXTOPERATIONDOCCOUNTERPROVCODE,
+       t.EXTOPERATIONDOCCOUNTERDEFCODE,
+       t.CUSTOMEXTOPERATIONCODE,
+       t.CHECKEXTOPERATIONCODE,
+       t.CUSTOMEXTDOCUMENTCODE,
+       t.CHECKEXTDOCUMENTCODE,
+       t.CLOSURERULEPOLICYCODE,
+       t.QUANTITYPLYREFCODE,
+       t.STATISTICALGROUPREQUIRED,
+       t.COLLECTIONREQUIRED
+FROM   DB2ADMIN.EXTOPCUSTOMIZEDOPTIONS t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

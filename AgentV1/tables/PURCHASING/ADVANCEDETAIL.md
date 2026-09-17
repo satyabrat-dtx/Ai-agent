@@ -1,0 +1,71 @@
+# DB2ADMIN.ADVANCEDETAIL
+
+- **Module**: `PURCHASING` (low confidence — FK neighbourhood: 1 of 1 related tables are PURCHASING)
+- **Roles**: `business_data`
+- **Columns**: 24
+- **Primary key**: `ADVANCECOMPANYCODE`, `ADVANCEPURORDERCOUNTERCODE`, `ADVANCEPURCHASEORDERCODE`, `ADVANCELINENO`, `LINENO`
+- **FK degree**: referenced by 0 constraint(s), references 2 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 216922
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `ADVANCECOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `ADVANCEPURORDERCOUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `ADVANCEPURCHASEORDERCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `ADVANCELINENO` | INTEGER | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `LINENO` | DECIMAL(7,0) | NOT NULL | PK | primary_key |  |
+| 5 | `PURINVDIVISIONCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 6 | `PURINVORDPRNCSMSUPPLIERTYPE` | CHAR(1) |  | FK | foreign_key |  |
+| 7 | `PURINVORDPRNCSMSUPPLIERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 8 | `PURINVCODE` | CHAR(25) |  | FK | foreign_key |  |
+| 9 | `PURINVINVOICEDATE` | DATE |  | FK | foreign_key |  |
+| 10 | `FINDOCBUSINESSUNITCODE` | CHAR(10) |  |  |  |  |
+| 11 | `FINDOCFINANCIALYEARCODE` | DECIMAL(4,0) |  |  |  |  |
+| 12 | `FINDOCTEMPLATECODE` | CHAR(3) |  |  |  |  |
+| 13 | `FINDOCSTATISTICALGROUPCODE` | CHAR(6) |  |  |  |  |
+| 14 | `FINDOCCODE` | CHAR(15) |  |  |  |  |
+| 15 | `TDSAPPLICABLEAMT` | DECIMAL(15,5) |  |  |  |  |
+| 16 | `TDSAMT` | DECIMAL(15,5) |  |  |  |  |
+| 17 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 18 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 19 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 20 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 21 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 22 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 23 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 2
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `ADVANCE_LINE` | `ADVANCECOMPANYCODE`, `ADVANCEPURORDERCOUNTERCODE`, `ADVANCEPURCHASEORDERCODE`, `ADVANCELINENO` | [`ADVANCE`](../PURCHASING/ADVANCE.md) | `COMPANYCODE`, `PURCHASEORDERCOUNTERCODE`, `PURCHASEORDERCODE`, `LINENO` | RESTRICT | `ADVANCEDETAIL.ADVANCECOMPANYCODE = ADVANCE.COMPANYCODE AND ADVANCEDETAIL.ADVANCEPURORDERCOUNTERCODE = ADVANCE.PURCHASEORDERCOUNTERCODE AND ADVANCEDETAIL.ADVANCEPURCHASEORDERCODE = ADVANCE.PURCHASEORDERCODE AND ADVANCEDETAIL.ADVANCELINENO = ADVANCE.LINENO` |
+| `PURCHASEINVOICE_PURINV` | `ADVANCECOMPANYCODE`, `PURINVDIVISIONCODE`, `PURINVORDPRNCSMSUPPLIERTYPE`, `PURINVORDPRNCSMSUPPLIERCODE`, `PURINVCODE`, `PURINVINVOICEDATE` | [`PURCHASEINVOICE`](../PURCHASING/PURCHASEINVOICE.md) | `COMPANYCODE`, `DIVISIONCODE`, `ORDPRNCUSTOMERSUPPLIERTYPE`, `ORDPRNCUSTOMERSUPPLIERCODE`, `CODE`, `INVOICEDATE` | RESTRICT | `ADVANCEDETAIL.ADVANCECOMPANYCODE = PURCHASEINVOICE.COMPANYCODE AND ADVANCEDETAIL.PURINVDIVISIONCODE = PURCHASEINVOICE.DIVISIONCODE AND ADVANCEDETAIL.PURINVORDPRNCSMSUPPLIERTYPE = PURCHASEINVOICE.ORDPRNCUSTOMERSUPPLIERTYPE AND ADVANCEDETAIL.PURINVORDPRNCSMSUPPLIERCODE = PURCHASEINVOICE.ORDPRNCUSTOMERSUPPLIERCODE AND ADVANCEDETAIL.PURINVCODE = PURCHASEINVOICE.CODE AND ADVANCEDETAIL.PURINVINVOICEDATE = PURCHASEINVOICE.INVOICEDATE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `ADVANCEDETAILUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.ADVANCECOMPANYCODE,
+       t.ADVANCEPURORDERCOUNTERCODE,
+       t.ADVANCEPURCHASEORDERCODE,
+       t.ADVANCELINENO,
+       t.LINENO,
+       t.PURINVDIVISIONCODE,
+       t.PURINVORDPRNCSMSUPPLIERTYPE,
+       t.PURINVORDPRNCSMSUPPLIERCODE,
+       t.PURINVCODE,
+       t.PURINVINVOICEDATE,
+       t.FINDOCBUSINESSUNITCODE,
+       t.FINDOCFINANCIALYEARCODE
+FROM   DB2ADMIN.ADVANCEDETAIL t
+FETCH FIRST 100 ROWS ONLY;
+```

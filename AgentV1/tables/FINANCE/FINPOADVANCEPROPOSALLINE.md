@@ -1,0 +1,65 @@
+# DB2ADMIN.FINPOADVANCEPROPOSALLINE
+
+- **Module**: `FINANCE` (high confidence — table name starts with 'FIN')
+- **Roles**: `business_data`
+- **Columns**: 18
+- **Primary key**: `FINPOADVANCEPROPOSALCMYCODE`, `FINPOADVANCEPROPOSALCODE`, `POADVPURCHASEORDERCOUNTERCODE`, `POADVPURCHASEORDERCODE`, `POADVLINENO`
+- **FK degree**: referenced by 0 constraint(s), references 2 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 223315
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FINPOADVANCEPROPOSALCMYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FINPOADVANCEPROPOSALCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `POADVPURCHASEORDERCOUNTERCODE` | CHAR(8) | NOT NULL | PK | primary_key |  |
+| 3 | `POADVPURCHASEORDERCODE` | CHAR(15) | NOT NULL | PK | primary_key |  |
+| 4 | `POADVLINENO` | INTEGER | NOT NULL | PK | primary_key |  |
+| 5 | `FDBUSINESSUNITCODE` | CHAR(10) |  | FK | foreign_key |  |
+| 6 | `FDFINANCIALYEARCODE` | DECIMAL(4,0) |  | FK | foreign_key |  |
+| 7 | `FDDOCUMENTTEMPLATECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 8 | `FDSTATISTICALGROUPCODE` | CHAR(6) |  | FK | foreign_key |  |
+| 9 | `FDCODE` | CHAR(15) |  | FK | foreign_key |  |
+| 10 | `ADVANCEPAYMENT` | DECIMAL(18,5) |  |  |  |  |
+| 11 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 12 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 13 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 14 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 15 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 16 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 17 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 2
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `FINDOCUMENT_FD` | `FINPOADVANCEPROPOSALCMYCODE`, `FDBUSINESSUNITCODE`, `FDFINANCIALYEARCODE`, `FDDOCUMENTTEMPLATECODE`, `FDSTATISTICALGROUPCODE`, `FDCODE` | [`FINDOCUMENT`](../FINANCE/FINDOCUMENT.md) | `COMPANYCODE`, `BUSINESSUNITCODE`, `FINANCIALYEARCODE`, `DOCUMENTTEMPLATECODE`, `STATISTICALGROUPCODE`, `CODE` | RESTRICT | `FINPOADVANCEPROPOSALLINE.FINPOADVANCEPROPOSALCMYCODE = FINDOCUMENT.COMPANYCODE AND FINPOADVANCEPROPOSALLINE.FDBUSINESSUNITCODE = FINDOCUMENT.BUSINESSUNITCODE AND FINPOADVANCEPROPOSALLINE.FDFINANCIALYEARCODE = FINDOCUMENT.FINANCIALYEARCODE AND FINPOADVANCEPROPOSALLINE.FDDOCUMENTTEMPLATECODE = FINDOCUMENT.DOCUMENTTEMPLATECODE AND FINPOADVANCEPROPOSALLINE.FDSTATISTICALGROUPCODE = FINDOCUMENT.STATISTICALGROUPCODE AND FINPOADVANCEPROPOSALLINE.FDCODE = FINDOCUMENT.CODE` |
+| `FINPOADVANCEPROPOSAL_TRANSACTIONLINE` | `FINPOADVANCEPROPOSALCMYCODE`, `FINPOADVANCEPROPOSALCODE` | [`FINPOADVANCEPROPOSAL`](../FINANCE/FINPOADVANCEPROPOSAL.md) | `COMPANYCODE`, `CODE` | RESTRICT | `FINPOADVANCEPROPOSALLINE.FINPOADVANCEPROPOSALCMYCODE = FINPOADVANCEPROPOSAL.COMPANYCODE AND FINPOADVANCEPROPOSALLINE.FINPOADVANCEPROPOSALCODE = FINPOADVANCEPROPOSAL.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `FINPOADVANCEPROPOSALLINEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FINPOADVANCEPROPOSALCMYCODE,
+       t.FINPOADVANCEPROPOSALCODE,
+       t.POADVPURCHASEORDERCOUNTERCODE,
+       t.POADVPURCHASEORDERCODE,
+       t.POADVLINENO,
+       t.FDBUSINESSUNITCODE,
+       t.FDFINANCIALYEARCODE,
+       t.FDDOCUMENTTEMPLATECODE,
+       t.FDSTATISTICALGROUPCODE,
+       t.FDCODE,
+       t.ADVANCEPAYMENT,
+       t.CREATIONDATETIME
+FROM   DB2ADMIN.FINPOADVANCEPROPOSALLINE t
+FETCH FIRST 100 ROWS ONLY;
+```

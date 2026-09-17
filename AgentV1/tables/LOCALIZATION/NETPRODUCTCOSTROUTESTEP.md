@@ -1,0 +1,129 @@
+# DB2ADMIN.NETPRODUCTCOSTROUTESTEP
+
+- **Module**: `LOCALIZATION` (low confidence — table name starts with 'NET')
+- **Roles**: `business_data`
+- **Columns**: 81
+- **Primary key**: `SALORDLINESALORDERCOMPANYCODE`, `SALORDLINESALORDERCOUNTERCODE`, `SALESORDERLINESALESORDERCODE`, `SALESORDERLINEORDERLINE`, `SALESORDERLINEORDERSUBLINE`, `SALORDLINECOMPONENTORDERLINE`, `APPROVALDATE`, `COSTSHEETNO`, `UNIQUEID`
+- **FK degree**: referenced by 0 constraint(s), references 2 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 200220
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `SALORDLINESALORDERCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `SALORDLINESALORDERCOUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `SALESORDERLINESALESORDERCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `SALESORDERLINEORDERLINE` | DECIMAL(7,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `SALESORDERLINEORDERSUBLINE` | DECIMAL(3,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `SALORDLINECOMPONENTORDERLINE` | DECIMAL(3,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 6 | `APPROVALDATE` | DATE | NOT NULL | PK | primary_key |  |
+| 7 | `COSTSHEETNO` | INTEGER | NOT NULL | PK | primary_key |  |
+| 8 | `UNIQUEID` | BIGINT | NOT NULL | PK | primary_key |  |
+| 9 | `COMPANYCODE` | CHAR(3) | NOT NULL |  | tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 10 | `PROJECTCODE` | CHAR(20) |  | FK | foreign_key |  |
+| 11 | `WORKCENTERCODE` | CHAR(8) |  |  |  |  |
+| 12 | `OPERATIONCODE` | CHAR(8) | NOT NULL |  |  |  |
+| 13 | `WORKCENTERANDOPERATTRIBUTESCOD` | CHAR(20) |  |  |  |  |
+| 14 | `PRODRESERVATIONLINKGROUPCODE` | CHAR(20) |  |  |  |  |
+| 15 | `RUNNINGDATE` | DATE |  |  |  |  |
+| 16 | `EFFICIENCY` | DECIMAL(5,2) |  |  |  |  |
+| 17 | `EFFICIENCYAPPLY` | CHAR(1) |  |  |  |  |
+| 18 | `STDQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 19 | `STDUOMCODE` | CHAR(3) |  |  |  |  |
+| 20 | `REPETITIONNUMBER` | DECIMAL(15,5) |  |  |  |  |
+| 21 | `INITQTYPRIMEUOM` | DECIMAL(20,10) |  |  |  |  |
+| 22 | `FINALQTYPRIMEUOM` | DECIMAL(20,10) |  |  |  |  |
+| 23 | `INITQTYSECONDUOM` | DECIMAL(20,10) |  |  |  |  |
+| 24 | `FINALQTYSECONDUOM` | DECIMAL(20,10) |  |  |  |  |
+| 25 | `WASTEQTYINPRIMARYUOM` | DECIMAL(20,10) |  |  |  |  |
+| 26 | `WASTEQTYINSECONDARYUOM` | DECIMAL(20,10) |  |  |  |  |
+| 27 | `TOTALTIME` | DECIMAL(20,10) |  |  |  |  |
+| 28 | `LOSSINCREASETYPE1CODE` | CHAR(3) |  |  |  |  |
+| 29 | `LOSSINCREASE1` | DECIMAL(15,5) |  |  |  |  |
+| 30 | `LOSSINCREASEREFUOM1CODE` | CHAR(3) |  |  |  |  |
+| 31 | `LOSSINCREASETYPE2CODE` | CHAR(3) |  |  |  |  |
+| 32 | `LOSSINCREASE2` | DECIMAL(15,5) |  |  |  |  |
+| 33 | `LOSSINCREASEREFUOM2CODE` | CHAR(3) |  |  |  |  |
+| 34 | `LOSSINCREASETYPE3CODE` | CHAR(3) |  |  |  |  |
+| 35 | `LOSSINCREASE3` | DECIMAL(15,5) |  |  |  |  |
+| 36 | `LOSSINCREASEREFUOM3CODE` | CHAR(3) |  |  |  |  |
+| 37 | `LOSSINCREASETYPE4CODE` | CHAR(3) |  |  |  |  |
+| 38 | `LOSSINCREASE4` | DECIMAL(15,5) |  |  |  |  |
+| 39 | `LOSSINCREASEREFUOM4CODE` | CHAR(3) |  |  |  |  |
+| 40 | `LOSSINCREASETYPE5CODE` | CHAR(3) |  |  |  |  |
+| 41 | `LOSSINCREASE5` | DECIMAL(15,5) |  |  |  |  |
+| 42 | `LOSSINCREASEREFUOM5CODE` | CHAR(3) |  |  |  |  |
+| 43 | `LOSSINCREASETYPE6CODE` | CHAR(3) |  |  |  |  |
+| 44 | `LOSSINCREASE6` | DECIMAL(15,5) |  |  |  |  |
+| 45 | `LOSSINCREASEREFUOM6CODE` | CHAR(3) |  |  |  |  |
+| 46 | `LOSSINCREASETYPE7CODE` | CHAR(3) |  |  |  |  |
+| 47 | `LOSSINCREASE7` | DECIMAL(15,5) |  |  |  |  |
+| 48 | `LOSSINCREASEREFUOM7CODE` | CHAR(3) |  |  |  |  |
+| 49 | `LOSSINCREASETYPE8CODE` | CHAR(3) |  |  |  |  |
+| 50 | `LOSSINCREASE8` | DECIMAL(15,5) |  |  |  |  |
+| 51 | `LOSSINCREASEREFUOM8CODE` | CHAR(3) |  |  |  |  |
+| 52 | `ENDCALCULATIONDATETIME` | TIMESTAMP |  |  |  |  |
+| 53 | `TIMETYPE1CODE` | CHAR(3) |  |  |  |  |
+| 54 | `TIME1` | DECIMAL(10,5) |  |  |  |  |
+| 55 | `TIMEUNIT1` | CHAR(2) |  |  |  |  |
+| 56 | `TIMEREFQTY1` | DECIMAL(15,5) |  |  |  |  |
+| 57 | `TIMEREFUOM1CODE` | CHAR(3) |  |  |  |  |
+| 58 | `TIMETYPE2CODE` | CHAR(3) |  |  |  |  |
+| 59 | `TIME2` | DECIMAL(10,5) |  |  |  |  |
+| 60 | `TIMEUNIT2` | CHAR(2) |  |  |  |  |
+| 61 | `TIMEREFQTY2` | DECIMAL(15,5) |  |  |  |  |
+| 62 | `TIMEREFUOM2CODE` | CHAR(3) |  |  |  |  |
+| 63 | `TIMETYPE3CODE` | CHAR(3) |  |  |  |  |
+| 64 | `TIME3` | DECIMAL(10,5) |  |  |  |  |
+| 65 | `TIMEUNIT3` | CHAR(2) |  |  |  |  |
+| 66 | `TIMEREFQTY3` | DECIMAL(15,5) |  |  |  |  |
+| 67 | `TIMEREFUOM3CODE` | CHAR(3) |  |  |  |  |
+| 68 | `TIMETYPE4CODE` | CHAR(3) |  |  |  |  |
+| 69 | `TIME4` | DECIMAL(10,5) |  |  |  |  |
+| 70 | `TIMEUNIT4` | CHAR(2) |  |  |  |  |
+| 71 | `TIMEREFQTY4` | DECIMAL(15,5) |  |  |  |  |
+| 72 | `TIMEREFUOM4CODE` | CHAR(3) |  |  |  |  |
+| 73 | `TIMETYPE5CODE` | CHAR(3) |  |  |  |  |
+| 74 | `TIME5` | DECIMAL(10,5) |  |  |  |  |
+| 75 | `TIMEUNIT5` | CHAR(2) |  |  |  |  |
+| 76 | `TIMEREFQTY5` | DECIMAL(15,5) |  |  |  |  |
+| 77 | `TIMEREFUOM5CODE` | CHAR(3) |  |  |  |  |
+| 78 | `CALCULATEDTIME2` | DECIMAL(10,5) |  |  |  |  |
+| 79 | `CALCULATEDTIME3` | DECIMAL(10,5) |  |  |  |  |
+| 80 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 2
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `PROJECT_PROJECT` | `SALORDLINESALORDERCOMPANYCODE`, `PROJECTCODE` | [`PROJECT`](../CORE_MASTER/PROJECT.md) | `COMPANYCODE`, `CODE` | RESTRICT | `NETPRODUCTCOSTROUTESTEP.SALORDLINESALORDERCOMPANYCODE = PROJECT.COMPANYCODE AND NETPRODUCTCOSTROUTESTEP.PROJECTCODE = PROJECT.CODE` |
+| `SALESORDERLINE_SALESORDERLINE` | `SALORDLINESALORDERCOMPANYCODE`, `SALORDLINESALORDERCOUNTERCODE`, `SALESORDERLINESALESORDERCODE`, `SALESORDERLINEORDERLINE`, `SALESORDERLINEORDERSUBLINE`, `SALORDLINECOMPONENTORDERLINE` | [`SALESORDERLINE`](../SALES/SALESORDERLINE.md) | `SALESORDERCOMPANYCODE`, `SALESORDERCOUNTERCODE`, `SALESORDERCODE`, `ORDERLINE`, `ORDERSUBLINE`, `COMPONENTORDERLINE` | RESTRICT | `NETPRODUCTCOSTROUTESTEP.SALORDLINESALORDERCOMPANYCODE = SALESORDERLINE.SALESORDERCOMPANYCODE AND NETPRODUCTCOSTROUTESTEP.SALORDLINESALORDERCOUNTERCODE = SALESORDERLINE.SALESORDERCOUNTERCODE AND NETPRODUCTCOSTROUTESTEP.SALESORDERLINESALESORDERCODE = SALESORDERLINE.SALESORDERCODE AND NETPRODUCTCOSTROUTESTEP.SALESORDERLINEORDERLINE = SALESORDERLINE.ORDERLINE AND NETPRODUCTCOSTROUTESTEP.SALESORDERLINEORDERSUBLINE = SALESORDERLINE.ORDERSUBLINE AND NETPRODUCTCOSTROUTESTEP.SALORDLINECOMPONENTORDERLINE = SALESORDERLINE.COMPONENTORDERLINE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `NETPRODUCTCOSTROUTESTEPUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.SALORDLINESALORDERCOMPANYCODE,
+       t.SALORDLINESALORDERCOUNTERCODE,
+       t.SALESORDERLINESALESORDERCODE,
+       t.SALESORDERLINEORDERLINE,
+       t.SALESORDERLINEORDERSUBLINE,
+       t.SALORDLINECOMPONENTORDERLINE,
+       t.APPROVALDATE,
+       t.COSTSHEETNO,
+       t.UNIQUEID,
+       t.COMPANYCODE,
+       t.PROJECTCODE,
+       t.WORKCENTERCODE
+FROM   DB2ADMIN.NETPRODUCTCOSTROUTESTEP t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

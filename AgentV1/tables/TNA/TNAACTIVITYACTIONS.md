@@ -1,0 +1,70 @@
+# DB2ADMIN.TNAACTIVITYACTIONS
+
+- **Module**: `TNA` (low confidence — table name starts with 'TNA')
+- **Roles**: `business_data`
+- **Columns**: 21
+- **Primary key**: `UNIQUEID`, `COMPANY`, `TNAHEADERCODE`, `ACTIVITYCODE`, `SEQNO`, `LINENUMBER`
+- **FK degree**: referenced by 1 constraint(s), references 2 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 195154
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `UNIQUEID` | BIGINT | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `COMPANY` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `TNAHEADERCODE` | CHAR(10) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `ACTIVITYCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `SEQNO` | DECIMAL(5,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `LINENUMBER` | INTEGER | NOT NULL | PK | primary_key |  |
+| 6 | `SEQUENCE` | INTEGER | NOT NULL |  |  |  |
+| 7 | `ISVALIDATION` | SMALLINT | NOT NULL |  |  |  |
+| 8 | `ACTIVITYACTIONSPOLICYCODE` | CHAR(20) |  |  |  |  |
+| 9 | `ENTITYENTITY` | CHAR(50) |  |  |  |  |
+| 10 | `DECISIONTABLEGROUPFAMILY` | CHAR(15) |  | FK | foreign_key |  |
+| 11 | `DECISIONTABLEREFERENCEDENTITY` | CHAR(50) |  | FK | foreign_key |  |
+| 12 | `DECISIONTABLEDTRPKTOKEN` | CHAR(15) |  | FK | foreign_key |  |
+| 13 | `TNAFROMCOPY` | SMALLINT | NOT NULL |  |  |  |
+| 14 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 15 | `CREATIONUSER` | CHAR(50) |  |  | audit | User who created the row (audit). |
+| 16 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 17 | `LASTUPDATEUSER` | CHAR(50) |  |  | audit | User who last modified the row (audit). |
+| 18 | `CREATIONDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC creation timestamp (audit). Prefer this over the local-time twin for comparisons across companies. |
+| 19 | `LASTUPDATEDATETIMEUTC` | TIMESTAMP |  |  | audit | UTC last-modification timestamp (audit). |
+| 20 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 2
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `ABSDTRENTITY_DECISIONTABLE` | `DECISIONTABLEGROUPFAMILY`, `DECISIONTABLEREFERENCEDENTITY`, `DECISIONTABLEDTRPKTOKEN` | [`ABSDTRENTITY`](../PLATFORM/ABSDTRENTITY.md) | `GROUPFAMILY`, `REFERENCEDENTITY`, `DTRPKTOKEN` | RESTRICT | `TNAACTIVITYACTIONS.DECISIONTABLEGROUPFAMILY = ABSDTRENTITY.GROUPFAMILY AND TNAACTIVITYACTIONS.DECISIONTABLEREFERENCEDENTITY = ABSDTRENTITY.REFERENCEDENTITY AND TNAACTIVITYACTIONS.DECISIONTABLEDTRPKTOKEN = ABSDTRENTITY.DTRPKTOKEN` |
+| `TNAACTIVITYDETAIL_ACTIONS` | `UNIQUEID`, `COMPANY`, `TNAHEADERCODE`, `ACTIVITYCODE`, `SEQNO` | [`TNAACTIVITYDETAIL`](../TNA/TNAACTIVITYDETAIL.md) | `TNAACTIVITYUNIQUEID`, `TNAACTIVITYTNAHDRCOMPANYCODE`, `TNAACTIVITYTNAHEADERCODE`, `ACTIVITYCODECODE`, `SEQNO` | RESTRICT | `TNAACTIVITYACTIONS.UNIQUEID = TNAACTIVITYDETAIL.TNAACTIVITYUNIQUEID AND TNAACTIVITYACTIONS.COMPANY = TNAACTIVITYDETAIL.TNAACTIVITYTNAHDRCOMPANYCODE AND TNAACTIVITYACTIONS.TNAHEADERCODE = TNAACTIVITYDETAIL.TNAACTIVITYTNAHEADERCODE AND TNAACTIVITYACTIONS.ACTIVITYCODE = TNAACTIVITYDETAIL.ACTIVITYCODECODE AND TNAACTIVITYACTIONS.SEQNO = TNAACTIVITYDETAIL.SEQNO` |
+
+## Referenced by (child → this table) — 1
+
+| Constraint | Child table | Child columns | JOIN predicate |
+|---|---|---|---|
+| `TNAACTIVITYACTIONS_SELECTIVEPOLICYDATA` | [`TNASELECTIVEDATA`](../TNA/TNASELECTIVEDATA.md) | `UNIQUEID`, `COMPANY`, `HEADERCODE`, `ACTIVITYCODE`, `SEQNO`, `LINE` | `TNASELECTIVEDATA.UNIQUEID = TNAACTIVITYACTIONS.UNIQUEID AND TNASELECTIVEDATA.COMPANY = TNAACTIVITYACTIONS.COMPANY AND TNASELECTIVEDATA.HEADERCODE = TNAACTIVITYACTIONS.TNAHEADERCODE AND TNASELECTIVEDATA.ACTIVITYCODE = TNAACTIVITYACTIONS.ACTIVITYCODE AND TNASELECTIVEDATA.SEQNO = TNAACTIVITYACTIONS.SEQNO AND TNASELECTIVEDATA.LINE = TNAACTIVITYACTIONS.LINENUMBER` |
+
+## Indexes
+
+- `TNAACTIVITYACTIONSUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.UNIQUEID,
+       t.COMPANY,
+       t.TNAHEADERCODE,
+       t.ACTIVITYCODE,
+       t.SEQNO,
+       t.LINENUMBER,
+       t.SEQUENCE,
+       t.ISVALIDATION,
+       t.ACTIVITYACTIONSPOLICYCODE,
+       t.ENTITYENTITY,
+       t.DECISIONTABLEGROUPFAMILY,
+       t.DECISIONTABLEREFERENCEDENTITY
+FROM   DB2ADMIN.TNAACTIVITYACTIONS t
+FETCH FIRST 100 ROWS ONLY;
+```

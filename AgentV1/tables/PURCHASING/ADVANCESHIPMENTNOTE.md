@@ -1,0 +1,80 @@
+# DB2ADMIN.ADVANCESHIPMENTNOTE
+
+- **Module**: `PURCHASING` (low confidence — FK neighbourhood: 1 of 1 related tables are PURCHASING)
+- **Roles**: `business_data`
+- **Columns**: 28
+- **Primary key**: `COMPANYCODE`, `PURORDPURORDERCOUNTERCODE`, `PURCHASEORDERPURCHASEORDERCODE`, `PURCHASEORDERORDERLINE`, `PURCHASEORDERORDERSUBLINE`, `LINENO`
+- **FK degree**: referenced by 0 constraint(s), references 6 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 111057
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `COMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key tenant_key | Company/legal-entity discriminator -- this schema's tenant key. Appears on 1,934 tables and is the leading primary-key column on most of them. Nearly every query should constrain it, and every join between company-scoped tables should include it. |
+| 1 | `DIVISIONCODE` | CHAR(3) |  | FK | foreign_key | Division within a company; second-level organisational discriminator. |
+| 2 | `PURORDPURORDERCOUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `PURCHASEORDERPURCHASEORDERCODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 4 | `PURCHASEORDERORDERLINE` | DECIMAL(7,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `PURCHASEORDERORDERSUBLINE` | DECIMAL(3,0) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 6 | `LINENO` | DECIMAL(3,0) | NOT NULL | PK | primary_key |  |
+| 7 | `PRIMARYQUANTITY` | DECIMAL(15,5) |  |  |  |  |
+| 8 | `UOMCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 9 | `LOT` | CHAR(35) |  |  |  |  |
+| 10 | `QUALITY` | DECIMAL(5,0) |  |  |  |  |
+| 11 | `SUPPLIERLOTCODE` | CHAR(35) |  |  |  |  |
+| 12 | `ZONE` | CHAR(3) |  |  |  |  |
+| 13 | `LOCATION` | CHAR(10) |  |  |  |  |
+| 14 | `CNRCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 15 | `CNRITEMTYPECODE` | CHAR(3) |  | FK | foreign_key |  |
+| 16 | `CNRSUBCODE01` | CHAR(20) |  | FK | foreign_key |  |
+| 17 | `CNRELEMENT` | CHAR(15) |  |  |  |  |
+| 18 | `WEIGHTUOMCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 19 | `GROSS` | DECIMAL(18,5) |  |  |  |  |
+| 20 | `NET` | DECIMAL(18,5) |  |  |  |  |
+| 21 | `REALNET` | DECIMAL(18,5) |  |  |  |  |
+| 22 | `RECEIVINGDOCUMENTCOUNTERCODE` | CHAR(8) |  |  |  |  |
+| 23 | `RECEIVINGDOCUMENTCODE` | CHAR(15) |  |  |  |  |
+| 24 | `ASNCODE` | CHAR(15) |  |  |  |  |
+| 25 | `ASNDATE` | DATE |  |  |  |  |
+| 26 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+| 27 | `ALLOWEDDIVISIONS` | CHAR(90) |  |  |  |  |
+
+## References (this table → parent) — 6
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COMPANY_COMPANY` | `COMPANYCODE` | [`COMPANY`](../CORE_MASTER/COMPANY.md) | `CODE` | RESTRICT | `ADVANCESHIPMENTNOTE.COMPANYCODE = COMPANY.CODE` |
+| `CONTAINER_CNR` | `CNRCOMPANYCODE`, `CNRITEMTYPECODE`, `CNRSUBCODE01` | [`CONTAINER`](../CORE_MASTER/CONTAINER.md) | `COMPANYCODE`, `ITEMTYPECODE`, `SUBCODE01` | RESTRICT | `ADVANCESHIPMENTNOTE.CNRCOMPANYCODE = CONTAINER.COMPANYCODE AND ADVANCESHIPMENTNOTE.CNRITEMTYPECODE = CONTAINER.ITEMTYPECODE AND ADVANCESHIPMENTNOTE.CNRSUBCODE01 = CONTAINER.SUBCODE01` |
+| `DIVISION_DIVISION` | `COMPANYCODE`, `DIVISIONCODE` | [`DIVISION`](../CORE_MASTER/DIVISION.md) | `COMPANYCODE`, `CODE` | RESTRICT | `ADVANCESHIPMENTNOTE.COMPANYCODE = DIVISION.COMPANYCODE AND ADVANCESHIPMENTNOTE.DIVISIONCODE = DIVISION.CODE` |
+| `PURCHASEORDERLINE_PURCHASEORDER` | `COMPANYCODE`, `PURORDPURORDERCOUNTERCODE`, `PURCHASEORDERPURCHASEORDERCODE`, `PURCHASEORDERORDERLINE`, `PURCHASEORDERORDERSUBLINE` | [`PURCHASEORDERLINE`](../PURCHASING/PURCHASEORDERLINE.md) | `PURCHASEORDERCOMPANYCODE`, `PURCHASEORDERCOUNTERCODE`, `PURCHASEORDERCODE`, `ORDERLINE`, `ORDERSUBLINE` | RESTRICT | `ADVANCESHIPMENTNOTE.COMPANYCODE = PURCHASEORDERLINE.PURCHASEORDERCOMPANYCODE AND ADVANCESHIPMENTNOTE.PURORDPURORDERCOUNTERCODE = PURCHASEORDERLINE.PURCHASEORDERCOUNTERCODE AND ADVANCESHIPMENTNOTE.PURCHASEORDERPURCHASEORDERCODE = PURCHASEORDERLINE.PURCHASEORDERCODE AND ADVANCESHIPMENTNOTE.PURCHASEORDERORDERLINE = PURCHASEORDERLINE.ORDERLINE AND ADVANCESHIPMENTNOTE.PURCHASEORDERORDERSUBLINE = PURCHASEORDERLINE.ORDERSUBLINE` |
+| `UNITOFMEASURE_UOM` | `UOMCODE` | [`UNITOFMEASURE`](../CORE_MASTER/UNITOFMEASURE.md) | `CODE` | RESTRICT | `ADVANCESHIPMENTNOTE.UOMCODE = UNITOFMEASURE.CODE` |
+| `UNITOFMEASURE_WEIGHTUOM` | `WEIGHTUOMCODE` | [`UNITOFMEASURE`](../CORE_MASTER/UNITOFMEASURE.md) | `CODE` | RESTRICT | `ADVANCESHIPMENTNOTE.WEIGHTUOMCODE = UNITOFMEASURE.CODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `ADVANCESHIPMENTNOTEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.COMPANYCODE,
+       t.DIVISIONCODE,
+       t.PURORDPURORDERCOUNTERCODE,
+       t.PURCHASEORDERPURCHASEORDERCODE,
+       t.PURCHASEORDERORDERLINE,
+       t.PURCHASEORDERORDERSUBLINE,
+       t.LINENO,
+       t.PRIMARYQUANTITY,
+       t.UOMCODE,
+       t.LOT,
+       t.QUALITY,
+       t.SUPPLIERLOTCODE
+FROM   DB2ADMIN.ADVANCESHIPMENTNOTE t
+WHERE  t.COMPANYCODE = ?   -- tenant key: always constrain
+FETCH FIRST 100 ROWS ONLY;
+```

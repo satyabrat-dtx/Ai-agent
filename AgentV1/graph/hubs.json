@@ -1,0 +1,417 @@
+[
+ {
+  "table": "COMPANY",
+  "inbound_fk": 1244,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "UNITOFMEASURE",
+  "inbound_fk": 804,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ITEMTYPE",
+  "inbound_fk": 414,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "USERGENERICGROUP",
+  "inbound_fk": 343,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "DIVISION",
+  "inbound_fk": 336,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ICSENTITY",
+  "inbound_fk": 322,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ORDERPARTNER",
+  "inbound_fk": 286,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "CURRENCY",
+  "inbound_fk": 276,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "GLMASTER",
+  "inbound_fk": 211,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "COUNTER",
+  "inbound_fk": 192,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "LOGICALWAREHOUSE",
+  "inbound_fk": 188,
+  "module": "WAREHOUSE"
+ },
+ {
+  "table": "PLANT",
+  "inbound_fk": 160,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "EMPLOYEE",
+  "inbound_fk": 153,
+  "module": "HR"
+ },
+ {
+  "table": "CUSTOMERSUPPLIERDATA",
+  "inbound_fk": 133,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "USERGENERICGROUPTYPE",
+  "inbound_fk": 129,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "STANDARDORDERGROUP",
+  "inbound_fk": 125,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "COUNTRY",
+  "inbound_fk": 113,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "STOCKTRANSACTIONTEMPLATE",
+  "inbound_fk": 100,
+  "module": "INVENTORY"
+ },
+ {
+  "table": "LOGREASON",
+  "inbound_fk": 97,
+  "module": "LOGISTICS"
+ },
+ {
+  "table": "AGENT",
+  "inbound_fk": 91,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "COSTCENTER",
+  "inbound_fk": 90,
+  "module": "COSTING"
+ },
+ {
+  "table": "DIVISIONVSFACTORYVSDEPARTMENT",
+  "inbound_fk": 80,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "RULES",
+  "inbound_fk": 77,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "STATISTICALGROUP",
+  "inbound_fk": 76,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PAYMENTMETHOD",
+  "inbound_fk": 75,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "BANK",
+  "inbound_fk": 72,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "STOCKTYPE",
+  "inbound_fk": 70,
+  "module": "INVENTORY"
+ },
+ {
+  "table": "TERMSOFDELIVERY",
+  "inbound_fk": 69,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "SUBCATEGORY",
+  "inbound_fk": 66,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "DIVVSFACTORYVSDEPTVSSECTION",
+  "inbound_fk": 60,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "FINBUSINESSUNIT",
+  "inbound_fk": 60,
+  "module": "FINANCE"
+ },
+ {
+  "table": "ABSUSERDEF",
+  "inbound_fk": 57,
+  "module": "PLATFORM"
+ },
+ {
+  "table": "STANDARDGROUP",
+  "inbound_fk": 54,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "DOCUMENTTYPE",
+  "inbound_fk": 53,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "DIVVSFACVSDEPTVSSECVSMTYPE",
+  "inbound_fk": 51,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PROJECT",
+  "inbound_fk": 50,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PAYELEMENT",
+  "inbound_fk": 50,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ORDERCATEGORY",
+  "inbound_fk": 44,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "AREA",
+  "inbound_fk": 43,
+  "module": "SALES"
+ },
+ {
+  "table": "ROUTINGSTEPLOSSINCREASETYPE",
+  "inbound_fk": 43,
+  "module": "PRODUCTION"
+ },
+ {
+  "table": "TERMSOFSHIPPING",
+  "inbound_fk": 42,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "GENERALLEDGERACCOUNT",
+  "inbound_fk": 42,
+  "module": "FINANCE"
+ },
+ {
+  "table": "AVAILABILITYFORMULA",
+  "inbound_fk": 39,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ADDRESS",
+  "inbound_fk": 38,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "WORKCENTER",
+  "inbound_fk": 38,
+  "module": "PRODUCTION"
+ },
+ {
+  "table": "STOCKTRANSACTION",
+  "inbound_fk": 38,
+  "module": "INVENTORY"
+ },
+ {
+  "table": "COLLECTIONGROUP",
+  "inbound_fk": 35,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PERIODIZEDCALENDARTYPE",
+  "inbound_fk": 34,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "AVAILABILITYWAREHOUSEGROUP",
+  "inbound_fk": 33,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ELEMENTS",
+  "inbound_fk": 33,
+  "module": "QUALITY"
+ },
+ {
+  "table": "RESOURCES",
+  "inbound_fk": 32,
+  "module": "PRODUCTION"
+ },
+ {
+  "table": "PURCHASEORDER",
+  "inbound_fk": 32,
+  "module": "PURCHASING"
+ },
+ {
+  "table": "SALESORDERTEMPLATE",
+  "inbound_fk": 32,
+  "module": "SALES"
+ },
+ {
+  "table": "TAX",
+  "inbound_fk": 31,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "ACCOUNTINGCHOOSEKEYSHEADER",
+  "inbound_fk": 31,
+  "module": "OTHER"
+ },
+ {
+  "table": "STATE",
+  "inbound_fk": 31,
+  "module": "HR"
+ },
+ {
+  "table": "INITIALS",
+  "inbound_fk": 30,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PORT",
+  "inbound_fk": 30,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "TARIFF",
+  "inbound_fk": 30,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "COSTGROUP",
+  "inbound_fk": 29,
+  "module": "COSTING"
+ },
+ {
+  "table": "WAREHOUSELOCATION",
+  "inbound_fk": 29,
+  "module": "WAREHOUSE"
+ },
+ {
+  "table": "OPERATION",
+  "inbound_fk": 29,
+  "module": "PRODUCTION"
+ },
+ {
+  "table": "STANDARDTABLERECORDS",
+  "inbound_fk": 29,
+  "module": "FINANCE"
+ },
+ {
+  "table": "TRANSPORTZONE",
+  "inbound_fk": 28,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "SALESORDER",
+  "inbound_fk": 28,
+  "module": "SALES"
+ },
+ {
+  "table": "FINVOUCHERTEMPLATE",
+  "inbound_fk": 28,
+  "module": "FINANCE"
+ },
+ {
+  "table": "FINCOSTCENTERDETAIL",
+  "inbound_fk": 28,
+  "module": "FINANCE"
+ },
+ {
+  "table": "WORKINGCALENDAR",
+  "inbound_fk": 25,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "APPLICANTSDETAILS",
+  "inbound_fk": 25,
+  "module": "HR"
+ },
+ {
+  "table": "SALESORDERLINE",
+  "inbound_fk": 24,
+  "module": "SALES"
+ },
+ {
+  "table": "PHYSICALWAREHOUSE",
+  "inbound_fk": 24,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "QUALITYLEVEL",
+  "inbound_fk": 23,
+  "module": "QUALITY"
+ },
+ {
+  "table": "TRANSPORTREASON",
+  "inbound_fk": 22,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "DEPARTMENT",
+  "inbound_fk": 22,
+  "module": "WAREHOUSE"
+ },
+ {
+  "table": "PLANTINVOICE",
+  "inbound_fk": 22,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PRICELIST",
+  "inbound_fk": 21,
+  "module": "SALES"
+ },
+ {
+  "table": "SALESORDERLINETEMPLATE",
+  "inbound_fk": 21,
+  "module": "SALES"
+ },
+ {
+  "table": "AVQUALITYGROUP",
+  "inbound_fk": 21,
+  "module": "QUALITY"
+ },
+ {
+  "table": "LINEREPORTDETAIL",
+  "inbound_fk": 21,
+  "module": "FINANCE"
+ },
+ {
+  "table": "CONTAINER",
+  "inbound_fk": 20,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "PMBOM",
+  "inbound_fk": 20,
+  "module": "CORE_MASTER"
+ },
+ {
+  "table": "NETTOLOG",
+  "inbound_fk": 20,
+  "module": "LOCALIZATION"
+ },
+ {
+  "table": "EPCGAPPLICATION",
+  "inbound_fk": 20,
+  "module": "PURCHASING"
+ }
+]

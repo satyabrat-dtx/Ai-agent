@@ -1,0 +1,202 @@
+[
+ {
+  "kind": "FUNCTION",
+  "name": "AVIT5",
+  "line": 383103
+ },
+ {
+  "kind": "FUNCTION",
+  "name": "AVIT6",
+  "line": 383126
+ },
+ {
+  "kind": "FUNCTION",
+  "name": "PARSEVECTOR",
+  "line": 383151
+ },
+ {
+  "kind": "FUNCTION",
+  "name": "BUILDITEMCODE",
+  "line": 383189
+ },
+ {
+  "kind": "FUNCTION",
+  "name": "TODATE",
+  "line": 383218
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SRVLOADSETSTATUSOPENED_OR_CLOSED",
+  "line": 411548
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SRVLOADGETSTATUSOPENED_OR_CLOSED",
+  "line": 411566
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SET_CONSTRAINTS",
+  "line": 411596
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "Sp_AttendanceScheduleDelete",
+  "line": 411624
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SP_GETBESTHOLIDAYRULE",
+  "line": 411681
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SP_ATTENDANCESCHEDULE",
+  "line": 411848
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SP_SECONDWEEKOFF",
+  "line": 413143
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SP_ATTENDANCEAUTHORISATIONDAYS",
+  "line": 413408
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SP_ATTENDANCEAUTHORISATION",
+  "line": 413463
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_GET_ACCESS",
+  "line": 415614
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_END_ACCESS",
+  "line": 415800
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_ACTIVE_WRKST",
+  "line": 415824
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_CHANGE_ACCESS",
+  "line": 415854
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_GET_STATUS",
+  "line": 415872
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_IS_EXIST_CLIENT",
+  "line": 415916
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_UPDATE_CLIENTS",
+  "line": 415946
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_JOB_MSG",
+  "line": 415958
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SHARED_DATA",
+  "line": 415970
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SRVLOADSETSTATUS",
+  "line": 415982
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_CONNECT",
+  "line": 416002
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_DISCONNECT",
+  "line": 416046
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_ASKPOLL",
+  "line": 416072
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_CHKPOLL",
+  "line": 416084
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_CHKPOLLDELOLD",
+  "line": 416102
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SRVCNGDATABASE",
+  "line": 416120
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SRV_SET_OPENED_OR_CLOSED",
+  "line": 416132
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_SRV_GET_OPENED_OR_CLOSED",
+  "line": 416150
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "TEST",
+  "line": 416182
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_ClientRequest",
+  "line": 416194
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDC_ClientStatusUpdate",
+  "line": 416206
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDM_GET_CAP_RES_GEN_NUM",
+  "line": 416218
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDM_GET_GRP_GEN_NUM",
+  "line": 416284
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDM_GET_NEW_REQ_GEN_NUM",
+  "line": 416350
+ },
+ {
+  "kind": "PROCEDURE",
+  "name": "SCDM_GET_SPLIT_FAMILY_GEN_NUM",
+  "line": 416416
+ },
+ {
+  "kind": "TRIGGER",
+  "name": "SCDC_SRVLOADTRIGER",
+  "line": 416476
+ }
+]

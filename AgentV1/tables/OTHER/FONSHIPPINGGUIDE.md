@@ -1,0 +1,66 @@
+# DB2ADMIN.FONSHIPPINGGUIDE
+
+- **Module**: `OTHER` (none confidence — no known prefix matched)
+- **Roles**: `business_data`
+- **Columns**: 18
+- **Primary key**: `FONSHIPGUIDEHEADERCOMPANYCODE`, `FONSHIPGUIDEHDRGUIDECNTCODE`, `FONSHIPGUIDEHEADERGUIDECODE`, `TYPE`, `PROVISIONALCOUNTERCODE`, `PROVISIONALDOCUMENTCODE`
+- **FK degree**: referenced by 0 constraint(s), references 3 constraint(s)
+- **Source**: `DB2ADMIN_DDL.sql` line 69937
+
+## Columns
+
+| # | Column | Type | Null | Key | Tags | Meaning |
+|---|--------|------|------|-----|------|---------|
+| 0 | `FONSHIPGUIDEHEADERCOMPANYCODE` | CHAR(3) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 1 | `FONSHIPGUIDEHDRGUIDECNTCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 2 | `FONSHIPGUIDEHEADERGUIDECODE` | CHAR(15) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 3 | `TYPE` | CHAR(1) | NOT NULL | PK | primary_key |  |
+| 4 | `PROVISIONALCOUNTERCODE` | CHAR(8) | NOT NULL | PK FK | primary_key foreign_key |  |
+| 5 | `PROVISIONALDOCUMENTCODE` | CHAR(15) | NOT NULL | PK | primary_key |  |
+| 6 | `DEFINITIVECOUNTERCODE` | CHAR(8) |  | FK | foreign_key |  |
+| 7 | `DEFINITIVEDOCUMENTCODE` | CHAR(15) |  |  |  |  |
+| 8 | `DRIVER` | CHAR(3) |  |  |  |  |
+| 9 | `CARRIER` | CHAR(8) |  |  |  |  |
+| 10 | `LICENSEPLATE` | VARCHAR(40) |  |  |  |  |
+| 11 | `CREATIONDATETIME` | TIMESTAMP |  |  | audit | Local-time creation timestamp (audit). |
+| 12 | `CREATIONUSER` | CHAR(25) |  |  | audit | User who created the row (audit). |
+| 13 | `LASTUPDATEDATETIME` | TIMESTAMP |  |  | audit | Local-time last-modification timestamp (audit). |
+| 14 | `LASTUPDATEUSER` | CHAR(25) |  |  | audit | User who last modified the row (audit). |
+| 15 | `PROVISIONALCOUNTERCOMPANYCODE` | CHAR(3) | NOT NULL | FK | foreign_key |  |
+| 16 | `DEFINITIVECOUNTERCOMPANYCODE` | CHAR(3) |  | FK | foreign_key |  |
+| 17 | `ABSUNIQUEID` | BIGINT | NOT NULL |  | surrogate_id | Framework-assigned surrogate row id (BIGINT). Present on most tables. NO foreign key in this schema references it, but it is the target of the implicit FATHERID parent link. Not part of the primary key. |
+
+## References (this table → parent) — 3
+
+| Constraint | Local columns | → Table | → Columns | ON DELETE | JOIN predicate |
+|---|---|---|---|---|---|
+| `COUNTER_DEFINITIVECOUNTER` | `DEFINITIVECOUNTERCOMPANYCODE`, `DEFINITIVECOUNTERCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `FONSHIPPINGGUIDE.DEFINITIVECOUNTERCOMPANYCODE = COUNTER.COMPANYCODE AND FONSHIPPINGGUIDE.DEFINITIVECOUNTERCODE = COUNTER.CODE` |
+| `COUNTER_PROVISIONALCOUNTER` | `PROVISIONALCOUNTERCOMPANYCODE`, `PROVISIONALCOUNTERCODE` | [`COUNTER`](../CORE_MASTER/COUNTER.md) | `COMPANYCODE`, `CODE` | RESTRICT | `FONSHIPPINGGUIDE.PROVISIONALCOUNTERCOMPANYCODE = COUNTER.COMPANYCODE AND FONSHIPPINGGUIDE.PROVISIONALCOUNTERCODE = COUNTER.CODE` |
+| `FONSHIPGUIDEHEADER_LINES` | `FONSHIPGUIDEHEADERCOMPANYCODE`, `FONSHIPGUIDEHDRGUIDECNTCODE`, `FONSHIPGUIDEHEADERGUIDECODE` | [`FONSHIPGUIDEHEADER`](../OTHER/FONSHIPGUIDEHEADER.md) | `COMPANYCODE`, `GUIDECOUNTERCODE`, `GUIDECODE` | RESTRICT | `FONSHIPPINGGUIDE.FONSHIPGUIDEHEADERCOMPANYCODE = FONSHIPGUIDEHEADER.COMPANYCODE AND FONSHIPPINGGUIDE.FONSHIPGUIDEHDRGUIDECNTCODE = FONSHIPGUIDEHEADER.GUIDECOUNTERCODE AND FONSHIPPINGGUIDE.FONSHIPGUIDEHEADERGUIDECODE = FONSHIPGUIDEHEADER.GUIDECODE` |
+
+## Referenced by (child → this table) — 0
+
+_None._
+
+## Indexes
+
+- `FONSHIPPINGGUIDEUID` (ABSUNIQUEID)
+
+## Starter query
+
+```sql
+SELECT t.FONSHIPGUIDEHEADERCOMPANYCODE,
+       t.FONSHIPGUIDEHDRGUIDECNTCODE,
+       t.FONSHIPGUIDEHEADERGUIDECODE,
+       t.TYPE,
+       t.PROVISIONALCOUNTERCODE,
+       t.PROVISIONALDOCUMENTCODE,
+       t.DEFINITIVECOUNTERCODE,
+       t.DEFINITIVEDOCUMENTCODE,
+       t.DRIVER,
+       t.CARRIER,
+       t.LICENSEPLATE,
+       t.CREATIONDATETIME
+FROM   DB2ADMIN.FONSHIPPINGGUIDE t
+FETCH FIRST 100 ROWS ONLY;
+```
